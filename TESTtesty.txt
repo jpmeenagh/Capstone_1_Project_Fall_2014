@@ -1,3 +1,3 @@
 New test file to demonstrate git commit and versioning.
 
-First Manual Change
+Seconds Manual Change
