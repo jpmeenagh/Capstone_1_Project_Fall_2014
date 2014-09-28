@@ -291,6 +291,7 @@ GameObject:
   - 114: {fileID: 1560633076}
   - 114: {fileID: 1560633075}
   - 114: {fileID: 1560633074}
+  - 114: {fileID: 1560633078}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -335,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canControl: 1
-  useFixedUpdate: 1
+  useFixedUpdate: 0
   movement:
     maxForwardSpeed: 6
     maxSidewaysSpeed: 6
@@ -412,6 +413,17 @@ CharacterController:
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1560633078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560633072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c738b8f15cd0a8f419f6b23a5da08b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1857904076
 GameObject:
   m_ObjectHideFlags: 0
