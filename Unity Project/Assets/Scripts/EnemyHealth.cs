@@ -77,4 +77,20 @@ public class EnemyHealth : MonoBehaviour
 		// After 2 seconds destory the enemy.
 		Destroy (gameObject, 2f);
 	}
+
+	void OnTriggerEnter(Collider otherObj)
+   	{
+	
+      	
+	if(otherObj.gameObject.tag == "Bullet")
+    	{
+ 		TakeDamage(17, new Vector3(0,0,0));
+        	
+ 	}
+
+    }
+	
+
+	
+
 }
