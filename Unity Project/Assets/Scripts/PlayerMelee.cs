@@ -2,7 +2,7 @@
 
 //http://docs.unity3d.com/Manual/Layers.html
 
-public class PlayerMele : MonoBehaviour
+public class PlayerMelee : MonoBehaviour
 {
 	public int damagePerShot = 20;                  // The damage inflicted by each bullet.
 	public float timeBetweenBullets = 0.15f;        // The time between each shot.
