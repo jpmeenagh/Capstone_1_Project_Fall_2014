@@ -28,9 +28,9 @@ public class bulletEffects : MonoBehaviour {
 	}
 	
 	
-	void OnTriggerEnter(Collider otherObj)
+	void OnCollisionEnter(Collision otherObj)
 	{
-
+		/*
 		if(otherObj.gameObject.tag == "Enemy")
     		{
 			// Try and find an EnemyHealth script on the gameobject hit.
@@ -44,7 +44,7 @@ public class bulletEffects : MonoBehaviour {
 			}
         	
  		}
-	
+	*/
 		Destroy(this.gameObject);
 
 	
