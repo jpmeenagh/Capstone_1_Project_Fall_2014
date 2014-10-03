@@ -38,7 +38,7 @@ public class Enemy_Behavior : MonoBehaviour {
  		if (distanceToAim < range && distanceToAim > -range && Time.time > nextFire)
         	{
 		nextFire = Time.time + fireRate;
-            	Rigidbody instantiatedProjectile = Instantiate(projectile,shooter.position,shooter.rotation)as Rigidbody;
+				Rigidbody instantiatedProjectile = Instantiate(projectile, new Vector3(shooter.position.x, shooter.position.y, shooter.position.z),shooter.rotation) as Rigidbody;
             	instantiatedProjectile.velocity = shooter.TransformDirection(new Vector3(0, 0,bulletSpeed));
 
         	}
