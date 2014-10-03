@@ -2,10 +2,10 @@
 
 //http://docs.unity3d.com/Manual/Layers.html
 
-public class PlayerShooting : MonoBehaviour
+public class Attack_Ranged_Ray : MonoBehaviour
 {
 	public int damagePerShot = 20;                  // The damage inflicted by each bullet.
-	public float timeBetweenBullets = 0.15f;        // The time between each shot.
+	public float timeBetweenAttacks = 0.15f;        // The time between each shot.
 	public float range = 100f;                      // The distance the gun can fire.
 	
 	float timer;                                    // A timer to determine when to fire.
@@ -30,14 +30,14 @@ public class PlayerShooting : MonoBehaviour
 		timer += Time.deltaTime;
 		
 		// If the Fire1 button is being press and it's time to fire...
-		if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets)
-		{
+		//if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets)
+		//{
 			// ... shoot the gun.
-			Shoot ();
-		}
+		//	Shoot ();
+		//}
 		
 		// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
-		if(timer >= timeBetweenBullets * effectsDisplayTime)
+		if(timer >= timeBetweenAttacks * effectsDisplayTime)
 		{
 			// ... disable the effects.
 			DisableEffects ();
@@ -49,8 +49,14 @@ public class PlayerShooting : MonoBehaviour
 
 	}
 	
-	void Shoot ()
+	public void Shoot ()
 	{
+		// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
+		if(timer < timeBetweenAttacks)
+		{
+			return;
+		}
+
 		// Reset the timer.
 		timer = 0f;
 
