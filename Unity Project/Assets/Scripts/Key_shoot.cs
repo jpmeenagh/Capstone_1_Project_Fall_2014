@@ -4,6 +4,7 @@ using System.Collections;
 public class Key_shoot : MonoBehaviour {
 	public string attack_ranged_ray_key = "Fire1";
 	public string attack_melee_ray_key = "Fire2";
+	public string heal_ranged_ray_key = "heal";
 	// Use this for initialization
 	void Start () {
 	
@@ -24,6 +25,13 @@ public class Key_shoot : MonoBehaviour {
 			// ... shoot the gun.
 			Attack_Melee_Ray raymelee = this.GetComponent <Attack_Melee_Ray>();
 			raymelee.Shoot();
+		}
+		// If the Fire1 button is being press and it's time to fire...
+		if(Input.GetButton (heal_ranged_ray_key))
+		{
+			// ... shoot the gun.
+			Heal_Ranged_Ray rayranged = this.GetComponent <Heal_Ranged_Ray>();
+			rayranged.Shoot();
 		}
 	}
 }

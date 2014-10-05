@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
+	public enum Faction {Ally, Enemy, Neutral};
+	public Faction faction = Faction.Neutral;
 	public int startingHealth = 100;            // The amount of health the enemy starts the game with.
 	public int currentHealth;                   // The current health the enemy has.
+	public int maxHealth = 150;
 	public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
 
 	//CapsuleCollider enemyCollider;            // Reference to the capsule collider.
@@ -88,6 +91,19 @@ public class EnemyHealth : MonoBehaviour
 		}
 		
 		healthBarLength = 100 * (currentHealth / (float)startingHealth);
+	}
+	public void Heal (int amount, Vector3 hitPoint)
+	{
+		// Reduce the current health by the amount of damage sustained.
+		if (currentHealth < maxHealth) 
+		{
+			if(currentHealth + amount > maxHealth){
+				currentHealth = maxHealth;
+			}
+			else{
+				currentHealth += amount;
+			}
+		}
 	}
 	
 	

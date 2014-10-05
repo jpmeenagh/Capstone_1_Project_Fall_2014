@@ -144,6 +144,7 @@ MonoBehaviour:
   faction: 0
   startingHealth: 100
   currentHealth: 0
+  maxHealth: 150
   sinkSpeed: 2.5
 --- !u!54 &212725361
 Rigidbody:
@@ -350,6 +351,7 @@ MonoBehaviour:
   faction: 1
   startingHealth: 100
   currentHealth: 0
+  maxHealth: 150
   sinkSpeed: 2.5
 --- !u!54 &236915054
 Rigidbody:
@@ -707,6 +709,7 @@ MonoBehaviour:
   faction: 0
   startingHealth: 100
   currentHealth: 0
+  maxHealth: 150
   sinkSpeed: 2.5
 --- !u!114 &845600078
 MonoBehaviour:

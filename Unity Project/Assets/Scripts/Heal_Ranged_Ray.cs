@@ -2,7 +2,7 @@
 
 //http://docs.unity3d.com/Manual/Layers.html
 
-public class Attack_Ranged_Ray : MonoBehaviour
+public class Heal_Ranged_Ray : MonoBehaviour
 {
 	public int damagePerShot = 20;                  // The damage inflicted by each bullet.
 	public float timeBetweenAttacks = 0.15f;        // The time between each shot.
@@ -12,7 +12,7 @@ public class Attack_Ranged_Ray : MonoBehaviour
 	Ray shootRay;                                   // A ray from the gun end forwards.
 	RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
 	int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
-
+	
 	float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
 	
 	void Awake ()
@@ -32,7 +32,7 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		// If the Fire1 button is being press and it's time to fire...
 		//if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets)
 		//{
-			// ... shoot the gun.
+		// ... shoot the gun.
 		//	Shoot ();
 		//}
 		
@@ -46,7 +46,7 @@ public class Attack_Ranged_Ray : MonoBehaviour
 	
 	public void DisableEffects ()
 	{
-
+		
 	}
 	
 	public void Shoot ()
@@ -56,10 +56,10 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		{
 			return;
 		}
-
+		
 		// Reset the timer.
 		timer = 0f;
-
+		
 		// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.forward;
@@ -69,20 +69,20 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		{
 			// Try and find an EnemyHealth script on the gameobject hit.
 			Health targetHealth = shootHit.collider.GetComponent <Health> ();
-
+			
 			
 			// If the EnemyHealth component exist...
 			if(targetHealth != null)
 			{
-				if(targetHealth.faction != this.GetComponent<Health>().faction)
+				if(targetHealth.faction == this.GetComponent<Health>().faction)
 				{
-					print("hit: other faction");
+					print("hit: same faction");
 					// ... the enemy should take damage.
-					targetHealth.TakeDamage (damagePerShot, shootHit.point);
+					targetHealth.Heal (damagePerShot, shootHit.point);
 				}
 				else
 				{
-					print("hit: same faction");
+					print("hit: other faction");
 				}
 			}
 		}

@@ -62,7 +62,7 @@ public class Attack_Melee_Ray : MonoBehaviour
 		{
 			print("hit");
 			// Try and find an EnemyHealth script on the gameobject hit.
-			EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();
+			Health enemyHealth = shootHit.collider.GetComponent <Health> ();
 			
 			// If the EnemyHealth component exist...
 			if(enemyHealth != null)
