@@ -51,5 +51,10 @@ public class bulletEffects : MonoBehaviour {
 
 	}
 
+	/*void OnTriggerEnter (Collider trig){
+		if (trig.name.Equals("bb_shi")) {
+			Destroy(this.gameObject);
+				}
+		}*/
 
 }
