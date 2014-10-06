@@ -11,7 +11,24 @@ public class EnemyHealth : MonoBehaviour
 	bool isDead;                                // Whether the enemy is dead.
 	bool isSinking;                             // Whether the enemy has started sinking through the floor.
 
-	
+	//Health Bar Variables
+        public float healthBarLength = 100;
+
+        public Vector3 pos;
+        public float xOffset;
+        public float yOffset;
+
+        GUIStyle style = new GUIStyle();
+        Texture2D texture;
+        Color redColor = Color.red;
+        Color greenColor = Color.green;
+ 
+	 // Use this for initialization
+    	void Start () {
+		texture = new Texture2D(1, 1);
+        	texture.SetPixel(1, 1, greenColor);
+    	}
+
 	void Awake ()
 	{
 		// Setting up the references.
@@ -31,6 +48,25 @@ public class EnemyHealth : MonoBehaviour
 			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
 			print (-Vector3.up * sinkSpeed * Time.deltaTime);
 		}
+
+		pos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z)); //The offsets are to position the health bar so it's placed above and centered to the character
+		pos.y = Screen.height - pos.y;
+
+		if (currentHealth > 40)
+        	{
+ 	           	texture.SetPixel(1, 1, greenColor);
+        	}
+ 
+ 	       if (currentHealth < 40)
+        	{
+ 	           	texture.SetPixel(1, 1, redColor);
+        	}
+			
+		//For testing Health Bar, reduce player's health by 10 when Fire1 (ctrl) key is released
+		//if(Input.GetButtonUp("Fire1"))
+        	//{
+ 	    	//	TakeDamage(10, new Vector3(0,0,0));
+		//}
 	}
 	
 	
@@ -50,6 +86,8 @@ public class EnemyHealth : MonoBehaviour
 			// ... the enemy is dead.
 			Death ();
 		}
+		
+		healthBarLength = 100 * (currentHealth / (float)startingHealth);
 	}
 	
 	
@@ -88,6 +126,14 @@ public class EnemyHealth : MonoBehaviour
         	
  	}
 
+    }
+
+    void OnGUI(){
+
+    	texture.Apply();
+ 
+    	style.normal.background = texture;
+    	GUI.Box(new Rect(pos.x,pos.y, healthBarLength, 20), new GUIContent(""), style);
     }
 	
 
