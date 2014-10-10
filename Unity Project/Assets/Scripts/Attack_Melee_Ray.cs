@@ -68,7 +68,7 @@ public class Attack_Melee_Ray : MonoBehaviour
 			if(enemyHealth != null)
 			{
 				// ... the enemy should take damage.
-				enemyHealth.TakeDamage (damagePerShot, shootHit.point);
+				enemyHealth.TakeDamage (damagePerShot, shootHit.point/*, this*/);
 			}
 		}
 		// If the raycast didn't hit anything on the shootable layer...

@@ -138,12 +138,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 212725357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd2e46423125cd48a8fce7c5dc64b8e, type: 3}
+  m_Script: {fileID: 11500000, guid: b17ea878a7ba1fb4692da5ab403fa574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faction: 0
   startingHealth: 100
   currentHealth: 0
+  maxHealth: 150
   sinkSpeed: 2.5
+  healthBarLength: 100
+  pos: {x: 0, y: 0, z: 0}
+  xOffset: 0
+  yOffset: 0
 --- !u!54 &212725361
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -343,12 +349,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 236915051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd2e46423125cd48a8fce7c5dc64b8e, type: 3}
+  m_Script: {fileID: 11500000, guid: b17ea878a7ba1fb4692da5ab403fa574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faction: 1
   startingHealth: 100
   currentHealth: 0
+  maxHealth: 150
   sinkSpeed: 2.5
+  healthBarLength: 100
+  pos: {x: 0, y: 0, z: 0}
+  xOffset: 0
+  yOffset: 0
 --- !u!54 &236915054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -489,7 +501,6 @@ GameObject:
   - 4: {fileID: 495704148}
   - 33: {fileID: 495704154}
   - 23: {fileID: 495704152}
-  - 114: {fileID: 495704150}
   m_Layer: 0
   m_Name: head
   m_TagString: Untagged
@@ -508,21 +519,6 @@ Transform:
   m_LocalScale: {x: .699999988, y: 1, z: .699999988}
   m_Children: []
   m_Father: {fileID: 236915058}
---- !u!114 &495704150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 9a19ede5a7de6b84d8d5c6d4a48e467a,
-    type: 2}
-  m_PrefabInternal: {fileID: 549728096}
-  m_GameObject: {fileID: 495704147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd2e46423125cd48a8fce7c5dc64b8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
-  sinkSpeed: 2.5
 --- !u!23 &495704152
 Renderer:
   m_ObjectHideFlags: 0
@@ -610,11 +606,11 @@ GameObject:
   - 23: {fileID: 845600072}
   - 54: {fileID: 845600074}
   - 136: {fileID: 845600076}
-  - 114: {fileID: 845600077}
   - 114: {fileID: 845600078}
   - 114: {fileID: 845600079}
   - 114: {fileID: 845600075}
   - 114: {fileID: 845600080}
+  - 114: {fileID: 845600077}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Player
@@ -693,6 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack_ranged_ray_key: Fire1
   attack_melee_ray_key: Fire2
+  heal_ranged_ray_key: heal
 --- !u!136 &845600076
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -714,12 +711,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 845600070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c0004c9697ec64994c6d9ef1e59c05, type: 3}
+  m_Script: {fileID: 11500000, guid: b17ea878a7ba1fb4692da5ab403fa574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  curHealth: 100
-  healthBarLength: 0
+  faction: 0
+  startingHealth: 100
+  currentHealth: 0
+  maxHealth: 150
+  sinkSpeed: 2.5
+  healthBarLength: 100
+  pos: {x: 0, y: 0, z: 0}
+  xOffset: 0
+  yOffset: 0
 --- !u!114 &845600078
 MonoBehaviour:
   m_ObjectHideFlags: 0
