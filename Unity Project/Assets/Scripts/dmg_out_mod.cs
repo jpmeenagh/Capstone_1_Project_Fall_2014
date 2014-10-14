@@ -15,13 +15,13 @@ public class dmg_out_mod : MonoBehaviour {
 	
 	}
 
-	int modDmg (int defDam){
+	public int modDmg (int defDam){
 		int outDam;
 		outDam = defDam + dmgModCur;
 		return outDam;
 	}
 
-	void changeMod (int change){
+	public void changeMod (int change){
 		dmgModCur = dmgModCur + change;
 		}
 
