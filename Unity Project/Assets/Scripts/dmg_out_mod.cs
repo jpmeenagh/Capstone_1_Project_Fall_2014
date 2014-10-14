@@ -15,12 +15,14 @@ public class dmg_out_mod : MonoBehaviour {
 	
 	}
 
+	//takes outgoing dmg and does final number modifications before its sent to target
 	public int modDmg (int defDam){
 		int outDam;
 		outDam = defDam + dmgModCur;
 		return outDam;
 	}
 
+	//changes the curreny damage mod bu adding the given ammount
 	public void changeMod (int change){
 		dmgModCur = dmgModCur + change;
 		}
