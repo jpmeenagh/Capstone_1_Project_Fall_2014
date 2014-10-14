@@ -52,9 +52,10 @@ public class Health : MonoBehaviour
 			print (-Vector3.up * sinkSpeed * Time.deltaTime);
 		}
 
-		pos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z)); //The offsets are to position the health bar so it's placed above and centered to the character
+		pos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z)); 
+		//The offsets are to position the health bar so it's placed above and centered to the character
 		pos.y = Screen.height - pos.y;
-
+		 
 		if (currentHealth > 40)
         	{
  	           	texture.SetPixel(1, 1, greenColor);
@@ -73,7 +74,7 @@ public class Health : MonoBehaviour
 	}
 	
 	
-	public void TakeDamage (int amount, Vector3 hitPoint)
+	public void TakeDamage (int amount, Vector3 hitPoint/*, MonoBehaviour dmgS*/)
 	{
 		// If the enemy is dead...
 		if(isDead)
