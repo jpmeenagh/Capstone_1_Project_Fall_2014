@@ -14,7 +14,7 @@ public abstract class Ability : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update (Stance given_stance) {
 	
 	}
 

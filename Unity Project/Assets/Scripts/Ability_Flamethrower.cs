@@ -7,7 +7,5 @@ public class Ability_Flamethrower : Ability {
 	//void Start () {}
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+	void Update () {}
 }
