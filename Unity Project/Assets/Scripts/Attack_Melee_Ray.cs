@@ -7,6 +7,7 @@ public class Attack_Melee_Ray : MonoBehaviour
 	public int damagePerShot = 20;                  // The damage inflicted by each bullet.
 	public float timeBetweenAttacks = 0.15f;        // The time between each shot.
 	public float range = 100f;                      // The distance the gun can fire.
+	public string sourceDmg = "player";				//souce of the dmg, fed to what it is hitting
 	
 	float timer;                                    // A timer to determine when to fire.
 	Ray shootRay;                                   // A ray from the gun end forwards.
@@ -68,7 +69,7 @@ public class Attack_Melee_Ray : MonoBehaviour
 			if(enemyHealth != null)
 			{
 				// ... the enemy should take damage.
-				enemyHealth.TakeDamage (damagePerShot, shootHit.point/*, this*/);
+				enemyHealth.TakeDamage (damagePerShot, shootHit.point, sourceDmg);
 			}
 		}
 		// If the raycast didn't hit anything on the shootable layer...

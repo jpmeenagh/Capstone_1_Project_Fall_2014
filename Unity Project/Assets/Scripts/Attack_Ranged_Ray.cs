@@ -7,6 +7,7 @@ public class Attack_Ranged_Ray : MonoBehaviour
 	public int damagePerShot = 20;                  // The damage inflicted by each bullet.
 	public float timeBetweenAttacks = 0.15f;        // The time between each shot.
 	public float range = 100f;                      // The distance the gun can fire.
+	public string sourceDmg = "player";				//souce of the dmg, fed to what it is hitting
 	
 	float timer;                                    // A timer to determine when to fire.
 	Ray shootRay;                                   // A ray from the gun end forwards.
@@ -78,7 +79,7 @@ public class Attack_Ranged_Ray : MonoBehaviour
 				{
 					print("hit: other faction");
 					// ... the enemy should take damage.
-					targetHealth.TakeDamage (damagePerShot, shootHit.point/*, this*/);
+					targetHealth.TakeDamage (damagePerShot, shootHit.point, sourceDmg);
 				}
 				else
 				{
