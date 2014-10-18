@@ -74,7 +74,7 @@ public class Health : MonoBehaviour
 	}
 	
 	
-	public void TakeDamage (int amount, Vector3 hitPoint/*, MonoBehaviour dmgS*/)
+	public void TakeDamage (int amount, Vector3 hitPoint, string sourceDmg)
 	{
 		// If the enemy is dead...
 		if(isDead)
@@ -89,6 +89,9 @@ public class Health : MonoBehaviour
 		{
 			// ... the enemy is dead.
 			Death ();
+			if (sourceDmg.Equals("Player")){
+				//gameObject.FindWithTag("Player")//.Frenzy_suit.gotKill;
+			}
 		}
 		
 		healthBarLength = 100 * (currentHealth / (float)startingHealth);
@@ -115,6 +118,8 @@ public class Health : MonoBehaviour
 		
 		// Turn the collider into a trigger so shots can pass through it.
 		enemyCollider.isTrigger = true;
+
+
 	}
 	
 	
