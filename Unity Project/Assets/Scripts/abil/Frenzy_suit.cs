@@ -4,10 +4,10 @@ using System.Collections;
 public class Frenzy_suit : MonoBehaviour {
 
 	dmg_out_mod dmgOut;
-	int curFrz;
+	int curFrz;  //current frenzy
 	public int frzTime = 100;
-	int frzTimeRem;
-	public int frzDmg = 10;
+	int frzTimeRem;  //frenzy time remaining
+	public int frzDmg = 10;  //frenzy damage
 
 	// Use this for initialization
 	void Start () {
