@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class dmg_out_mod : MonoBehaviour {
+public class dmg_out_mod_player : MonoBehaviour {
 
 	int dmgModCur = 0;
 
@@ -19,6 +19,7 @@ public class dmg_out_mod : MonoBehaviour {
 	public int modDmg (int defDam){
 		int outDam;
 		outDam = defDam + dmgModCur;
+		//print ("outd " + outDam);
 		return outDam;
 	}
 

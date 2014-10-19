@@ -14,6 +14,10 @@ public class Health : MonoBehaviour
 	bool isDead;                                // Whether the enemy is dead.
 	bool isSinking;                             // Whether the enemy has started sinking through the floor.
 
+	//tmp variables to feed to frenzy
+	GameObject tmpPlayerObj;					//game object used to temporarily store the player for frenzy feedback on kill
+	Frenzy_suit playFz;							//frenzy suit extracted from player
+
 	//Health Bar Variables
         public float healthBarLength = 100;
 
@@ -89,8 +93,11 @@ public class Health : MonoBehaviour
 		{
 			// ... the enemy is dead.
 			Death ();
+			//get player, extract frenzy suit, tell frenzy we got a kill
 			if (sourceDmg.Equals("Player")){
-				//gameObject.FindWithTag("Player")//.Frenzy_suit.gotKill;
+				tmpPlayerObj = GameObject.FindWithTag("Player");
+				playFz = tmpPlayerObj.GetComponent<Frenzy_suit>();
+				playFz.gotKill();
 			}
 		}
 		
@@ -144,7 +151,7 @@ public class Health : MonoBehaviour
       	
 	if(otherObj.gameObject.tag == "Bullet")
     	{
- 		TakeDamage(17, new Vector3(0,0,0));
+ 		TakeDamage(17, new Vector3(0,0,0), "Bullet");
         	
  	}
 
