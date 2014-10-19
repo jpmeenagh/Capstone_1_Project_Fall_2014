@@ -79,7 +79,7 @@ public class Attack_Ranged_Ray : MonoBehaviour
 				{
 					print("hit: other faction");
 					// ... the enemy should take damage.
-					targetHealth.TakeDamage (damagePerShot, shootHit.point, sourceDmg);
+					targetHealth.TakeDamage (this.GetComponent<dmg_out_mod_player>().modDmg(damagePerShot), shootHit.point, sourceDmg);
 				}
 				else
 				{

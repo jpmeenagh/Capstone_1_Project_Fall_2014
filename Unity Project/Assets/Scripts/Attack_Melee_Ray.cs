@@ -68,9 +68,11 @@ public class Attack_Melee_Ray : MonoBehaviour
 			// If the EnemyHealth component exist...
 			if(enemyHealth != null)
 			{
+				if(enemyHealth.faction != this.GetComponent<Health>().faction){
 				// ... the enemy should take damage.
-				enemyHealth.TakeDamage (damagePerShot, shootHit.point, sourceDmg);
-			}
+				enemyHealth.TakeDamage (this.GetComponent<dmg_out_mod_player>().modDmg(damagePerShot), shootHit.point, sourceDmg);
+				}
+				}
 		}
 		// If the raycast didn't hit anything on the shootable layer...
 		else
