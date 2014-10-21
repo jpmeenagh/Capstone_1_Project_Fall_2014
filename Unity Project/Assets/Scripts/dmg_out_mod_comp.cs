@@ -15,6 +15,7 @@ public class dmg_out_mod_comp : MonoBehaviour {
 	
 	}
 
+	//modifies outgoing dmg
 	public int modDmg(int inDmg){
 		int outDmg = inDmg;
 		outDmg = thisCritPoint.crit_point_multi (outDmg);
