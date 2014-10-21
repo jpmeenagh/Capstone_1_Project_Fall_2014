@@ -2,7 +2,12 @@
 using System.Collections;
 
 
-public class Enemy_Behavior : MonoBehaviour {
+public class Companion_Behavior : MonoBehaviour {
+
+	//companion vars
+	public GameObject tether;
+	public float tetherDistance;
+	public int tetherRange = 10;
 
 	//basic movement 
 	public float speed = 3.0f;
@@ -19,7 +24,7 @@ public class Enemy_Behavior : MonoBehaviour {
 
 	//shooting
 	public int shootRange = 10;
-	public float fireRate = 1;
+	public float fireRate = 0.5F;
 	float nextFire = 0.0f;	
 	public Rigidbody projectile;
 	public float bulletSpeed = 10;
@@ -41,20 +46,28 @@ public class Enemy_Behavior : MonoBehaviour {
 	void Update () {
 		currentLocation = transform.position;
 		targetDistance = Vector3.Distance (transform.position, target.position);
+		tetherDistance = Vector3.Distance (transform.position, tether.transform.position);
 		moving = Vector3.Distance(targetLocation, currentLocation) > 2; //if we have a target location, we are moving
 
 		CheckCollider(); //check to see if tmpCpl1 still exists
 
 		if (targetTimer <= 0) {	target = FindTargets ().transform; targetTimer = 100; } else { targetTimer--; } 
 
-		if (target == transform) { randomMovement(); } //if not hostile, move around randomly
+		if (tetherDistance > tetherRange) {
+			if(target == transform){ transform.LookAt(tether.transform); }
+			transform.position = Vector3.MoveTowards (transform.position, tether.transform.position, speed * Time.deltaTime); 
+		} 
+
+		//if (target == transform) { randomMovement(); } //if not hostile, move around randomly
 		if (target != transform) {
-			transform.LookAt (new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
-			if(targetDistance > approachRange){ transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime); }
+			if(tetherDistance <= tetherRange){
+				transform.LookAt (new Vector3 (target.transform.position.x, target.transform.position.y, target.transform.position.z));
+				if (targetDistance > approachRange) {transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime);}
+			}
 			shoot(); //shoot when in range
 		}
-
-		if (target != transform && target.GetComponent<PlayerHealth>().curHealth <= 0) { target = transform; }
+	
+		if (target.GetComponent<Health> ().currentHealth <= 0) { target = transform; }
 	}
 
 	/*====================================================================
@@ -73,14 +86,14 @@ public class Enemy_Behavior : MonoBehaviour {
 	//Find a target
 	GameObject FindTargets(){
 		GameObject[] gos;
-		gos = GameObject.FindGameObjectsWithTag("Player");
+		gos = GameObject.FindGameObjectsWithTag("Robot");
 		GameObject closest = null;
 		float distance = Mathf.Infinity;
 		Vector3 position = transform.position;
 		foreach (GameObject go in gos) {
 			Vector3 diff = go.transform.position - position;
 			float curDistance = diff.sqrMagnitude;
-			if (curDistance < distance && curDistance < targetingRange && go.GetComponent<PlayerHealth>().curHealth > 0){
+			if (curDistance < distance && curDistance < targetingRange && go.GetComponent<Health>().currentHealth > 0){
 				closest = go;
 				distance = curDistance;
 			}
