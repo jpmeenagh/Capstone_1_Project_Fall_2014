@@ -12,14 +12,19 @@ public class Ability_Flamethrower : Ability {
 	//attack stance effect.  Should only be called using this.stance_delegate
 	protected override void attack(){
 		print ("fix this");
-		Rigidbody instantiatedProjectile = Instantiate(projectile, 
+		/*
+			Rigidbody instantiatedProjectile = Instantiate(projectile, 
 		                                               new Vector3(transform.position.x, transform.position.y, transform.position.z) 
 		                                               + (10 * transform.forward),
 		                                               Quaternion.identity) as Rigidbody;
+		*/
+		GameObject player_resource = Resources.Load<GameObject>("fire_mine");
+		Instantiate(player_resource, this.transform.position - (2 * transform.forward), Quaternion.identity);
 	}
 	//defend stance effect.  Should only be called using this.stance_delegate
 	protected override void defend(){
-		print ("burrito");
+
+
 	}
 	//support stance effect.  Should only be called using this.stance_delegate
 	protected override void support(){

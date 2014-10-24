@@ -6,7 +6,7 @@ public abstract class Ability : MonoBehaviour {
 	public int max_cooldown;
 
 	//these are the different stances that determine which effect this ability has
-	public enum Stance {Attack, Defend, Support};
+	public enum Stance {Attack, Defend};
 
 	//this should be changed in and only in change_stance(...)
 	protected Stance stance;
@@ -37,9 +37,6 @@ public abstract class Ability : MonoBehaviour {
 		else if(this.stance == Stance.Defend){
 			this.stance_delegate = new Ability_Delegate (defend);
 		}
-		else if(this.stance == Stance.Support){
-			this.stance_delegate = new Ability_Delegate (support);
-		}
 	}
 	
 	//attack stance effect.  Should only be called using this.stance_delegate
@@ -52,6 +49,6 @@ public abstract class Ability : MonoBehaviour {
 	}
 	//support stance effect.  Should only be called using this.stance_delegate
 	protected virtual void support(){
-		print ("part poppers");
+		print ("support");
 	}
 }
