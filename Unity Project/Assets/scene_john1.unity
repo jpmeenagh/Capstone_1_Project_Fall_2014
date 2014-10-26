@@ -86,8 +86,8 @@ GameObject:
   - 65: {fileID: 212725363}
   - 23: {fileID: 212725362}
   - 54: {fileID: 212725361}
-  - 114: {fileID: 212725359}
   - 114: {fileID: 212725360}
+  - 114: {fileID: 212725359}
   m_Layer: 0
   m_Name: Companion
   m_TagString: Untagged
@@ -119,18 +119,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 212725357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9d582dcb63d84849892101662398f4d, type: 3}
+  m_Script: {fileID: 11500000, guid: b17ea878a7ba1fb4692da5ab403fa574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1560633073}
-  aimTarget: {fileID: 236915058}
-  speed: 2
-  projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
-  bulletSpeed: 10
-  shooter: {fileID: 233443342}
-  fireRate: 1
-  approach: 10
-  range: 10
+  faction: 0
+  startingHealth: 100
+  currentHealth: 0
+  maxHealth: 150
+  sinkSpeed: 2.5
+  healthBarLength: 100
+  pos: {x: 0, y: 0, z: 0}
+  xOffset: 0
+  yOffset: 0
 --- !u!114 &212725360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,16 +139,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 212725357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd2e46423125cd48a8fce7c5dc64b8e, type: 3}
+  m_Script: {fileID: 11500000, guid: a60376db9785f6d4793f7b2448c7a882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
-  sinkSpeed: 2.5
-  healthBarLength: 100
-  pos: {x: 0, y: 0, z: 0}
-  xOffset: -2.29999995
-  yOffset: 4
+  tether: {fileID: 845600070}
+  tetherDistance: 0
+  tetherRange: 8
+  speed: 3
+  moving: 0
+  currentLocation: {x: 0, y: 0, z: 0}
+  targetLocation: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  targetDistance: 0
+  targetingRange: 100
+  approachRange: 7
+  targetTimer: 75
+  shootRange: 10
+  fireRate: .5
+  projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
+  bulletSpeed: 10
+  shooter: {fileID: 233443342}
+  arrayOfAbilities: []
+  arrayOfCooldowns: 
+  stance: 
+  defaultStance: Attack
+  testAbility1: {fileID: 0}
+  testAbility2: {fileID: 0}
+  testAbility3: {fileID: 0}
 --- !u!54 &212725361
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -311,11 +328,10 @@ GameObject:
   - 65: {fileID: 236915056}
   - 23: {fileID: 236915055}
   - 54: {fileID: 236915054}
-  - 114: {fileID: 236915053}
   - 114: {fileID: 236915052}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,36 +344,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 236915051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9d582dcb63d84849892101662398f4d, type: 3}
+  m_Script: {fileID: 11500000, guid: b17ea878a7ba1fb4692da5ab403fa574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1560633073}
-  aimTarget: {fileID: 1560633073}
-  speed: 3
-  projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
-  bulletSpeed: 10
-  shooter: {fileID: 887856815}
-  fireRate: 2.5
-  approach: 8
-  range: 10
---- !u!114 &236915053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 236915051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd2e46423125cd48a8fce7c5dc64b8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  faction: 2
   startingHealth: 100
   currentHealth: 0
+  maxHealth: 150
   sinkSpeed: 2.5
   healthBarLength: 100
   pos: {x: 0, y: 0, z: 0}
-  xOffset: -2.29999995
-  yOffset: 4
+  xOffset: 0
+  yOffset: 0
 --- !u!54 &236915054
 Rigidbody:
   m_ObjectHideFlags: 0
