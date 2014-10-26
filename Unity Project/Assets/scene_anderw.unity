@@ -90,7 +90,7 @@ GameObject:
   - 114: {fileID: 43575358}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,15 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d582dcb63d84849892101662398f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1560633073}
-  aimTarget: {fileID: 1560633073}
-  speed: 3
-  projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
-  bulletSpeed: 10
-  shooter: {fileID: 2092002685}
-  fireRate: 2.5
-  approach: 8
-  range: 15
 --- !u!114 &43575359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,6 +312,7 @@ GameObject:
   - 114: {fileID: 212725359}
   - 114: {fileID: 212725360}
   - 114: {fileID: 212725365}
+  - 114: {fileID: 212725366}
   m_Layer: 0
   m_Name: Companion
   m_TagString: Companion
@@ -335,7 +327,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212725357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.10407829, y: 1.68136024, z: 1.26312637}
+  m_LocalPosition: {x: 6.10407829, y: 1.79185319, z: 6.10645962}
   m_LocalScale: {x: 2.09940672, y: 2.09940672, z: 2.09940672}
   m_Children:
   - {fileID: 233443342}
@@ -348,18 +340,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 212725357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9d582dcb63d84849892101662398f4d, type: 3}
+  m_Script: {fileID: 11500000, guid: a60376db9785f6d4793f7b2448c7a882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1560633073}
-  aimTarget: {fileID: 236915058}
-  speed: 2
-  projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
+  tether: {fileID: 845600070}
+  tetherDistance: 0
+  tetherRange: 10
+  speed: 3
+  moving: 0
+  currentLocation: {x: 0, y: 0, z: 0}
+  targetLocation: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  targetDistance: 0
+  targetingRange: 100
+  approachRange: 7
+  targetTimer: 75
+  shootRange: 10
+  fireRate: 1
+  projectile: {fileID: 0}
   bulletSpeed: 10
   shooter: {fileID: 233443342}
-  fireRate: 1
-  approach: 10
-  range: 10
 --- !u!114 &212725360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +446,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0011cbd717e15f8438e430038243b9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &212725366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 212725357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c899498cd8feb7418450719c5d82ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_cooldown: 0
+  cone_colider: {fileID: 0}
+  saboStr: 0
+  sabotDur: 0
 --- !u!1 &233443341
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +503,7 @@ GameObject:
   - 114: {fileID: 236915052}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -504,15 +519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d582dcb63d84849892101662398f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1560633073}
-  aimTarget: {fileID: 1560633073}
-  speed: 3
-  projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
-  bulletSpeed: 10
-  shooter: {fileID: 887856815}
-  fireRate: 2.5
-  approach: 8
-  range: 15
 --- !u!114 &236915053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +863,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 845600070}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.634454966, z: 0}
+  m_LocalPosition: {x: 0, y: -2.08744502, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1560633073}
@@ -1155,7 +1161,7 @@ GameObject:
   - 114: {fileID: 1085752528}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1184,15 +1190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d582dcb63d84849892101662398f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1560633073}
-  aimTarget: {fileID: 1560633073}
-  speed: 3
-  projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
-  bulletSpeed: 10
-  shooter: {fileID: 1350945362}
-  fireRate: 2.5
-  approach: 8
-  range: 15
 --- !u!114 &1085752529
 MonoBehaviour:
   m_ObjectHideFlags: 0
