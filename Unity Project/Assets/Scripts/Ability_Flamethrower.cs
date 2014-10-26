@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Ability_Flamethrower : Ability {
-	public float defense_duration = 5f;
 	// Use this for initialization
 	void Start () {}
 	
@@ -12,16 +11,8 @@ public class Ability_Flamethrower : Ability {
 
 	//attack stance effect.  Should only be called using this.stance_delegate
 	protected override int attack(){
-		float nextActionTime = 0.0f;
-		float period = 1f;
-		while (this.defense_duration > 0) {
-			if (Time.time > nextActionTime) { 
-				nextActionTime += period;
-				print ("pasta!");
-			}
-			this.defense_duration = this.defense_duration - 1;
-		}
-
+		GameObject player_resource = Resources.Load<GameObject>("fire_mine");
+		Instantiate(player_resource, new Vector3(0,1,0), Quaternion.identity);
 
 
 		return max_cooldown_attack;

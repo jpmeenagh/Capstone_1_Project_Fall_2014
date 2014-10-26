@@ -23,9 +23,7 @@ public abstract class Ability : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update (Stance given_stance) {
-		change_stance (given_stance);
-	}
+	void Update () {}
 
 	//change stance and set the function pointer to the mode it should be using now
 	public void change_stance(Stance given_stance){
