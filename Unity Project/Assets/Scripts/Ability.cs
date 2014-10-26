@@ -8,7 +8,7 @@ public abstract class Ability : MonoBehaviour {
 	public int max_cooldown_support = 0;
 
 	//these are the different stances that determine which effect this ability has
-	public enum Stance {Attack, Defend};
+	public enum Stance {Attack, Defend, Support};
 
 	//this should be changed in and only in change_stance(...)
 	protected Stance stance;
@@ -36,6 +36,9 @@ public abstract class Ability : MonoBehaviour {
 		}
 		else if(this.stance == Stance.Defend){
 			this.stance_delegate = new Ability_Delegate (defend);
+		}
+		else if(this.stance == Stance.Support){
+			this.stance_delegate = new Ability_Delegate (support);
 		}
 	}
 	
