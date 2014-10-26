@@ -13,15 +13,4 @@ public class Ability_Sabotage : Ability {
 	
 	}
 
-	protected override void attack(){
-		
-	}
-
-	protected override void defend(){
-		
-	}
-
-	protected override void support(){
-
-	}
 }

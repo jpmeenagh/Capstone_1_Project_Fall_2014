@@ -1,14 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class fire_mine : MonoBehaviour {
+public class Weapon_Firemine : MonoBehaviour {
 	// Use this for initialization
 	
 	void Start () {
-		
-		//Destroy(this.gameObject, 3);
-		
-		
 	}
 	
 	
@@ -16,15 +12,12 @@ public class fire_mine : MonoBehaviour {
 	// Update is called once per frame
 	
 	void Update () {
-		
-		
-		
-		
 	}
 	
 	
 	void OnCollisionEnter(Collision otherObj)
 	{
+		print ("p's");
 		/*
 	if(otherObj.gameObject.tag == "Enemy")
 	{
@@ -43,6 +36,13 @@ public class fire_mine : MonoBehaviour {
 		Destroy(this.gameObject);
 		
 		
+		
+	}
+
+
+	void OnTriggerEnter(Collider other) {
+		print ("q's");
+
 		
 	}
 	

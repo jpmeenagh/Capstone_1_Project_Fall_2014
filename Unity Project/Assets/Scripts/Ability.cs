@@ -3,7 +3,9 @@ using System.Collections;
 
 public abstract class Ability : MonoBehaviour {
 	//this is the cooldown on the ability
-	public int max_cooldown;
+	public int max_cooldown_attack = 0;
+	public int max_cooldown_defend = 0;
+	public int max_cooldown_support = 0;
 
 	//these are the different stances that determine which effect this ability has
 	public enum Stance {Attack, Defend};
@@ -12,12 +14,12 @@ public abstract class Ability : MonoBehaviour {
 	protected Stance stance;
 
 	//stores which method should be called from the stance
-	public delegate void Ability_Delegate();
+	public delegate int Ability_Delegate();
 	public Ability_Delegate stance_delegate;
 
 	// Use this for initialization
-	void Start (int given_max_cooldown, Stance given_stance) {
-		this.max_cooldown = given_max_cooldown;
+	void Start (Stance given_stance) {
+		this.stance = given_stance;
 	}
 	
 	// Update is called once per frame
@@ -40,15 +42,18 @@ public abstract class Ability : MonoBehaviour {
 	}
 	
 	//attack stance effect.  Should only be called using this.stance_delegate
-	protected virtual void attack(){
+	protected virtual int attack(){
 		print ("confetti");
+		return max_cooldown_attack;
 	}
 	//defend stance effect.  Should only be called using this.stance_delegate
-	protected virtual void defend(){
+	protected virtual int defend(){
 		print ("cake");
+		return max_cooldown_defend;
 	}
 	//support stance effect.  Should only be called using this.stance_delegate
-	protected virtual void support(){
+	protected virtual int support(){
 		print ("support");
+		return max_cooldown_support;
 	}
 }
