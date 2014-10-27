@@ -12,6 +12,6 @@ public class player_forearm_armor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//this.transform = armBone.transform;
+		this.transform.position = new Vector3 (armBone.transform.position.x, armBone.transform.position.y, armBone.transform.position.z);
 	}
 }

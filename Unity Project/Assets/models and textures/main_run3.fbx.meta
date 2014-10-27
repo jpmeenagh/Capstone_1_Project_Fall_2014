@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 589c54b0a30f54d4d833837dc79082f1
+guid: 205770778ad53424583320dcccdecf11
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -99,7 +99,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Take 001
       takeName: Take 001
-      firstFrame: 1
+      firstFrame: 0
       lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
@@ -117,23 +117,7 @@ ModelImporter:
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves:
-      - name: Curve
-        curve:
-          serializedVersion: 2
-          curve:
-          - time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          - time: 1
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          preInfinity: 2
-          postInfinity: 2
+      curves: []
       events: []
       transformMask:
       - path: 
@@ -175,7 +159,7 @@ ModelImporter:
       - path: joints/root/hip_L/knee_L/ankle_L1/ball_L
         weight: 1
       - path: joints/root/hip_L/knee_L/ankle_L1/ball_L/toe_L
-        weight: 1
+        weight: 0
       - path: joints/root/hip_R
         weight: 1
       - path: joints/root/hip_R/knee_R
@@ -185,7 +169,7 @@ ModelImporter:
       - path: joints/root/hip_R/knee_R/ankle_R/ball_R
         weight: 1
       - path: joints/root/hip_R/knee_R/ankle_R/ball_R/toe_R
-        weight: 1
+        weight: 0
       - path: joints/root/spine
         weight: 1
       - path: joints/root/spine/chest
@@ -392,7 +376,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: main_idle(Clone)
+    - name: main_run3(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -403,58 +387,58 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_root
-      position: {x: -.000424286816, y: .0985832736, z: 8.04478623e-05}
-      rotation: {x: 0, y: .0956295282, z: -0, w: .995416999}
+      position: {x: -7.70371932e-35, y: .103027344, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_spine
-      position: {x: -3.25210587e-18, y: .0212699957, z: .00251130154}
-      rotation: {x: 0, y: .0935544297, z: -0, w: .995614171}
+      position: {x: 7.70371932e-35, y: .0212699957, z: .00251130154}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_chest
-      position: {x: -8.18789444e-18, y: .0177367702, z: .00134435843}
-      rotation: {x: 0, y: .0935544297, z: -0, w: .995614171}
+      position: {x: -1.7316109e-18, y: .0177367702, z: .00134435843}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_neck
-      position: {x: 9.22561568e-18, y: .0176849309, z: -.00201653782}
-      rotation: {x: -.0103645651, y: -.15160957, z: -.00158983341, w: .988384843}
+      position: {x: 1.11662616e-17, y: .0176849309, z: -.00201653782}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_head
-      position: {x: 1.0410585e-17, y: .00980102737, z: .00284583005}
-      rotation: {x: -.0103645651, y: -.15160957, z: -.00158983341, w: .988384843}
+      position: {x: 5.54902533e-18, y: .00980102737, z: .00284583005}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_shoulder_L
       position: {x: -.0184226539, y: .00776497927, z: -.00168044819}
-      rotation: {x: -.114507712, y: .0955807343, z: .437322289, w: .886849225}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_elbow_L
-      position: {x: -.0280726161, y: 1.7763568e-17, z: 6.9388939e-18}
-      rotation: {x: -.0136311064, y: .540091276, z: .122330762, w: .832556784}
+      position: {x: -.0280726161, y: -1.7763568e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_wrist_L
-      position: {x: -.027184302, y: -3.27301022e-05, z: 2.91433531e-17}
-      rotation: {x: .103117645, y: .0150407711, z: .152698711, w: .98276329}
+      position: {x: -.027184302, y: -3.27301022e-05, z: -1.66533444e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_shoulder_R
       position: {x: .0184227005, y: .00776499603, z: -.00168045005}
-      rotation: {x: .0104277516, y: .116176963, z: -.447567433, w: .88661021}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_elbow_R
-      position: {x: .0280725993, y: -5.3290704e-17, z: -1.08246741e-17}
-      rotation: {x: .0459238887, y: -.488022387, z: -.246609166, w: .836007833}
+      position: {x: .0280725993, y: -1.7763568e-17, z: -2.7755574e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_wrist_R
-      position: {x: .0271843001, y: -3.2699998e-05, z: 2.35922383e-17}
-      rotation: {x: .00476582535, y: -.0747927651, z: .00844284985, w: .997151971}
+      position: {x: .0271843001, y: -3.2699998e-05, z: -2.220446e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: joints
@@ -463,28 +447,28 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: root
-      position: {x: -7.70371932e-35, y: .0985832736, z: 0}
-      rotation: {x: .56254518, y: -.525931478, z: -.469134897, w: .432263255}
+      position: {x: -7.70371932e-35, y: .103027344, z: 0}
+      rotation: {x: .528501034, y: -.469772995, z: -.528501034, w: .469772995}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: hip_L
       position: {x: .00429034792, y: .000506551936, z: .00800246466}
-      rotation: {x: -.230540499, y: -.092124112, z: .0676349252, w: .966327965}
+      rotation: {x: -.267277598, y: .0028037189, z: -.0322472714, w: .963075757}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: knee_L
       position: {x: .0445419885, y: .00468116999, z: .00272232085}
-      rotation: {x: .0449929312, y: -.0141746718, z: .997771323, w: .0471929424}
+      rotation: {x: -.0320714489, y: -.014484915, z: .997983813, w: -.0528196208}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: ankle_L1
       position: {x: -.0458851941, y: 2.88514275e-05, z: -.000230527148}
-      rotation: {x: .767461002, y: -.57055819, z: .190977827, w: .221346885}
+      rotation: {x: .77321589, y: -.586841941, z: .117345378, w: .209723443}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: ball_L
       position: {x: .00518316636, y: .00525302719, z: 7.25091522e-05}
-      rotation: {x: .447155803, y: .893442512, z: .0177534632, w: -.0386912376}
+      rotation: {x: .447143197, y: .893449008, z: .0177526586, w: -.0386880487}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: toe_L
@@ -494,22 +478,22 @@ ModelImporter:
       transformModified: 1
     - name: hip_R
       position: {x: .00429034652, y: .00050655182, z: -.00800246}
-      rotation: {x: .419376135, y: .0821347386, z: -.100589208, w: .898476124}
+      rotation: {x: .303529829, y: .000412494526, z: -.0332849436, w: .952240348}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: knee_R
       position: {x: .0445420258, y: .00468113832, z: -.00272228057}
-      rotation: {x: -.00219435268, y: -.0540382564, z: -.0681453869, w: .996208429}
+      rotation: {x: -.00240891171, y: .0339401588, z: .0430324934, w: .998494089}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: ankle_R
       position: {x: .0458767265, y: .000840780733, z: .000344815402}
-      rotation: {x: .523191392, y: .77807045, z: -.239420012, w: .252101779}
+      rotation: {x: .573441625, y: .766783357, z: -.246379673, w: .150017217}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: ball_R
       position: {x: .00518320408, y: .00525304722, z: -7.25141508e-05}
-      rotation: {x: .600263894, y: .798668385, z: -.0105190249, w: .0412485674}
+      rotation: {x: .447149128, y: .893445969, z: -.0177534986, w: .0386894643}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: toe_R
@@ -519,22 +503,22 @@ ModelImporter:
       transformModified: 1
     - name: spine
       position: {x: -.0214177333, y: 0, z: 4.76486639e-18}
-      rotation: {x: -.0931183845, y: -.00902210176, z: .0208433419, w: .995395958}
+      rotation: {x: 5.43368525e-17, y: 5.66611176e-17, z: .0209351592, w: .999780834}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: chest
       position: {x: -.0177876465, y: -1.22124532e-17, z: 5.58595729e-18}
-      rotation: {x: -.0932868496, y: -.00707067642, z: 7.77149341e-16, w: .995614171}
+      rotation: {x: -1.38777878e-16, y: 1.11022302e-16, z: 2.77555756e-17, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: neck
       position: {x: -.0174819436, y: -.00334736542, z: -7.77156121e-18}
-      rotation: {x: .14945738, y: .0255045984, z: -.0921560526, w: .98413378}
+      rotation: {x: -2.18736514e-17, y: 5.80810095e-17, z: -.103285216, w: .994651794}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: head
       position: {x: -.0102058258, y: 0, z: -3.12749566e-18}
-      rotation: {x: .150106952, y: .021351628, z: .139197186, w: .978588879}
+      rotation: {x: -6.27753256e-17, y: 4.7140583e-17, z: .140825242, w: .990034461}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: top
@@ -544,17 +528,17 @@ ModelImporter:
       transformModified: 1
     - name: shoulder_L
       position: {x: -.00761576509, y: -.002262505, z: .0184226539}
-      rotation: {x: -.0228062738, y: .713718951, z: .144501641, w: .684984922}
+      rotation: {x: -.0267400611, y: .706601024, z: .0267400611, w: .706601024}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: elbow_L
       position: {x: -.0280726161, y: -2.7755575e-19, z: 1.7763568e-17}
-      rotation: {x: -.0201624185, y: -.014517514, z: -.00713508436, w: .999665856}
+      rotation: {x: -1.66533493e-16, y: .000602003362, z: -1.49701592e-17, w: .999999821}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: wrist_L
       position: {x: -.0271843206, y: -1.60982334e-17, z: 2.84217088e-16}
-      rotation: {x: .082951732, y: .0727429986, z: .0433775336, w: .992948055}
+      rotation: {x: -2.7755573e-16, y: -.000602003362, z: -1.67089514e-19, w: .999999821}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: hand_L
@@ -564,17 +548,17 @@ ModelImporter:
       transformModified: 1
     - name: shoulder_R
       position: {x: -.00761578185, y: -.00226250826, z: -.0184227005}
-      rotation: {x: -.101256207, y: .707772434, z: .0215139519, w: -.698815227}
+      rotation: {x: .0267400611, y: -.706601024, z: .0267400611, w: .706601024}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: elbow_R
       position: {x: -.0280725993, y: -3.6082247e-18, z: -3.5527136e-17}
-      rotation: {x: -.0442496352, y: .00865974929, z: -.0200269539, w: .998782277}
+      rotation: {x: 4.99600361e-16, y: -.000601449749, z: 4.63496429e-17, w: .999999821}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: wrist_R
       position: {x: -.0271843188, y: 1.10867297e-18, z: -5.45035314e-16}
-      rotation: {x: -.00481080869, y: .00904258527, z: -.0747898817, w: .997146726}
+      rotation: {x: -1.60775403e-16, y: .000601449749, z: -6.11356088e-17, w: .999999821}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: hand_R
