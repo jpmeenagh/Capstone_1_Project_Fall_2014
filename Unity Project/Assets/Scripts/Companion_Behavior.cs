@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 
 public class Companion_Behavior : MonoBehaviour {
@@ -7,7 +8,7 @@ public class Companion_Behavior : MonoBehaviour {
 	//companion vars
 	public GameObject tether;
 	public float tetherDistance;
-	public int tetherRange = 10;
+	public int tetherRange = 8;
 
 	//basic movement 
 	public float speed = 3.0f;
@@ -34,16 +35,40 @@ public class Companion_Behavior : MonoBehaviour {
 	float tmpspeed;
 	Collider tmpCol1;
 	bool trigger1 = false;
-	
+
+	//Companion Ability List
+	public List<Ability> arrayOfAbilities; //the array of ability scripts
+	public List<int> arrayOfCooldowns; //the array of ability cooldowns
+
+	//Companion Stance
+	public string stance = "";
+	public string defaultStance = "Attack";
+
+	//test abilities to auto add, since there's no menu to set up companion
+	public Ability testAbility1;
+	public Ability testAbility2;
+	public Ability testAbility3;
 
 	// Use this for initialization
 	void Start () {
 		target = transform; //set target to self when not hostile
 		targetLocation = transform.position;
+
+		//initialize ability list
+		arrayOfAbilities = new List<Ability>();
+		arrayOfCooldowns = new List<int>();
+
+		changeStance(defaultStance); //set the default stance
+
+		//add abilities
+		addAbility (testAbility1);
+		addAbility (testAbility2);
+		addAbility (testAbility3);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		stanceColor ();
 		currentLocation = transform.position;
 		targetDistance = Vector3.Distance (transform.position, target.position);
 		tetherDistance = Vector3.Distance (transform.position, tether.transform.position);
@@ -58,21 +83,81 @@ public class Companion_Behavior : MonoBehaviour {
 			transform.position = Vector3.MoveTowards (transform.position, tether.transform.position, speed * Time.deltaTime); 
 		} 
 
-		//if (target == transform) { randomMovement(); } //if not hostile, move around randomly
+		//if (target == transform) { randomMovement(); } //if not hostile, move around randomly *only works on enemy
 		if (target != transform) {
 			if(tetherDistance <= tetherRange){
-				transform.LookAt (new Vector3 (target.transform.position.x, target.transform.position.y, target.transform.position.z));
+				transform.LookAt (new Vector3 (target.transform.position.x, target.transform.position.y, target.transform.position.z)); 
 				if (targetDistance > approachRange) {transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime);}
 			}
 			shoot(); //shoot when in range
+			useAbilities(); //use companion abilities when you have a target
 		}
-	
+		
 		if (target.GetComponent<Health> ().currentHealth <= 0) { target = transform; }
+
+		controlStances ();
+
 	}
 
 	/*====================================================================
 	======Functions======================================================
 	====================================================================*/
+
+	void controlStances(){
+		if (Input.GetButtonUp ("SwitchStanceUp")) {
+			if(stance == "Attack"){ changeStance("Defend"); }
+			else if(stance == "Defend"){ changeStance("Support"); }
+			else if(stance == "Support"){ changeStance("Attack"); }
+		}
+
+		if (Input.GetButtonUp ("SwitchStanceDown")) {
+			if(stance == "Attack"){ changeStance("Support"); }
+			else if(stance == "Defend"){ changeStance("Attack"); }
+			else if(stance == "Support"){ changeStance("Defend"); }
+		}
+	}
+
+	void stanceColor(){
+		if (stance == "Attack") { gameObject.renderer.material.color = Color.red; }
+		if (stance == "Defend") { gameObject.renderer.material.color = Color.blue; }
+		if (stance == "Support") { gameObject.renderer.material.color = Color.white; }
+	}
+
+	void changeStance(string newStance){ 
+		Ability.Stance newStanceEnum = Ability.Stance.Attack;
+		if (newStance == "Attack") { newStanceEnum = Ability.Stance.Attack; }
+		if (newStance == "Defend") { newStanceEnum = Ability.Stance.Defend; }
+		if (newStance == "Support") { newStanceEnum = Ability.Stance.Support; }
+		foreach (Ability ability in arrayOfAbilities) {
+			if(ability != null){ ability.change_stance(newStanceEnum); }//Set the correct stance in each ability		
+		}
+
+		stance = newStance;
+		print ("" + newStance);
+	}
+
+	//add ability to list
+	void addAbility(Ability ability){
+		arrayOfAbilities.Add(ability);
+		//Add a 0 default cooldown at the same index in the cooldowns array
+		arrayOfCooldowns.Add(0);
+	}
+
+	//Use abilities and increment cooldowns
+	void useAbilities(){
+		int cooldownIndex = 0;
+
+		foreach (Ability ability in arrayOfAbilities) {
+			if (arrayOfCooldowns [cooldownIndex] == 0) {
+	
+				arrayOfCooldowns [cooldownIndex] = ability.stance_delegate();//use the ability for the current stance, it will return the cooldown
+
+			} else {
+				arrayOfCooldowns [cooldownIndex]--; //reduce cooldowns by 1
+			}
+			cooldownIndex++; //increase the index of index for the cooldowns
+		}
+	}
 
 	//shoot if in range
 	void shoot(){
@@ -86,7 +171,7 @@ public class Companion_Behavior : MonoBehaviour {
 	//Find a target
 	GameObject FindTargets(){
 		GameObject[] gos;
-		gos = GameObject.FindGameObjectsWithTag("Robot");
+		gos = GameObject.FindGameObjectsWithTag("Enemy");
 		GameObject closest = null;
 		float distance = Mathf.Infinity;
 		Vector3 position = transform.position;
