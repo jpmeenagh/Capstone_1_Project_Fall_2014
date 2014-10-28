@@ -11,15 +11,22 @@ public class Ability_Flamethrower : Ability {
 
 	//attack stance effect.  Should only be called using this.stance_delegate
 	protected override int attack(){
-		GameObject player_resource = Resources.Load<GameObject>("fire_mine");
-		Instantiate(player_resource, new Vector3(0,1,0), Quaternion.identity);
+		GameObject flame = Resources.Load<GameObject>("flame");
+		flame.GetComponent<Weapon_Firemine> ().target = Weapon_Flame.Following.Player;
+		Instantiate(flame, new Vector3(0,1,0), Quaternion.identity);
 
 
 		return max_cooldown_attack;
 	}
-	//defend stance effect.  Should only be called using this.stance_delegate
+	//circles of fire on the ground around the player and companion that hurt bad guys within every second
 	protected override int defend(){
-		//circles of fire on the ground around the player and companion that hurt bad guys within every second
+		GameObject mine1 = Resources.Load<GameObject>("fire_mine");
+		mine1.GetComponent<Weapon_Firemine> ().target = Weapon_Firemine.Following.Player;
+		Instantiate(mine1, new Vector3(0,1,0), Quaternion.identity);
+		
+		GameObject mine2 = Resources.Load<GameObject>("fire_mine");
+		mine2.GetComponent<Weapon_Firemine> ().target = Weapon_Firemine.Following.Companion;
+		Instantiate(mine2, new Vector3(0,1,0), Quaternion.identity);
 
 		return max_cooldown_defend;
 	}
