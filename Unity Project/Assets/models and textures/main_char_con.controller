@@ -27,7 +27,7 @@ Transition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_SrcState: {fileID: 110200000}
-  m_DstState: {fileID: 110207717}
+  m_DstState: {fileID: 110299386}
   m_TransitionDuration: .260869563
   m_TransitionOffset: 0
   m_Conditions:
@@ -49,22 +49,22 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 589c54b0a30f54d4d833837dc79082f1, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 168, y: 84, z: 0}
+  m_Position: {x: 120, y: 156, z: 0}
   m_IKOnFeet: 1
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110207717
+--- !u!1102 &110299386
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: run
+  m_Name: run2
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 205770778ad53424583320dcccdecf11, type: 3}
+  - {fileID: 7400000, guid: 0991a6ab06913ec448f8695abe1d7ff6, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 540, y: 156, z: 0}
+  m_Position: {x: 492, y: 168, z: 0}
   m_IKOnFeet: 1
   m_Mirror: 0
   m_Tag: 
@@ -78,7 +78,7 @@ StateMachine:
   m_DefaultState: {fileID: 110200000}
   m_States:
   - {fileID: 110200000}
-  - {fileID: 110207717}
+  - {fileID: 110299386}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
