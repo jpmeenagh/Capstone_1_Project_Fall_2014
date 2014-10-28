@@ -478,12 +478,12 @@ ModelImporter:
       transformModified: 1
     - name: hip_R
       position: {x: .00429034652, y: .00050655182, z: -.00800246}
-      rotation: {x: .427856058, y: .134659305, z: .0553057417, w: .89204669}
+      rotation: {x: .427856088, y: .13465932, z: .0553057455, w: .89204675}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: knee_R
       position: {x: .0445420258, y: .00468113832, z: -.00272228057}
-      rotation: {x: -.0519093387, y: -.179006919, z: -.197082058, w: .962507427}
+      rotation: {x: -.0519093424, y: -.179006934, z: -.197082072, w: .962507486}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: ankle_R
