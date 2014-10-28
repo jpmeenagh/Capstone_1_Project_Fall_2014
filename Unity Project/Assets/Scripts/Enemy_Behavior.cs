@@ -122,6 +122,13 @@ public class Enemy_Behavior : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionStay(Collision collision) {
+		if (collision.transform.position.y > 0.5) {
+			targetLocation = new Vector3 (currentLocation.x + Random.Range (-10.0F, 10.0F), currentLocation.y, currentLocation.z + Random.Range (-10.0F, 10.0F));
+		}
+	}
+
+
 	/*//starts the robot when it leaves robot imasible terrain
 	void OnTriggerExit(Collider othObj){
 		if (othObj.gameObject.tag == "RoboImpas") {
