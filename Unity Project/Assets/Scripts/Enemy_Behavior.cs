@@ -63,7 +63,7 @@ public class Enemy_Behavior : MonoBehaviour {
 	======Functions======================================================
 	====================================================================*/
 
-	//move around randomly when targetless
+	//move around the target while attacking
 	void randomStrafe(){
 		if (moving && Vector3.Distance(target.transform.position, targetLocation) < shootRange && targetDistance > 1.0f) {
 			transform.position = Vector3.MoveTowards (transform.position, targetLocation, speed * Time.deltaTime);
@@ -134,6 +134,7 @@ public class Enemy_Behavior : MonoBehaviour {
 		}
 	}
 
+	//Collide with something besides the ground? Choose a new random spot to move to 
 	void OnCollisionStay(Collision collision) {
 		if (collision.transform.position.y > 0.5) {
 			targetLocation = new Vector3 (currentLocation.x + Random.Range (-10.0F, 10.0F), currentLocation.y, currentLocation.z + Random.Range (-10.0F, 10.0F));
