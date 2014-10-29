@@ -52,6 +52,8 @@ public class Enemy_Behavior : MonoBehaviour {
 			transform.LookAt (new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
 			if(targetDistance > approachRange){ transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime); }
 			shoot(); //shoot when in range
+
+			randomStrafe();
 		}
 
 		if (target != transform && target.GetComponent<Health>().currentHealth <= 0) { target = transform; }
@@ -60,6 +62,16 @@ public class Enemy_Behavior : MonoBehaviour {
 	/*====================================================================
 	======Functions======================================================
 	====================================================================*/
+
+	//move around randomly when targetless
+	void randomStrafe(){
+		if (moving && Vector3.Distance(target.transform.position, targetLocation) < shootRange && targetDistance > 1.0f) {
+			transform.position = Vector3.MoveTowards (transform.position, targetLocation, speed * Time.deltaTime);
+		} else {
+			//if we have no target(since we aren't moving), choose a random spot within 5 units to move towards
+			targetLocation = new Vector3(target.transform.position.x + Random.Range(-7.0F, 7.0F), currentLocation.y, target.transform.position.z + Random.Range(-7.0F, 7.0F));
+		}
+	}
 
 	//shoot if in range
 	void shoot(){
