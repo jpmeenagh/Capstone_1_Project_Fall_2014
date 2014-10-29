@@ -58,12 +58,12 @@ public class Companion_Behavior : MonoBehaviour {
 		arrayOfAbilities = new List<Ability>();
 		arrayOfCooldowns = new List<int>();
 
-		changeStance(defaultStance); //set the default stance
-
 		//add abilities
 		addAbility (testAbility1);
 		addAbility (testAbility2);
 		addAbility (testAbility3);
+
+		changeStance(defaultStance); //set the default stance
 	}
 	
 	// Update is called once per frame
