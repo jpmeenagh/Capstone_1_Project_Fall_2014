@@ -13,8 +13,10 @@ public class Attack_Ranged_Ray : MonoBehaviour
 	Ray shootRay;                                   // A ray from the gun end forwards.
 	RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
 	int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
+	LineRenderer gunLine;
 
-	float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
+
+	float effectsDisplayTime = 1.0f;                // The proportion of the timeBetweenBullets that the effects will display for.
 	
 	void Awake ()
 	{
@@ -23,6 +25,7 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		//shootableMask = ~shootableMask;
 		shootableMask = 1 << 10;
 		shootableMask = ~shootableMask;
+		gunLine = GetComponent<LineRenderer> ();
 	}
 	
 	void Update ()
@@ -38,6 +41,8 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		//}
 		
 		// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
+		float otherthing = timeBetweenAttacks + effectsDisplayTime;
+		//print ("timer: " + timer + "   otherthing: " + otherthing);
 		if(timer >= timeBetweenAttacks * effectsDisplayTime)
 		{
 			// ... disable the effects.
@@ -47,7 +52,8 @@ public class Attack_Ranged_Ray : MonoBehaviour
 	
 	public void DisableEffects ()
 	{
-
+		//print ("called disableeffects");
+		gunLine.enabled = false;
 	}
 	
 	public void Shoot ()
@@ -55,11 +61,21 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
 		if(timer < timeBetweenAttacks)
 		{
+			if(timer > effectsDisplayTime)
+			{
+				// ... disable the effects.
+				DisableEffects ();
+			}
 			return;
 		}
+		//print ("fire! " + timer);
 
 		// Reset the timer.
 		timer = 0f;
+
+
+		gunLine.enabled = true;
+		gunLine.SetPosition (0, transform.position);
 
 		// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 		shootRay.origin = transform.position;
@@ -86,11 +102,13 @@ public class Attack_Ranged_Ray : MonoBehaviour
 					print("hit: same faction");
 				}
 			}
+			gunLine.SetPosition(1, shootHit.point);
 		}
 		// If the raycast didn't hit anything on the shootable layer...
 		else
 		{
 			print("miss");
+			gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
 		}
 	}
 }
