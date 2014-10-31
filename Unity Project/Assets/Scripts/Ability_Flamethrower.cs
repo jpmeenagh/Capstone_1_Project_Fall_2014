@@ -11,9 +11,9 @@ public class Ability_Flamethrower : Ability {
 
 	//attack stance effect.  Should only be called using this.stance_delegate
 	protected override int attack(){
-		//GameObject flame = Resources.Load<GameObject>("flame");
-		//flame.GetComponent<Weapon_Firemine> ().target = Weapon_Firemine.Following.Player;
-		//Instantiate(flame, new Vector3(0,1,0), Quaternion.identity);
+		GameObject mine1 = Resources.Load<GameObject>("flame");
+		mine1.GetComponent<Weapon_Firemine> ().target = Weapon_Firemine.Following.Player;
+		Instantiate(mine1, new Vector3(0,1,0), Quaternion.identity);
 
 
 		return max_cooldown_attack;

@@ -22,17 +22,16 @@ public class Weapon_Firemine : MonoBehaviour {
 	private GameObject following_object;
 
 	//this is used as a timer for when to do OnTriggerStay stuff again
-	private float nextActionTime;
+	private float time_trigger_is_ready;
+	private float time_trigger_is_ready2;
 
 	//this is the time before triggering again, in seconds
-	private float period = 1f;
-
-	//should OnTriggerStay do stuff?
-	private bool cause_harm = true;
+	private float time_between_triggers = 1f;
 
 	void Start () {
 		this.following_object = GameObject.FindWithTag (following_tags [target]);
-		this.nextActionTime = Time.time;
+		this.time_trigger_is_ready = Time.time;
+		this.time_trigger_is_ready2 = Time.time;
 	}
 	
 	
@@ -41,11 +40,10 @@ public class Weapon_Firemine : MonoBehaviour {
 	void Update () {
 		this.transform.position =  new Vector3(this.following_object.transform.position[0], this.transform.position[1], this.following_object.transform.position[2]);
 
-		if (Time.time > this.nextActionTime) { 
-			nextActionTime += period;
-			this.cause_harm = true;
+		if (Time.time >= this.time_trigger_is_ready) { 
+			time_trigger_is_ready = Time.time + time_between_triggers;
 			this.duration = this.duration - 1;
-			print ("Firemine time left:  " + this.duration);
+			print ("Firemine:  UPDATE  |  time left:  " + this.duration + "  trigger ready:  " + this.time_trigger_is_ready2);
 		}
 
 		if (this.duration == 0) {
@@ -54,8 +52,10 @@ public class Weapon_Firemine : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other) {
-		if (!(other.CompareTag (following_tags [target])) && this.cause_harm) {
-			print ("Firemine:  hit tag:  " + other.tag);
+		if (!(other.CompareTag (following_tags [target])) && (Time.time >= this.time_trigger_is_ready2)) {
+			print ("Firemine:  HIT  |  hit tag:  " + other.tag + "  time: " + Time.time);
+
+			time_trigger_is_ready2 = Time.time + time_between_triggers;
 
 			// Try and find an EnemyHealth script on the gameobject hit.
 			Health enemyHealth = other.GetComponent <Health> ();
@@ -68,7 +68,6 @@ public class Weapon_Firemine : MonoBehaviour {
 					enemyHealth.TakeDamage (10, new Vector3 (0f, 0f, 0f), following_tags [target]);
 				}
 			}
-			this.cause_harm = false;
 		}
 	}
 }
