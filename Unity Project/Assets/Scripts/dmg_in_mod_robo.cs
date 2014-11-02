@@ -43,7 +43,7 @@ public class dmg_in_mod_robo : MonoBehaviour {
 	public void sabo_def (int saboInTime, int saboStr){
 		saboTime = saboInTime;
 		dmgInModCur = dmgInModCur + saboStr;
-		saboStrCur = saboStr;
+		saboStrCur = saboStrCur + saboStr;
 
 		}
 

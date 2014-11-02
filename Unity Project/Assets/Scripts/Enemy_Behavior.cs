@@ -60,14 +60,14 @@ public class Enemy_Behavior : MonoBehaviour {
 
 		if (target != transform && target.GetComponent<Health>().currentHealth <= 0) { target = transform; }
 
-		nearbyEnemies = storeNearbyEnemies ();
+	//	nearbyEnemies = storeNearbyEnemies ();
 	}
 
 	/*====================================================================
 	======Functions======================================================
 	====================================================================*/
 
-	//Check how many enemies are within nearbyRange of this enemy
+/*	//Check how many enemies are within nearbyRange of this enemy
 	int storeNearbyEnemies(){
 		Collider[] hitColliders = Physics.OverlapSphere (transform.position, nearbyRange);
 		int i = 0;
@@ -81,7 +81,7 @@ public class Enemy_Behavior : MonoBehaviour {
 		}
 		return count;
 	}
-
+*/
 
 	//move around the target while attacking
 	void randomStrafe(){
