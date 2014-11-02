@@ -9,7 +9,7 @@ public class dmg_in_mod_ally : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		dmgInModCur = 0;
 	}
 	
 	// Update is called once per frame

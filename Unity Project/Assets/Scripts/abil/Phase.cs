@@ -20,14 +20,14 @@ public class Phase : MonoBehaviour {
 
 
 	public void enabler(){
-		if (enabledB = false) {
+		if (enabledB == false) {
 			comp_b.speed = comp_b.speed + phaseSpeedInitial;
 		}
 		enabledB = true;
 	}
 
 	public void disabler(){
-		if (enabledB = true) {
+		if (enabledB == true) {
 			comp_b.speed = comp_b.speed - phaseSpeedInitial;
 		}
 		enabledB = false;
