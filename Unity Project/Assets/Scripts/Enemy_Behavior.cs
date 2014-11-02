@@ -73,7 +73,7 @@ public class Enemy_Behavior : MonoBehaviour {
 		int i = 0;
 		int count = 0; 
 		while (i < hitColliders.Length) {
-				hitColliders [i].SendMessage ("AddDamage");
+//				hitColliders [i].SendMessage ("AddDamage");
 				if (hitColliders [i].tag == "Enemy") {
 						count++;
 				}
