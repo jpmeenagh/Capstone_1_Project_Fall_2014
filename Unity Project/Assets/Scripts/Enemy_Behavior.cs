@@ -15,7 +15,9 @@ public class Enemy_Behavior : MonoBehaviour {
 	public float targetDistance;
 	public int targetingRange = 100;
 	public int approachRange = 7;
-	public int targetTimer = 75;
+	public int targetTimer = 30;
+	public int nearbyEnemies;
+	public float nearbyRange = 4;
 
 	//shooting
 	public int shootRange = 10;
@@ -29,7 +31,7 @@ public class Enemy_Behavior : MonoBehaviour {
 	float tmpspeed;
 	Collider tmpCol1;
 	bool trigger1 = false;
-	
+
 
 	// Use this for initialization
 	void Start () {
@@ -57,11 +59,29 @@ public class Enemy_Behavior : MonoBehaviour {
 		}
 
 		if (target != transform && target.GetComponent<Health>().currentHealth <= 0) { target = transform; }
+
+		nearbyEnemies = storeNearbyEnemies ();
 	}
 
 	/*====================================================================
 	======Functions======================================================
 	====================================================================*/
+
+	//Check how many enemies are within nearbyRange of this enemy
+	int storeNearbyEnemies(){
+		Collider[] hitColliders = Physics.OverlapSphere (transform.position, nearbyRange);
+		int i = 0;
+		int count = 0; 
+		while (i < hitColliders.Length) {
+				hitColliders [i].SendMessage ("AddDamage");
+				if (hitColliders [i].tag == "Enemy") {
+						count++;
+				}
+				i++;
+		}
+		return count;
+	}
+
 
 	//move around the target while attacking
 	void randomStrafe(){

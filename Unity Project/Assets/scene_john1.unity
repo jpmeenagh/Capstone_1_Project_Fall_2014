@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48cd3cf8c9aeba48beb69ad928cda5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0
   moving: 0
   currentLocation: {x: 0, y: 0, z: 0}
   targetLocation: {x: 0, y: 0, z: 0}
@@ -250,6 +250,8 @@ MonoBehaviour:
   targetingRange: 100
   approachRange: 7
   targetTimer: 75
+  nearbyEnemies: 0
+  nearbyRange: 4
   shootRange: 10
   fireRate: 1
   projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
@@ -384,6 +386,7 @@ GameObject:
   - 54: {fileID: 212725361}
   - 114: {fileID: 212725360}
   - 114: {fileID: 212725359}
+  - 114: {fileID: 212725365}
   m_Layer: 0
   m_Name: Companion
   m_TagString: Untagged
@@ -398,7 +401,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212725357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.3893375, y: 1.68136024, z: -14.2026558}
+  m_LocalPosition: {x: 9.67591, y: 1.68136024, z: 4.23862076}
   m_LocalScale: {x: 2.09940672, y: 2.09940672, z: 2.09940672}
   m_Children:
   - {fileID: 1469346633}
@@ -450,6 +453,9 @@ MonoBehaviour:
   targetingRange: 100
   approachRange: 7
   targetTimer: 75
+  nearbyEnemies: 0
+  playerNearbyEnemies: 0
+  nearbyRange: 4
   shootRange: 10
   fireRate: .5
   projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
@@ -457,11 +463,15 @@ MonoBehaviour:
   shooter: {fileID: 233443342}
   arrayOfAbilities: []
   arrayOfCooldowns: 
+  arrayOfNames: []
   stance: 
   defaultStance: Attack
-  testAbility1: {fileID: 0}
+  testAbility1: {fileID: 212725365}
+  testAbility1Name: Flamethrower
   testAbility2: {fileID: 0}
+  testAbility2Name: 
   testAbility3: {fileID: 0}
+  testAbility3Name: 
 --- !u!54 &212725361
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -516,6 +526,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212725357}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &212725365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 212725357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5f20b599d00a743be698e62310296c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_cooldown_attack: 100
+  max_cooldown_defend: 0
+  max_cooldown_support: 0
+  name: 
+  name: 
 --- !u!1 &213442859
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48cd3cf8c9aeba48beb69ad928cda5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0
   moving: 0
   currentLocation: {x: 0, y: 0, z: 0}
   targetLocation: {x: 0, y: 0, z: 0}
@@ -718,6 +744,8 @@ MonoBehaviour:
   targetingRange: 100
   approachRange: 7
   targetTimer: 75
+  nearbyEnemies: 0
+  nearbyRange: 4
   shootRange: 10
   fireRate: 1
   projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
@@ -1030,7 +1058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48cd3cf8c9aeba48beb69ad928cda5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0
   moving: 0
   currentLocation: {x: 0, y: 0, z: 0}
   targetLocation: {x: 0, y: 0, z: 0}
@@ -1039,6 +1067,8 @@ MonoBehaviour:
   targetingRange: 100
   approachRange: 7
   targetTimer: 75
+  nearbyEnemies: 0
+  nearbyRange: 4
   shootRange: 10
   fireRate: 1
   projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
@@ -1566,7 +1596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48cd3cf8c9aeba48beb69ad928cda5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0
   moving: 0
   currentLocation: {x: 0, y: 0, z: 0}
   targetLocation: {x: 0, y: 0, z: 0}
@@ -1575,6 +1605,8 @@ MonoBehaviour:
   targetingRange: 100
   approachRange: 7
   targetTimer: 75
+  nearbyEnemies: 0
+  nearbyRange: 4
   shootRange: 10
   fireRate: 1
   projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
@@ -2358,7 +2390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48cd3cf8c9aeba48beb69ad928cda5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0
   moving: 0
   currentLocation: {x: 0, y: 0, z: 0}
   targetLocation: {x: 0, y: 0, z: 0}
@@ -2367,6 +2399,8 @@ MonoBehaviour:
   targetingRange: 100
   approachRange: 7
   targetTimer: 75
+  nearbyEnemies: 0
+  nearbyRange: 4
   shootRange: 10
   fireRate: 1
   projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
