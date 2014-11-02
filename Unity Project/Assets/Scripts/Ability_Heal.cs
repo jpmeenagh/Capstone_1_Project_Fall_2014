@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ability_Missile : Ability {
-	public string name = "Missile";
+public class Ability_Heal : Ability {
+	public string name = "Heal";
 	// Use this for initialization
 	void Start () {}
 	
@@ -12,7 +12,7 @@ public class Ability_Missile : Ability {
 	
 	//attack stance effect.  Should only be called using this.stance_delegate
 	protected override int attack(){
-		GameObject player_resource = Resources.Load<GameObject>("missile");
+		GameObject player_resource = Resources.Load<GameObject>("fire_mine");
 		Instantiate(player_resource, this.transform.position - (2 * transform.forward), Quaternion.identity);
 		return max_cooldown_attack;
 	}

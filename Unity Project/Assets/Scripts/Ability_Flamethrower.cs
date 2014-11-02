@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class Ability_Flamethrower : Ability {
+
+	public string name = "Flamethrower";
+
 	// Use this for initialization
 	void Start () {}
 	
