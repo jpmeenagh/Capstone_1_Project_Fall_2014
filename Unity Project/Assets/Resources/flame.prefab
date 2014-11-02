@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerSecond: 15
-  duration: 15
+  duration: 5
   target: 0
 --- !u!1001 &100100000
 Prefab:

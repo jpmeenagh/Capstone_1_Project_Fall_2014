@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class Key_shoot : MonoBehaviour {
-	public string attack_ranged_ray_key = "Fire1";
-	public string attack_melee_ray_key = "Fire2";
 	public string heal_ranged_ray_key = "heal";
 	// Use this for initialization
 	void Start () {
@@ -12,21 +10,21 @@ public class Key_shoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// If the Fire1 button is being press and it's time to fire...
-		if(Input.GetButton (attack_ranged_ray_key))
-		{
+
+		//uses triggers for shoot and melee
+		if(Input.GetAxis("triggerAxis") == 1){
 			// ... shoot the gun.
 			Attack_Ranged_Ray rayranged = this.GetComponent <Attack_Ranged_Ray>();
 			rayranged.Shoot();
 		}
-		// If the Fire1 button is being press and it's time to fire...
-		if(Input.GetButton (attack_melee_ray_key))
-		{
+
+		if(Input.GetAxis("triggerAxis") == -1){
 			// ... shoot the gun.
 			Attack_Melee_Ray raymelee = this.GetComponent <Attack_Melee_Ray>();
 			raymelee.Shoot();
 		}
-		// If the Fire1 button is being press and it's time to fire...
+
+		//heals for healbutton
 		if(Input.GetButton (heal_ranged_ray_key))
 		{
 			// ... shoot the gun.

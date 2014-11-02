@@ -18,6 +18,10 @@ public class Health : MonoBehaviour
 	GameObject tmpPlayerObj;					//game object used to temporarily store the player for frenzy feedback on kill
 	Frenzy_suit playFz;							//frenzy suit extracted from player
 
+	//stores dmg mod scrip
+	dmg_in_mod_ally dmgModAlly;
+	dmg_in_mod_robo dmgModEnemy;
+
 	//Health Bar Variables
         public float healthBarLength = 100;
 
@@ -31,10 +35,16 @@ public class Health : MonoBehaviour
         Color greenColor = Color.green;
  
 	 // Use this for initialization
-    	void Start () {
+    void Start () {
 		texture = new Texture2D(1, 1);
-        	texture.SetPixel(1, 1, greenColor);
-    	}
+        texture.SetPixel(1, 1, greenColor);
+		if (this.faction == Faction.Ally){
+			dmgModAlly = this.GetComponent<dmg_in_mod_ally>();
+		}
+		if (this.faction == Faction.Enemy){
+			dmgModEnemy = this.GetComponent<dmg_in_mod_robo>();
+		}
+    }
 
 	void Awake ()
 	{
@@ -81,12 +91,23 @@ public class Health : MonoBehaviour
 	public void TakeDamage (int amount, Vector3 hitPoint, string sourceDmg)
 	{
 		// If the enemy is dead...
-		if(isDead)
-			// ... no need to take damage so exit the function.
-			return;
+		if (isDead) {
+						// ... no need to take damage so exit the function.
+						return;
+				}
 		
 		// Reduce the current health by the amount of damage sustained.
-		currentHealth -= amount;
+		if (this.faction == Faction.Neutral) {
+				currentHealth -= amount;
+			}
+
+		if (this.faction == Faction.Ally) {
+			currentHealth -= dmgModAlly.modDmg(amount);
+		}
+
+		if (this.faction == Faction.Enemy) {
+			currentHealth -= dmgModEnemy.modDmg(amount);
+		}
 		
 		// If the current health is less than or equal to zero...
 		if(currentHealth <= 0)
@@ -103,6 +124,7 @@ public class Health : MonoBehaviour
 		
 		healthBarLength = 100 * (currentHealth / (float)startingHealth);
 	}
+
 	public void Heal (int amount, Vector3 hitPoint)
 	{
 		// Reduce the current health by the amount of damage sustained.
