@@ -2,9 +2,11 @@
 using System.Collections;
 
 public class Ability_Missile : Ability {
-	public new string name = "Missile";
 	// Use this for initialization
 	void Start () {}
+	void Awake(){
+		this.name = "Missile";
+	}
 	
 	// Update is called once per frame
 	void Update () {}

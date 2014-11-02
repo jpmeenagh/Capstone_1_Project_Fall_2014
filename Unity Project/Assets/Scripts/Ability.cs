@@ -7,7 +7,7 @@ public abstract class Ability : MonoBehaviour {
 	public int max_cooldown_defend = 0;
 	public int max_cooldown_support = 0;
 
-	public string name;
+	protected string name;
 	
 	//these are the different stances that determine which effect this ability has
 	public enum Stance {Attack, Defend, Support};
@@ -43,7 +43,10 @@ public abstract class Ability : MonoBehaviour {
 			this.stance_delegate = new Ability_Delegate (support);
 		}
 	}
-	
+
+	public virtual string get_damnit(){
+		return this.name;
+	}
 	//attack stance effect.  Should only be called using this.stance_delegate
 	protected virtual int attack(){
 		print ("confetti");

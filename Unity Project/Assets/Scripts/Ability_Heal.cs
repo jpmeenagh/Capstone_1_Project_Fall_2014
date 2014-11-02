@@ -2,9 +2,11 @@
 using System.Collections;
 
 public class Ability_Heal : Ability {
-	public new string name = "Heal";
 	// Use this for initialization
 	void Start () {}
+	void Awake(){
+		this.name = "Heal";
+	}
 	
 	// Update is called once per frame
 	void Update () {}

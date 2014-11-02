@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class Ability_Flamethrower : Ability {
-
-	public new string name = "Flamethrower";
-
 	// Use this for initialization
 	void Start () {}
-	
+	void Awake(){
+		this.name = "Flamethrower";
+	}
+
 	// Update is called once per frame
 	void Update () {}
 	
@@ -17,8 +17,6 @@ public class Ability_Flamethrower : Ability {
 		GameObject mine1 = Resources.Load<GameObject>("flame");
 		mine1.GetComponent<Weapon_Firemine> ().target = Weapon_Firemine.Following.Player;
 		Instantiate(mine1, new Vector3(0,1,0), this.transform.rotation);
-
-
 		return max_cooldown_attack;
 	}
 	//circles of fire on the ground around the player and companion that hurt bad guys within every second

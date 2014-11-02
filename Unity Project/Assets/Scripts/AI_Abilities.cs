@@ -11,8 +11,10 @@ public class AI_Abilities : MonoBehaviour {
 		this.temp = true;
 		//get all the abilities in this object
 		abilities = this.GetComponents<Ability> ();
+		print ("AI abilities:");
 		foreach (Ability element in this.abilities){
-			print (element);
+			print ("ability:  " + element.get_damnit());
+
 		}
 	}
 	

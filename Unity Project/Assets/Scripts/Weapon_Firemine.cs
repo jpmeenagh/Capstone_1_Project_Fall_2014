@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Weapon_Firemine : MonoBehaviour {
-	//how much damage does the do per second?
+	//how much damage does this do per second?
 	public int damagePerSecond = 10;
 
 	//how long does this exist?
