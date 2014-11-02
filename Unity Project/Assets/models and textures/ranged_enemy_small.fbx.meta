@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: 389eab153465a4a448e1a5dc6ae30714
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Control_Base
+    100002: Control_Top
+    100004: main_character_0037:controls
+    100006: main_character_0037:joints
+    100008: main_character_0037:mask1
+    100010: main_character_0037:mesh
+    100012: main_character_0037:nurbsCircle4
+    100014: main_character_0037:nurbsCircle5
+    100016: main_character_0037:pCube1
+    100018: main_character_0037:pCube2
+    100020: main_character_0037:pCube3
+    100022: main_character_0037:pCube4
+    100024: main_character_0037:pCube5
+    100026: main_character_0037:pCylinder1
+    100028: main_character_0037:transform1
+    100030: main_character_0037:transform2
+    100032: main_character_0037:transform3
+    100034: main_character_0037:transform4
+    100036: main_character_0037:transform5
+    100038: main_character_0037:transform6
+    100040: nurbsSquare1
+    100042: nurbsSquare2
+    100044: pCube10
+    100046: pCylinder6
+    100048: pCylinder7
+    100050: pCylinder8
+    100052: polySurface7
+    100054: //RootNode
+    100056: tank_base
+    100058: tank_gun
+    100060: tank_top
+    400000: Control_Base
+    400002: Control_Top
+    400004: main_character_0037:controls
+    400006: main_character_0037:joints
+    400008: main_character_0037:mask1
+    400010: main_character_0037:mesh
+    400012: main_character_0037:nurbsCircle4
+    400014: main_character_0037:nurbsCircle5
+    400016: main_character_0037:pCube1
+    400018: main_character_0037:pCube2
+    400020: main_character_0037:pCube3
+    400022: main_character_0037:pCube4
+    400024: main_character_0037:pCube5
+    400026: main_character_0037:pCylinder1
+    400028: main_character_0037:transform1
+    400030: main_character_0037:transform2
+    400032: main_character_0037:transform3
+    400034: main_character_0037:transform4
+    400036: main_character_0037:transform5
+    400038: main_character_0037:transform6
+    400040: nurbsSquare1
+    400042: nurbsSquare2
+    400044: pCube10
+    400046: pCylinder6
+    400048: pCylinder7
+    400050: pCylinder8
+    400052: polySurface7
+    400054: //RootNode
+    400056: tank_base
+    400058: tank_gun
+    400060: tank_top
+    4300000: polySurface7
+    9500000: //RootNode
+    13700000: polySurface7
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .119999997
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
