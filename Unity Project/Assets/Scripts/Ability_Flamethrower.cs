@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Ability_Flamethrower : Ability {
 
-	public string name = "Flamethrower";
+	public new string name = "Flamethrower";
 
 	// Use this for initialization
 	void Start () {}
@@ -16,7 +16,7 @@ public class Ability_Flamethrower : Ability {
 	protected override int attack(){
 		GameObject mine1 = Resources.Load<GameObject>("flame");
 		mine1.GetComponent<Weapon_Firemine> ().target = Weapon_Firemine.Following.Player;
-		Instantiate(mine1, new Vector3(0,1,0), Quaternion.identity);
+		Instantiate(mine1, new Vector3(0,1,0), this.transform.rotation);
 
 
 		return max_cooldown_attack;

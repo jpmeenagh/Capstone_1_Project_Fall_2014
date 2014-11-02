@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Ability_Heal : Ability {
-	public string name = "Heal";
+	public new string name = "Heal";
 	// Use this for initialization
 	void Start () {}
 	

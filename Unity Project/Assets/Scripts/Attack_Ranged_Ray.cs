@@ -50,22 +50,9 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		gunLine.enabled = false;
 	}
 	
-	public void Shoot ()
-	{
-		// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
-		//if there hasn't been enough time between attacks
-		if(time_since_last_attack < timeBetweenAttacks)
-		{
-			print ("Attack_Ranged:  NOFIRE  |  time_since_last:  " + time_since_last_attack);
-			/*
-			if(time_since_last_attack > time_at_last_attack + effects_display_time)
-			{
-				DisableEffects ();
-			}
-			return;
-			*/
-		}
-		else{
+	public void Shoot (){
+		//if there has been enough time between attacks
+		if(time_since_last_attack >= timeBetweenAttacks){
 			print ("Attack_Ranged:  FIRE  |  time_since_last:  " + time_since_last_attack);
 
 			// Reset the time_since_last_attack.
@@ -110,6 +97,9 @@ public class Attack_Ranged_Ray : MonoBehaviour
 				print("miss");
 				gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
 			}
+		}
+		else{
+			print ("Attack_Ranged:  NOFIRE  |  time_since_last:  " + time_since_last_attack);
 		}
 	}
 }

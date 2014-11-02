@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Ability_Missile : Ability {
-	public string name = "Missile";
+	public new string name = "Missile";
 	// Use this for initialization
 	void Start () {}
 	

@@ -39,7 +39,7 @@ public class Weapon_Firemine : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		this.transform.position =  new Vector3(this.following_object.transform.position[0], this.transform.position[1], this.following_object.transform.position[2]);
-
+		this.transform.rotation = this.following_object.transform.rotation;
 		if (Time.time >= this.time_trigger_is_ready) { 
 			time_trigger_is_ready = Time.time + time_between_triggers;
 			this.duration = this.duration - 1;
