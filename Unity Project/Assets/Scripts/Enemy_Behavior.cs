@@ -112,10 +112,10 @@ public class Enemy_Behavior : MonoBehaviour {
 		foreach (GameObject go in gos) {
 			Vector3 diff = go.transform.position - position;
 			float curDistance = diff.sqrMagnitude;
-/*			if (curDistance < distance && curDistance < targetingRange && go.GetComponent<Health>().currentHealth > 0){
+			if (curDistance < distance && curDistance < targetingRange && go.GetComponent<Health>().currentHealth > 0){
 				closest = go;
 				distance = curDistance;
-			}					*/
+			}					
 		}
 		if (distance > targetingRange) { closest = gameObject; }
 		return closest;
