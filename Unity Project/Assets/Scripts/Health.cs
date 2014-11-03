@@ -91,10 +91,11 @@ public class Health : MonoBehaviour
 	public void TakeDamage (int amount, Vector3 hitPoint, string sourceDmg)
 	{
 		// If the enemy is dead...
-		if (isDead) {
+		if (isDead) 
+			{
 						// ... no need to take damage so exit the function.
 						return;
-				}
+			}
 		
 		// Reduce the current health by the amount of damage sustained.
 		if (this.faction == Faction.Neutral) {
