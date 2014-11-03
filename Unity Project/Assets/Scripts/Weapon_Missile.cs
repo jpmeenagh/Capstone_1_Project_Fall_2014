@@ -6,9 +6,6 @@ public class Weapon_Missile : MonoBehaviour {
 	//how much damage does this do
 	public int damage = 50;
 
-	//the object it is following
-	private GameObject following_object;
-
 	public string target_tag = "Enemy";
 	GameObject target;
 
@@ -35,14 +32,13 @@ public class Weapon_Missile : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.following_object = GameObject.FindWithTag (following_tags [target]);
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.position =  new Vector3(this.following_object.transform.position[0], this.transform.position[1], this.following_object.transform.position[2]);
-		this.transform.rotation = this.following_object.transform.rotation;
+		this.transform.position =  new Vector3(this.target.transform.position[0], this.transform.position[1], this.target.transform.position[2]);
+		this.transform.rotation = this.target.transform.rotation;
 
 
 	}
@@ -50,7 +46,7 @@ public class Weapon_Missile : MonoBehaviour {
 	//finds the closest valid target and sets this object's "target" property to point to what it finds
 	void set_target(){
 		//get an array of things tagged as enemies
-		Gameobject[] possible_targets_array = GameObject.FindGameObjectsWithTag (target_tag);
+		GameObject[] possible_targets_array = GameObject.FindGameObjectsWithTag (target_tag);
 
 		//if it wasn't able to find any objects with that tag at any range, complain and commit suicide
 		if (possible_targets_array.Length != 0) {
@@ -59,7 +55,7 @@ public class Weapon_Missile : MonoBehaviour {
 		}
 
 		//turn the array into a List because arrays are tedious as hell to work with
-		List<Gameobject> possible_targets = new List<GameObject>();
+		List<GameObject> possible_targets = new List<GameObject>();
 		foreach (GameObject element in possible_targets_array) {
 			possible_targets.Add(element);
 		}
@@ -84,9 +80,9 @@ public class Weapon_Missile : MonoBehaviour {
 			shootRay.origin = transform.position;
 
 			//calculate which direction to shoot the ray
-			float closest_heading = closest_possible_target.transform.position - transform.position;
+			Vector3 closest_heading = closest_possible_target.transform.position - transform.position;
 			float closest_distance = closest_heading.magnitude;
-			float closest_direction = closest_heading / closest_distance; // This is now the normalized direction.
+			Vector3 closest_direction = closest_heading / closest_distance; // This is now the normalized direction.
 
 			//store the direction to shoot the ray
 			shootRay.direction = closest_direction;
@@ -114,7 +110,8 @@ public class Weapon_Missile : MonoBehaviour {
 			//rotate to face where it's moving
 			transform.LookAt (move_location);
 			//move
-			transform.position = (move_location % move_distance) + transform.position;
+			int md = move_distance;
+			transform.position = new Vector3(move_location[0] % md, move_location[1] % md, move_location[2] % md) + transform.position;
 		//if it hits a wall or something else
 			//either 	
 				//blow up
