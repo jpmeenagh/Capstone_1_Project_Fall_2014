@@ -7911,9 +7911,9 @@ MonoBehaviour:
   stance: 
   defaultStance: Attack
   testAbility1: {fileID: 1782966848}
-  testAbility1Name: Flamethrowerz
+  testAbility1Name: Flamethrower
   testAbility2: {fileID: 1782966847}
-  testAbility2Name: Sabotagez
+  testAbility2Name: Sabotage
   testAbility3: {fileID: 0}
   testAbility3Name: 
 --- !u!23 &1782966853
