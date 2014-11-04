@@ -243,8 +243,8 @@ public class Companion_Behavior : MonoBehaviour {
 		} else if (name == "Sabotage" && stance == "Defend") {
 			if (checkEnemiesAtLocation (new Vector3 (transform.position.x, transform.position.y, transform.position.z + 2), 2) 
 			    > 0) { 
-				return true; 
 				target = spreadTheWealth();
+				return true; 
 			} else { 
 				return false;
 			}
