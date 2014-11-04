@@ -7852,6 +7852,11 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 150
   sinkSpeed: 2.5
+  allowGameOver: 1
+  gameOver: 0
+  gameOverTimer: 1
+  CompanionDead: 0
+  allowCompanionDeath: 1
   healthBarLength: 100
   pos: {x: 0, y: 0, z: 0}
   xOffset: 0
@@ -9124,6 +9129,11 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 150
   sinkSpeed: 2.5
+  allowGameOver: 1
+  gameOver: 0
+  gameOverTimer: 1
+  CompanionDead: 0
+  allowCompanionDeath: 1
   healthBarLength: 100
   pos: {x: 0, y: 0, z: 0}
   xOffset: 0
@@ -9431,6 +9441,11 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 150
   sinkSpeed: 2.5
+  allowGameOver: 1
+  gameOver: 0
+  gameOverTimer: 1
+  CompanionDead: 0
+  allowCompanionDeath: 1
   healthBarLength: 100
   pos: {x: 0, y: 0, z: 0}
   xOffset: 0
