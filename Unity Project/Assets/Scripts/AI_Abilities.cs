@@ -25,8 +25,8 @@ public class AI_Abilities : MonoBehaviour {
 			this.temp = false;
 			print ("abilities activated");
 			foreach (Ability element in this.abilities){
-				element.change_stance(Ability.Stance.Attack);
-				element.stance_delegate();
+				//element.change_stance(Ability.Stance.Attack);
+				//element.stance_delegate();
 			}
 
 		}
