@@ -31,7 +31,7 @@ public class bulletEffects : MonoBehaviour {
 	void OnCollisionEnter(Collision otherObj)
 	{
 
-		if(otherObj.gameObject.tag == "Player" || otherObj.gameObject.tag == "Companion")
+		if(otherObj.gameObject.tag == "Player" || otherObj.gameObject.tag == "Companion" || otherObj.gameObject.tag == "Enemy")
     		{
 			// Try and find an EnemyHealth script on the gameobject hit.
 			Health health = otherObj.transform.GetComponent <Health>();
@@ -41,7 +41,7 @@ public class bulletEffects : MonoBehaviour {
 			{
 				print("hit: " + otherObj.gameObject.tag);
 				// ... the enemy should take damage.
-				health.TakeDamage (10 , new Vector3(0,0,0), "Robot");
+				health.TakeDamage (10 , new Vector3(0,0,0), "Bullet");
 			}
         	
  		}

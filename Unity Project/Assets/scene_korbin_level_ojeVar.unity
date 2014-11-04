@@ -4408,7 +4408,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 887856814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0192577839, y: 1.38914633, z: 2.63891792}
+  m_LocalPosition: {x: -.0192577839, y: .52239418, z: 3.02262497}
   m_LocalScale: {x: 1.55421436, y: 2.22030592, z: 1.55421436}
   m_Children: []
   m_Father: {fileID: 1995357401}
@@ -7893,17 +7893,17 @@ MonoBehaviour:
   target: {fileID: 0}
   targetDistance: 0
   targetingRange: 100
-  approachRange: 5
+  approachRange: 7
   targetTimer: 150
   nearbyEnemies: 0
   playerNearbyEnemies: 0
   nearbyRange: 4
   oldTarget: {fileID: 0}
   oldTargetTimer: 30
-  shootRange: 0
+  shootRange: 10
   fireRate: 3
   projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
-  bulletSpeed: 10
+  bulletSpeed: 7
   shooter: {fileID: 233443342}
   arrayOfAbilities: []
   arrayOfCooldowns: 
@@ -7911,9 +7911,9 @@ MonoBehaviour:
   stance: 
   defaultStance: Attack
   testAbility1: {fileID: 1782966848}
-  testAbility1Name: Flamethrower
+  testAbility1Name: Flamethrowerz
   testAbility2: {fileID: 1782966847}
-  testAbility2Name: Sabotage
+  testAbility2Name: Sabotagez
   testAbility3: {fileID: 0}
   testAbility3Name: 
 --- !u!23 &1782966853
@@ -9412,7 +9412,7 @@ MonoBehaviour:
   shootRange: 10
   fireRate: 1
   projectile: {fileID: 5400000, guid: 714936457ff3e3e4086408f4498113be, type: 2}
-  bulletSpeed: 10
+  bulletSpeed: 7
   shooter: {fileID: 887856815}
 --- !u!114 &1995357405
 MonoBehaviour:
