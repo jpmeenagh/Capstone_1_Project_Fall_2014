@@ -25,7 +25,9 @@ public class Companion_Behavior : MonoBehaviour {
 	public int nearbyEnemies;
 	public int playerNearbyEnemies;
 	public float nearbyRange = 4;
-	
+	public Transform oldTarget;
+	public int oldTargetTimer = 30;
+
 	//shooting
 	public int shootRange = 10;
 	public float fireRate = 0.5F;
@@ -58,6 +60,7 @@ public class Companion_Behavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		target = transform; //set target to self when not hostile
 		targetLocation = transform.position;
 		
@@ -87,14 +90,14 @@ public class Companion_Behavior : MonoBehaviour {
 		if (targetTimer <= 0) {	target = FindTargets ().transform; targetTimer = 75; } else { targetTimer--; } 
 		
 		if (tetherDistance > tetherRange) {
-			if(target == transform){ transform.LookAt(tether.transform); }
+			//if(target == transform){ transform.LookAt(tether.transform); }
 			transform.position = Vector3.MoveTowards (transform.position, tether.transform.position, speed * Time.deltaTime); 
 		} 
 		
 		//if (target == transform) { randomMovement(); } //if not hostile, move around randomly *only works on enemy
 		if (target != transform) {
-			if(tetherDistance <= tetherRange){
-				transform.LookAt (new Vector3 (target.transform.position.x, target.transform.position.y, target.transform.position.z)); 
+			transform.LookAt (new Vector3 (target.transform.position.x, target.transform.position.y, target.transform.position.z));
+			if(tetherDistance <= tetherRange){ 
 				if (targetDistance > approachRange) {transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime);}
 			}
 			shoot(); //shoot when in range
@@ -107,7 +110,17 @@ public class Companion_Behavior : MonoBehaviour {
 		
 		nearbyEnemies = storeNearbyEnemies ();
 		playerNearbyEnemies = storePlayerNearbyEnemies ();
-	}
+
+		//lock companion roation so he stays totally upright
+		transform.rotation = Quaternion.Euler(1, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
+		if (oldTargetTimer < 1) {
+				oldTarget = null;
+				oldTargetTimer = 30;
+			} else {
+				oldTargetTimer--;
+			}
+		}
 	
 	/*====================================================================
 	======Functions======================================================
@@ -179,10 +192,11 @@ public class Companion_Behavior : MonoBehaviour {
 	
 	//add ability to list
 	void addAbility(Ability ability, string testAbilityName){
+		arrayOfNames.Add (testAbilityName);
 		arrayOfAbilities.Add(ability);
 		//Add a 0 default cooldown at the same index in the cooldowns array
 		arrayOfCooldowns.Add(0);
-		arrayOfNames.Add (testAbilityName);
+
 	}
 	
 	//Use abilities and increment cooldowns
@@ -203,12 +217,71 @@ public class Companion_Behavior : MonoBehaviour {
 	
 	//check if it's the right situation to use an ability
 	bool checkAbilityUseCase (string name){
-		//if (name == "Flamethrower") {
-			//print ("" + name);
-			return true;
-		//} else {
-			//return false;	
-		//}
+		if (name == "Flamethrower" && stance == "Attack") {
+				if (checkEnemiesAtLocation (new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1), 2) 
+						> 0) { 
+					return true; 
+				} else { 
+					return false;
+				}
+		} else if (name == "Flamethrower" && stance == "Defend") {
+				if (checkEnemiesAtLocation (new Vector3 (transform.position.x, transform.position.y, transform.position.z), 3) > 2 ||
+				    checkEnemiesAtLocation (new Vector3 (tether.transform.position.x, tether.transform.position.y, tether.transform.position.z), 3) > 2
+			    ) { 
+					return true; 
+				} else { 
+					return false;
+				}
+		} else if (name == "Sabotage" && stance == "Attack") {
+			if (checkEnemiesAtLocation (new Vector3 (transform.position.x, transform.position.y, transform.position.z + 2), 2) 
+			    > 0) { 
+				target = spreadTheWealth();
+				return true; 
+			} else { 
+				return false;
+			}
+		} else if (name == "Sabotage" && stance == "Defend") {
+			if (checkEnemiesAtLocation (new Vector3 (transform.position.x, transform.position.y, transform.position.z + 2), 2) 
+			    > 0) { 
+				return true; 
+				target = spreadTheWealth();
+			} else { 
+				return false;
+			}
+		} else {
+				return false;
+		}
+	}
+
+	Transform spreadTheWealth(){
+		Transform newTarget = target;
+		Collider[] hitColliders = Physics.OverlapSphere (transform.position, targetingRange);
+		int i = 0; 
+		while (i < hitColliders.Length) {
+			if (hitColliders [i].tag == "Enemy") {
+				if(hitColliders[i].transform != oldTarget){ 
+					newTarget = hitColliders[i].transform; 
+					oldTarget = target;
+				}
+			}
+			i++;
+		}
+		return newTarget;
+
+	}
+
+	int checkEnemiesAtLocation(Vector3 location, int range){
+		Collider[] hitColliders = Physics.OverlapSphere (location, range);
+		int i = 0;
+		int count = 0; 
+		while (i < hitColliders.Length) {
+			if (hitColliders [i].tag == "Enemy") {
+				count++;
+			}
+			i++;
+		}
+		return count;
+
 	}
 	
 	//shoot if in range
@@ -230,7 +303,8 @@ public class Companion_Behavior : MonoBehaviour {
 		foreach (GameObject go in gos) {
 			Vector3 diff = go.transform.position - position;
 			float curDistance = diff.sqrMagnitude;
-			if (curDistance < distance && curDistance < targetingRange && go.GetComponent<Health>().currentHealth > 0){
+			if (curDistance < distance && curDistance < targetingRange && 
+			    go.GetComponent<Health>().currentHealth > 0 && oldTarget != go.transform){
 				closest = go;
 				distance = curDistance;
 			}

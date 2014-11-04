@@ -61,6 +61,10 @@ public class Enemy_Behavior : MonoBehaviour {
 		if (target != transform && target.GetComponent<Health>().currentHealth <= 0) { target = transform; }
 
 		nearbyEnemies = storeNearbyEnemies ();
+
+		//lock enemy roation so he stays totally upright
+		transform.rotation = Quaternion.Euler(1, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
 	}
 
 	/*====================================================================
@@ -105,11 +109,18 @@ public class Enemy_Behavior : MonoBehaviour {
 	//Find a target
 	GameObject FindTargets(){
 		GameObject[] gos;
+		GameObject[] gos2;
 		gos = GameObject.FindGameObjectsWithTag("Player");
+		gos2 = GameObject.FindGameObjectsWithTag("Companion");
+		int size = gos.Length + gos2.Length;
+		GameObject[] gos3 = new GameObject[size];
+		int index = 0;
+		foreach (GameObject go in gos)   { gos3[index++] = go; } 
+		foreach (GameObject go in gos2) { gos3[index++] = go; }
 		GameObject closest = null;
 		float distance = Mathf.Infinity;
 		Vector3 position = transform.position;
-		foreach (GameObject go in gos) {
+		foreach (GameObject go in gos3) {
 			Vector3 diff = go.transform.position - position;
 			float curDistance = diff.sqrMagnitude;
 			if (curDistance < distance && curDistance < targetingRange && go.GetComponent<Health>().currentHealth > 0){
