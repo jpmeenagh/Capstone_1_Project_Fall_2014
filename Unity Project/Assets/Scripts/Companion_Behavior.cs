@@ -79,46 +79,50 @@ public class Companion_Behavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		stanceColor ();
-		currentLocation = transform.position;
-		targetDistance = Vector3.Distance (transform.position, target.position);
-		tetherDistance = Vector3.Distance (transform.position, tether.transform.position);
-		moving = Vector3.Distance(targetLocation, currentLocation) > 2; //if we have a target location, we are moving
-		
-		CheckCollider(); //check to see if tmpCpl1 still exists
-		
-		if (targetTimer <= 0) {	target = FindTargets ().transform; targetTimer = 75; } else { targetTimer--; } 
-		
-		if (tetherDistance > tetherRange) {
-			//if(target == transform){ transform.LookAt(tether.transform); }
-			transform.position = Vector3.MoveTowards (transform.position, tether.transform.position, speed * Time.deltaTime); 
-		} 
-		
-		//if (target == transform) { randomMovement(); } //if not hostile, move around randomly *only works on enemy
-		if (target != transform) {
-			transform.LookAt (new Vector3 (target.transform.position.x, target.transform.position.y, target.transform.position.z));
-			if(tetherDistance <= tetherRange){ 
-				if (targetDistance > approachRange) {transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime);}
+		if(this.GetComponent<Health>().currentHealth > 0){
+			stanceColor ();
+			currentLocation = transform.position;
+			targetDistance = Vector3.Distance (transform.position, target.position);
+			tetherDistance = Vector3.Distance (transform.position, tether.transform.position);
+			moving = Vector3.Distance(targetLocation, currentLocation) > 2; //if we have a target location, we are moving
+			
+			CheckCollider(); //check to see if tmpCpl1 still exists
+			
+			if (targetTimer <= 0) {	target = FindTargets ().transform; targetTimer = 75; } else { targetTimer--; } 
+			
+			if (tetherDistance > tetherRange) {
+				//if(target == transform){ transform.LookAt(tether.transform); }
+				transform.position = Vector3.MoveTowards (transform.position, tether.transform.position, speed * Time.deltaTime); 
+			} 
+			
+			//if (target == transform) { randomMovement(); } //if not hostile, move around randomly *only works on enemy
+			if (target != transform) {
+				transform.LookAt (new Vector3 (target.transform.position.x, target.transform.position.y, target.transform.position.z));
+				if(tetherDistance <= tetherRange){ 
+					if (targetDistance > approachRange) {transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime);}
+				}
+				shoot(); //shoot when in range
+				useAbilities(); //use companion abilities when you have a target
 			}
-			shoot(); //shoot when in range
-			useAbilities(); //use companion abilities when you have a target
-		}
-		
-		if (target.GetComponent<Health> ().currentHealth <= 0) { target = transform; }
-		
-		controlStances ();
-		
-		nearbyEnemies = storeNearbyEnemies ();
-		playerNearbyEnemies = storePlayerNearbyEnemies ();
+			
+			if (target.GetComponent<Health> ().currentHealth <= 0) { target = transform; }
+			
+			controlStances ();
+			
+			nearbyEnemies = storeNearbyEnemies ();
+			playerNearbyEnemies = storePlayerNearbyEnemies ();
 
-		//lock companion roation so he stays totally upright
-		transform.rotation = Quaternion.Euler(1, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+			//lock companion roation so he stays totally upright
+			transform.rotation = Quaternion.Euler(1, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 
-		if (oldTargetTimer < 1) {
-				oldTarget = null;
-				oldTargetTimer = 30;
-			} else {
-				oldTargetTimer--;
+			if (oldTargetTimer < 1) {
+					oldTarget = null;
+					oldTargetTimer = 30;
+				} else {
+					oldTargetTimer--;
+				}
+			}else{
+				transform.rotation = Quaternion.Euler(75, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 			}
 		}
 	

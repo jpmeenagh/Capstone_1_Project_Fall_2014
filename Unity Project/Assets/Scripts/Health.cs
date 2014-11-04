@@ -22,6 +22,13 @@ public class Health : MonoBehaviour
 	dmg_in_mod_ally dmgModAlly;
 	dmg_in_mod_robo dmgModEnemy;
 
+	
+	public bool allowGameOver = true;
+	public bool gameOver = false;
+	public int gameOverTimer = 1;
+	public bool CompanionDead = false;
+	public bool allowCompanionDeath = true;
+
 	//Health Bar Variables
         public float healthBarLength = 100;
 
@@ -54,10 +61,23 @@ public class Health : MonoBehaviour
 		
 		// Setting the current health when the enemy first spawns.
 		currentHealth = startingHealth;
+
 	}
 	
 	void Update ()
 	{
+		//END THE GAME 
+		if(tag == "Player" ){
+			if (currentHealth <= 0 && allowGameOver && gameOver == false) {
+				gameOver = true;
+				gameOverTimer = 200;
+					}
+			if (gameOver) { gameOverTimer--; }
+			if (gameOverTimer == 0){ GameOver(); }
+		}
+		if (tag == "Companion" && allowCompanionDeath && currentHealth <= 0) {
+			CompanionDead = true;
+		}
 		// If the enemy should be sinking...
 		if(isSinking)
 		{
@@ -186,8 +206,21 @@ public class Health : MonoBehaviour
  
     	style.normal.background = texture;
     	GUI.Box(new Rect(pos.x,pos.y, healthBarLength, 20), new GUIContent(""), style);
+
+		if (gameOver) {
+					GUI.Label (new Rect (Screen.height / 2, Screen.width / 4, Screen.width, Screen.height), "GAME OVER\nYOU HAVE DIED!\nrestart in: " + gameOverTimer);
+		}
+		if (CompanionDead) {
+			GUI.Label (new Rect (Screen.height / 2, Screen.width / 2, Screen.width, Screen.height), "COMPANION HAS DIED, BRO\nYOUR FRIEND!!!!!");
+		}
     }
-	
+
+	void GameOver ()
+	{
+
+		Debug.Break();
+	}
+
 
 	
 
