@@ -65,7 +65,7 @@ public class Weapon_Firemine : MonoBehaviour {
 				if (enemyHealth.faction != this.following_object.GetComponent<Health> ().faction) {
 					// ... the enemy should take damage.
 					//enemyHealth.TakeDamage (this.following_object.GetComponent<dmg_out_mod_player>().modDmg(damagePerSecond), new Vector3(0f,0f,0f), following_tags[target]);
-					enemyHealth.TakeDamage (10, new Vector3 (0f, 0f, 0f), following_tags [target]);
+					enemyHealth.TakeDamage (damagePerSecond, new Vector3 (0f, 0f, 0f), following_tags [target]);
 				}
 			}
 		}
