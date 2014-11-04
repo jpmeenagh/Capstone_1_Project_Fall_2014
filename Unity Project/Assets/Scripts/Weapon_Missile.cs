@@ -21,24 +21,28 @@ public class Weapon_Missile : MonoBehaviour {
 
 	//where this moved last
 	Vector3 last_move_location;
-
-	//where this is currently moving
-	Vector3 move_location;
-
+	
 	//how fast this moves
-	public int move_distance = 1;
+	public float move_distance;
 
-
+	void Awake ()
+	{
+		// Create a layer mask for the Shootable layer.
+		shootableMask = 1 << 10;
+		shootableMask = ~shootableMask;
+	}
 
 	// Use this for initialization
 	void Start () {
-	
+		set_target ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.position =  new Vector3(this.target.transform.position[0], this.transform.position[1], this.target.transform.position[2]);
-		this.transform.rotation = this.target.transform.rotation;
+//		this.transform.position =  new Vector3(this.target.transform.position[0], this.transform.position[1], this.target.transform.position[2]);
+//		this.transform.rotation = this.target.transform.rotation;
+
+		move ();
 
 
 	}
@@ -49,9 +53,10 @@ public class Weapon_Missile : MonoBehaviour {
 		GameObject[] possible_targets_array = GameObject.FindGameObjectsWithTag (target_tag);
 
 		//if it wasn't able to find any objects with that tag at any range, complain and commit suicide
-		if (possible_targets_array.Length != 0) {
+		if (possible_targets_array.Length == 0) {
 			print ("ALERT  |  MISSILE:  no targets found with target_tag  " + target_tag);
 			Destroy(this.gameObject);
+			return;
 		}
 
 		//turn the array into a List because arrays are tedious as hell to work with
@@ -60,22 +65,19 @@ public class Weapon_Missile : MonoBehaviour {
 			possible_targets.Add(element);
 		}
 
-		//set this to the first element
-		GameObject closest_possible_target = possible_targets [0];
+		//this will be set in the while loop
+		GameObject closest_possible_target;
 
-
+		//has this found a valid target yet?
 		bool found_valid_target = false;
-		while(!(found_valid_target)){
-			//pick the closest one
-			foreach (GameObject element in possible_targets) {
-				//if it finds an element closer or the same distance, make it the closest_possible_target
-				float distance_to_element = (element.transform.position - transform.position).magnitude;
-				float distance_to_closest_possible_target = (closest_possible_target.transform.position - transform.position).magnitude;
-				if (distance_to_element <= distance_to_closest_possible_target){
-					closest_possible_target = element;
-				}
-			}
 
+		//find a valid target
+		while(!(found_valid_target) && (possible_targets.Count > 0)){
+			//pick the closest one
+			closest_possible_target = find_closest_possible_target(possible_targets[0], possible_targets);
+
+			print ("loop state: start |  found: " + found_valid_target + "  |  possible: " + possible_targets.Count + "  |  closest: " + closest_possible_target);
+		    
 			// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 			shootRay.origin = transform.position;
 
@@ -87,31 +89,99 @@ public class Weapon_Missile : MonoBehaviour {
 			//store the direction to shoot the ray
 			shootRay.direction = closest_direction;
 
-			//try to shoot a ray at the closest_possible_target
-			if(Physics.Raycast(shootRay, out shootHit, range, shootableMask))
-			{
+			//if shooting a ray at the closest_possible_target hits something
+			if(Physics.Raycast(shootRay, out shootHit, range, shootableMask)){
 				//if it hits the target, set target to point to that object
-				if(shootHit.collider == closest_possible_target){
+				if(shootHit.collider.gameObject.GetInstanceID() == closest_possible_target.GetInstanceID()){
 					target = closest_possible_target;
-				}
-				//if it hits something else, move on to the next object in the array
-				else{
-					possible_targets.Remove(closest_possible_target);
+					found_valid_target = true;
 				}
 			}
+			//if it hits something else or nothing, remove that from possible_targets and try the next one
+			if(!(found_valid_target)){
+				print ("fuck?");
+				possible_targets.Remove(closest_possible_target);
+				//closest_possible_target = find_closest_possible_target(possible_targets[0], possible_targets);
+
+			}
+
+			print ("loop state: end  |  found valid target: " + found_valid_target + "  |  target: " + target + "  |  possible: " + possible_targets.Count);
+		}
+
+		//if it went through all possible targets and didn't find a valid one, commit suicide
+		if(!(found_valid_target)){
+			print ("ALERT  |  MISSILE:  No valid targets found with target_tag  " + target_tag);
+			Destroy(this.gameObject);
+			return;
 		}
 	}
 
+	private GameObject find_closest_possible_target(GameObject g_closest_possible_target, List<GameObject> g_possible_targets){
+		GameObject temp_closest_possible_target = g_closest_possible_target;
+		float distance_to_element = 0f;
+		float distance_to_closest_possible_target = 0f;
+
+		foreach (GameObject element in g_possible_targets) {
+			//calculate distances
+			distance_to_element = (element.transform.position - transform.position).magnitude;
+			distance_to_closest_possible_target = (temp_closest_possible_target.transform.position - transform.position).magnitude;
+			
+			//if it finds an element closer or the same distance, make it the closest_possible_target
+			if (distance_to_element <= distance_to_closest_possible_target){
+				temp_closest_possible_target = element;
+			}
+		}
+		return temp_closest_possible_target;
+	}
+
+
 	void move(){
 		//shoot a ray at target
-		//if it hits the target
-			//move towards the target
 
-			//rotate to face where it's moving
-			transform.LookAt (move_location);
-			//move
-			int md = move_distance;
-			transform.position = new Vector3(move_location[0] % md, move_location[1] % md, move_location[2] % md) + transform.position;
+		//set where the ray starts
+		shootRay.origin = transform.position;
+		
+		//calculate which direction to shoot the ray
+		Vector3 target_heading = target.transform.position - transform.position;
+		float target_distance = target_heading.magnitude;
+		Vector3 target_direction = target_heading / target_distance; // This is now the normalized direction.
+		
+		//store the direction to shoot the ray
+		shootRay.direction = target_direction;
+		//if shooting a ray at the closest_possible_target hits something
+		if(Physics.Raycast(shootRay, out shootHit, range, shootableMask)){
+			//if it hits the target, move towards the target
+			if(shootHit.collider.gameObject.GetInstanceID() == target.GetInstanceID()){
+				//rotate to face where it's moving
+				transform.LookAt (target.transform.position);
+
+				//calculate whether to move the full allowed distance or less and if the latter, how much
+				float move_x = Mathf.Min(Mathf.Abs(target.transform.position[0] - transform.position[0]), move_distance);
+				float move_y = Mathf.Min(Mathf.Abs(target.transform.position[1] - transform.position[1]), move_distance);
+				float move_z = Mathf.Min(Mathf.Abs(target.transform.position[2] - transform.position[2]), move_distance);
+
+				//calculate whether the movement is positive or negative
+				if(target.transform.position[0] < transform.position[0]){
+					move_x = move_x * -1;
+				}
+				if(target.transform.position[1] < transform.position[1]){
+					move_y = move_y * -1;
+				}
+				if(target.transform.position[2] < transform.position[2]){
+					move_z = move_z * -1;
+				}
+
+				//make a vector to add to the current position
+				Vector3 movement_vector = new Vector3(move_x, move_y, move_z);
+
+				print("Missile  |  position: " + transform.position + " | move: " + movement_vector + " | target: " + target.transform.position);
+
+				//change the current position
+				transform.position = movement_vector + transform.position;
+			}
+		}
+
+			
 		//if it hits a wall or something else
 			//either 	
 				//blow up
