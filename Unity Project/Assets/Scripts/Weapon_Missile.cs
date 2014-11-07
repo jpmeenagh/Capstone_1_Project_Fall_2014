@@ -155,21 +155,15 @@ public class Weapon_Missile : MonoBehaviour {
 				//rotate to face where it's moving
 				transform.LookAt (target.transform.position);
 
-				//calculate whether to move the full allowed distance or less and if the latter, how much
-				float move_x = Mathf.Min(Mathf.Abs(target.transform.position[0] - transform.position[0]), move_distance);
-				float move_y = Mathf.Min(Mathf.Abs(target.transform.position[1] - transform.position[1]), move_distance);
-				float move_z = Mathf.Min(Mathf.Abs(target.transform.position[2] - transform.position[2]), move_distance);
+				//difference in position for each direction
+				float diff_x = target.transform.position[0] - transform.position[0];
+				float diff_y = target.transform.position[1] - transform.position[1];
+				float diff_z = target.transform.position[2] - transform.position[2];
 
-				//calculate whether the movement is positive or negative
-				if(target.transform.position[0] < transform.position[0]){
-					move_x = move_x * -1;
-				}
-				if(target.transform.position[1] < transform.position[1]){
-					move_y = move_y * -1;
-				}
-				if(target.transform.position[2] < transform.position[2]){
-					move_z = move_z * -1;
-				}
+				//calculate whether to move the full allowed distance or less and if the latter, how much
+				float move_x = Mathf.Sign(diff_x) * Mathf.Min(Mathf.Abs(diff_x), move_distance);
+				float move_y = Mathf.Sign(diff_y) * Mathf.Min(Mathf.Abs(diff_y), move_distance);
+				float move_z = Mathf.Sign(diff_z) * Mathf.Min(Mathf.Abs(diff_z), move_distance);
 
 				//make a vector to add to the current position
 				Vector3 movement_vector = new Vector3(move_x, move_y, move_z);
@@ -190,7 +184,6 @@ public class Weapon_Missile : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		print ("omg fuck");
 		//hurt 
 		hurt_enemy (other);
 
@@ -198,16 +191,15 @@ public class Weapon_Missile : MonoBehaviour {
 		Destroy(this.gameObject);
 	}
 
+	//hurt enemy, return whether it hit enemy (and hurt them) or notg
 	bool hurt_enemy(Collider given_collider){
 		// Try and find an EnemyHealth script on the gameobject hit.
 		Health enemyHealth = given_collider.GetComponent <Health> ();
-		print ("omg fuuuck");
-		
+
 		// If the EnemyHealth component exist...
 		if (enemyHealth != null) {
 
 			if (given_collider.gameObject.tag.Equals("Enemy")) {
-				print ("omg f'singno");
 				// ... the enemy should take damage.
 				//enemyHealth.TakeDamage (this.following_object.GetComponent<dmg_out_mod_player>().modDmg(damagePerSecond), new Vector3(0f,0f,0f), following_tags[target]);
 				enemyHealth.TakeDamage (damage, new Vector3 (0f, 0f, 0f), "Companion");
