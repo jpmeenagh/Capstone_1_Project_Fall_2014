@@ -174,7 +174,7 @@ public class Weapon_Missile : MonoBehaviour {
 				//make a vector to add to the current position
 				Vector3 movement_vector = new Vector3(move_x, move_y, move_z);
 
-				print("Missile  |  position: " + transform.position + " | move: " + movement_vector + " | target: " + target.transform.position);
+				//print("Missile  |  position: " + transform.position + " | move: " + movement_vector + " | target: " + target.transform.position);
 
 				//change the current position
 				transform.position = movement_vector + transform.position;
@@ -187,5 +187,34 @@ public class Weapon_Missile : MonoBehaviour {
 				//blow up
 				//check if the target is dead 
 					//if not, move towards the last position
+	}
+
+	void OnTriggerEnter(Collider other) {
+		print ("omg fuck");
+		//hurt 
+		hurt_enemy (other);
+
+		//the missile has hurt the enemy, so it should suicide
+		Destroy(this.gameObject);
+	}
+
+	bool hurt_enemy(Collider given_collider){
+		// Try and find an EnemyHealth script on the gameobject hit.
+		Health enemyHealth = given_collider.GetComponent <Health> ();
+		print ("omg fuuuck");
+		
+		// If the EnemyHealth component exist...
+		if (enemyHealth != null) {
+
+			if (given_collider.gameObject.tag.Equals("Enemy")) {
+				print ("omg f'singno");
+				// ... the enemy should take damage.
+				//enemyHealth.TakeDamage (this.following_object.GetComponent<dmg_out_mod_player>().modDmg(damagePerSecond), new Vector3(0f,0f,0f), following_tags[target]);
+				enemyHealth.TakeDamage (damage, new Vector3 (0f, 0f, 0f), "Companion");
+
+				return true;
+			}
+		}
+		return false;
 	}
 }
