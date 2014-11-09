@@ -79,7 +79,7 @@ ModelImporter:
     400070: top
     400072: wrist_L
     400074: wrist_R
-    7400000: Take 001
+    7400000: main_idle
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -97,7 +97,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: main_idle
       takeName: Take 001
       firstFrame: 1
       lastFrame: 24
