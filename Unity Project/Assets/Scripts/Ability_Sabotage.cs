@@ -8,11 +8,10 @@ public class Ability_Sabotage : Ability {
 	int coneSpamTime;
 	int coneSpamCount;
 	*/
-	public GameObject cone_colider;
-	GameObject cone_aoe;
 
-	public int saboStr;
-	public int sabotDur;
+	public int strength;
+	public int ability_time;
+	public int duration;
 
 
 
@@ -27,16 +26,16 @@ public class Ability_Sabotage : Ability {
 	}
 
 	protected override int attack(){
-		cone_aoe = (GameObject)Instantiate (cone_colider, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.transform.rotation);
-		cone_col cone_col_tmp = cone_aoe.GetComponent<cone_col>();
-		cone_col_tmp.setPerams (saboStr, sabotDur, 1.0f);
+		GameObject cone_collider = Resources.Load<GameObject>("sabotage_cone");
+		cone_collider.GetComponent<cone_col>().setPerams (strength, ability_time, duration, cone_col.Stance.Attack);
+		Instantiate (cone_collider, transform.position, transform.rotation);
 		return max_cooldown_attack;
 	}
 
 	protected override int defend(){
-		cone_aoe = (GameObject)Instantiate (cone_colider, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.transform.rotation);
-		cone_col cone_col_tmp = cone_aoe.GetComponent<cone_col>();
-		cone_col_tmp.setPerams (saboStr, sabotDur, 1.1f);
+		GameObject cone_collider = Resources.Load<GameObject>("sabotage_cone");
+		cone_collider.GetComponent<cone_col>().setPerams (strength, ability_time, duration, cone_col.Stance.Defend);
+		Instantiate (cone_collider, transform.position, transform.rotation);
 		return max_cooldown_defend;
 	}
 

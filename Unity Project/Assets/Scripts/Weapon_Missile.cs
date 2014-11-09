@@ -99,7 +99,6 @@ public class Weapon_Missile : MonoBehaviour {
 			}
 			//if it hits something else or nothing, remove that from possible_targets and try the next one
 			if(!(found_valid_target)){
-				print ("fuck?");
 				possible_targets.Remove(closest_possible_target);
 				//closest_possible_target = find_closest_possible_target(possible_targets[0], possible_targets);
 
