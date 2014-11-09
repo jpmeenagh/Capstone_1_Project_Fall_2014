@@ -14,6 +14,8 @@ public class Heal_Ranged_Ray : MonoBehaviour
 	int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
 	
 	float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
+
+	public AudioClip healSound;						//sound for healing
 	
 	void Awake ()
 	{
@@ -63,6 +65,9 @@ public class Heal_Ranged_Ray : MonoBehaviour
 		// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.forward;
+
+		//sound
+		audio.PlayOneShot (healSound);
 		
 		// Perform the raycast against gameobjects on the shootable layer and if it hits something...
 		if(Physics.Raycast(shootRay, out shootHit, range, shootableMask))
