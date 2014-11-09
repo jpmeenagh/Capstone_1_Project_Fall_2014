@@ -41,13 +41,18 @@ public class Health : MonoBehaviour
 
         GUIStyle style = new GUIStyle();
         Texture2D texture;
-        Color redColor = Color.red;
+		Texture2D texture2;
+		Color redColor = Color.red;
         Color greenColor = Color.green;
  
 	 // Use this for initialization
     void Start () {
 		texture = new Texture2D(1, 1);
         texture.SetPixel(1, 1, greenColor);
+
+		texture2 = new Texture2D(1, 1);
+		texture2.SetPixel(1, 1, Color.white);
+
 		if (this.faction == Faction.Ally){
 			dmgModAlly = this.GetComponent<dmg_in_mod_ally>();
 		}
@@ -210,15 +215,35 @@ public class Health : MonoBehaviour
 
     	texture.Apply();
  
-    	style.normal.background = texture;
-    	GUI.Box(new Rect(pos.x,pos.y, healthBarLength, 20), new GUIContent(""), style);
+		style.normal.background = texture;
+
+		if (tag == "Player") {
+			GUI.Box (new Rect (10, Screen.height - 20, healthBarLength, 20), new GUIContent (""), style);
+			//GUI.Label (new Rect (10,Screen.height - 40,100,20), "PlayerHP");
+
+			} else if (tag == "Companion") {
+			//GUI.Label (new Rect (Screen.width - 120,Screen.height - 40,100,20), "CompanionHP");
+			GUI.Box (new Rect (Screen.width - 120, Screen.height - 20, healthBarLength, 20), new GUIContent (""), style);
+			} else {
+				GUI.Box (new Rect (pos.x, pos.y, healthBarLength, 20), new GUIContent (""), style);
+		}
+
+		style.normal.background = texture2;
+		style.normal.textColor = Color.black;
+		if (tag == "Player") {
+			GUI.Label (new Rect (10,Screen.height - 40,100,20), "PlayerHP", style);
+		} else if (tag == "Companion") {
+			GUI.Label (new Rect (Screen.width - 120,Screen.height - 40,100,20), "CompanionHP", style);
+		} 
 
 		if (gameOver) {
-					GUI.Label (new Rect (Screen.height / 2, Screen.width / 4, Screen.width, Screen.height), "GAME OVER\nYOU HAVE DIED!\nrestart in: " + gameOverTimer);
+			GUI.Label (new Rect (Screen.width / 3, Screen.height / 2, Screen.width, Screen.height), "GAME OVER\nYOU HAVE DIED!\nrestart in: " + gameOverTimer);
 		}
 		if (CompanionDead) {
-			GUI.Label (new Rect (Screen.height / 2, Screen.width / 2, Screen.width, Screen.height), "COMPANION HAS DIED, BRO\nYOUR FRIEND!!!!!");
+			GUI.Label (new Rect (Screen.width / 2, Screen.height / 2, Screen.width, Screen.height), "COMPANION HAS DIED, BRO\nYOUR FRIEND!!!!!");
 		}
+	
+
     }
 
 	void GameOver ()
