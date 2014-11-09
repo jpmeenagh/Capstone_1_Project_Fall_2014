@@ -8,8 +8,14 @@ AnimatorController:
   m_Name: main_char_con
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: velocity
+  - m_Name: animSpeed
     m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: animAttack
+    m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -38,8 +44,8 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: velocity
-    m_EventTreshold: .300000012
+    m_ConditionEvent: animSpeed
+    m_EventTreshold: .100000001
     m_ExitTime: .739130437
   m_Atomic: 1
   m_Solo: 0
@@ -56,7 +62,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
-    m_ConditionEvent: velocity
+    m_ConditionEvent: animSpeed
     m_EventTreshold: 0
     m_ExitTime: .625
   m_Atomic: 1
@@ -74,9 +80,27 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
-    m_ConditionEvent: velocity
+    m_ConditionEvent: animSpeed
     m_EventTreshold: 0
     m_ExitTime: .647058845
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+--- !u!1101 &110145112
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110200000}
+  m_DstState: {fileID: 110223194}
+  m_TransitionDuration: .260869563
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: .739130437
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -92,9 +116,27 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: velocity
-    m_EventTreshold: .5
+    m_ConditionEvent: animSpeed
+    m_EventTreshold: .200000003
     m_ExitTime: .739130437
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+--- !u!1101 &110187723
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110223194}
+  m_DstState: {fileID: 110200000}
+  m_TransitionDuration: .352941185
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: animSpeed
+    m_EventTreshold: 0
+    m_ExitTime: .647058845
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -190,24 +232,26 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110229051}
-      second:
-      - {fileID: 110102405}
-    data:
-      first: {fileID: 110223194}
-      second:
-      - {fileID: 110131209}
-    data:
-      first: {fileID: 110245038}
-      second:
-      - {fileID: 110154127}
-    data:
       first: {fileID: 0}
       second: []
     data:
       first: {fileID: 110200000}
       second:
       - {fileID: 110100000}
+      - {fileID: 110145112}
+    data:
+      first: {fileID: 110223194}
+      second:
+      - {fileID: 110131209}
+      - {fileID: 110187723}
+    data:
+      first: {fileID: 110229051}
+      second:
+      - {fileID: 110102405}
+    data:
+      first: {fileID: 110245038}
+      second:
+      - {fileID: 110154127}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 48, y: 24, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
