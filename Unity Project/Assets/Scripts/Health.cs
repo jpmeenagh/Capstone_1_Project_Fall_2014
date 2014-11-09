@@ -9,6 +9,9 @@ public class Health : MonoBehaviour
 	public int maxHealth = 150;
 	public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
 
+	//sound
+	public AudioClip hitSound;
+
 	//CapsuleCollider enemyCollider;            // Reference to the capsule collider.
 	BoxCollider enemyCollider;
 	bool isDead;                                // Whether the enemy is dead.
@@ -116,6 +119,9 @@ public class Health : MonoBehaviour
 						// ... no need to take damage so exit the function.
 						return;
 			}
+
+		//play hit sound
+		audio.PlayOneShot(hitSound);
 		
 		// Reduce the current health by the amount of damage sustained.
 		if (this.faction == Faction.Neutral) {

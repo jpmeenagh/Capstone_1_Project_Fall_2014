@@ -18,6 +18,8 @@ public class Attack_Ranged_Ray : MonoBehaviour
 
 
 	float effects_display_time = 0.1f;                // The proportion of the timeBetweenBullets that the effects will display for.
+
+	public AudioClip shootSound;					//sound for shooting
 	
 	void Awake ()
 	{
@@ -67,6 +69,9 @@ public class Attack_Ranged_Ray : MonoBehaviour
 			// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 			shootRay.origin = transform.position;
 			shootRay.direction = transform.forward;
+
+			//play audio
+			audio.PlayOneShot(shootSound);
 			
 			// Perform the raycast against gameobjects on the shootable layer and if it hits something...
 			if(Physics.Raycast(shootRay, out shootHit, range, shootableMask))
