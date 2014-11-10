@@ -24126,18 +24126,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tether: {fileID: 1980875452}
   tetherDistance: 0
-  tetherDefenseRange: 6
-  tetherFarRange: 9
-  tetherTeleportRange: 30
-  speed: 6
+  tetherRange: 5
+  speed: 3
   moving: 1
   currentLocation: {x: 0, y: 0, z: 0}
   targetLocation: {x: 0, y: 0, z: 0}
-  target: {fileID: 1980875453}
+  target: {fileID: 0}
   targetDistance: 0
   targetingRange: 100
   approachRange: 7
-  targetTimer: 30
+  targetTimer: 150
   nearbyEnemies: 0
   playerNearbyEnemies: 0
   nearbyRange: 4
