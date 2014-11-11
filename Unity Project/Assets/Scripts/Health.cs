@@ -121,7 +121,7 @@ public class Health : MonoBehaviour
 			}
 
 		//play hit sound
-		audio.PlayOneShot(hitSound);
+		audio.Play();
 		
 		// Reduce the current health by the amount of damage sustained.
 		if (this.faction == Faction.Neutral) {
