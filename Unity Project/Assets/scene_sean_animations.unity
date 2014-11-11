@@ -12211,6 +12211,7 @@ GameObject:
   - 114: {fileID: 1782966851}
   - 114: {fileID: 1782966850}
   - 23: {fileID: 1782966853}
+  - 143: {fileID: 1782966854}
   m_Layer: 0
   m_Name: robot_skeleton
   m_TagString: Companion
@@ -12465,6 +12466,20 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!143 &1782966854
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1782966841}
+  serializedVersion: 2
+  m_Height: 0
+  m_Radius: 0
+  m_SlopeLimit: 45
+  m_StepOffset: .300000012
+  m_SkinWidth: .0799999982
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1784293608
 GameObject:
   m_ObjectHideFlags: 0
