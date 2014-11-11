@@ -837,7 +837,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 160228761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.42141199, y: .535934448, z: 3.52255416}
+  m_LocalPosition: {x: 5.4305625, y: .535934448, z: 3.52255416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1980875453}
@@ -7604,7 +7604,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &1782966845
 CapsuleCollider:
@@ -8823,6 +8823,7 @@ GameObject:
   - 82: {fileID: 1980875467}
   - 82: {fileID: 1980875468}
   - 82: {fileID: 1980875471}
+  - 114: {fileID: 1980875472}
   m_Layer: 0
   m_Name: main_character
   m_TagString: Player
@@ -8868,7 +8869,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!95 &1980875455
 Animator:
@@ -9311,6 +9312,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1980875472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1980875452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2cf2e4f528c8946b1fcf995f8d9bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1989162811
 GameObject:
   m_ObjectHideFlags: 0
