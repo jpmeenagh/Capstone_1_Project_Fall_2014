@@ -19,7 +19,9 @@ public class Attack_Ranged_Ray : MonoBehaviour
 
 	float effects_display_time = 0.1f;                // The proportion of the timeBetweenBullets that the effects will display for.
 
-	public AudioClip shootSound;					//sound for shooting
+	//public AudioClip shootSound;					//sound for shooting
+	AudioSource[] sounds;
+	AudioSource shootSoundSource;
 	
 	void Awake ()
 	{
@@ -32,6 +34,9 @@ public class Attack_Ranged_Ray : MonoBehaviour
 
 		time_at_last_attack = 0f;
 		time_since_last_attack = 0f;
+
+		sounds = this.GetComponents<AudioSource>();
+		shootSoundSource = sounds[1];
 	}
 	
 	void Update ()
@@ -71,7 +76,8 @@ public class Attack_Ranged_Ray : MonoBehaviour
 			shootRay.direction = transform.forward;
 
 			//play audio
-			audio.PlayOneShot(shootSound);
+			//audio.Play();
+			shootSoundSource.Play();
 			
 			// Perform the raycast against gameobjects on the shootable layer and if it hits something...
 			if(Physics.Raycast(shootRay, out shootHit, range, shootableMask))

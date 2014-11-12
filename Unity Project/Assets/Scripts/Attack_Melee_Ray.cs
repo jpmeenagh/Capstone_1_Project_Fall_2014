@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 //http://docs.unity3d.com/Manual/Layers.html
 
@@ -16,7 +16,9 @@ public class Attack_Melee_Ray : MonoBehaviour
 	
 	float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
 
-	public AudioClip meleeSound;					//sound for melee
+	//public AudioClip meleeSound;					//sound for melee
+	AudioSource[] sounds;
+	AudioSource meleeSoundSource;
 	
 	void Awake ()
 	{
@@ -25,6 +27,8 @@ public class Attack_Melee_Ray : MonoBehaviour
 		//shootableMask = ~shootableMask;
 		shootableMask = 1 << 10;
 		shootableMask = ~shootableMask;
+		sounds = this.GetComponents<AudioSource>();
+		meleeSoundSource = sounds[0];
 	}
 	
 	void Update ()
@@ -61,7 +65,10 @@ public class Attack_Melee_Ray : MonoBehaviour
 		shootRay.direction = transform.forward;
 
 		//play sound
-		audio.PlayOneShot (meleeSound);
+		//audio.PlayOneShot (meleeSound);
+		//audio.Stop ();
+		//audio.Play ();
+		meleeSoundSource.Play ();
 		
 		// Perform the raycast against gameobjects on the shootable layer and if it hits something...
 		if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))

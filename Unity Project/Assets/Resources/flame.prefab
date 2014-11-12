@@ -83,8 +83,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerSecond: 10
-  duration: 5
-  target: 0
+  duration: 2
+  target: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
