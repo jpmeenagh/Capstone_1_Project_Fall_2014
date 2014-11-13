@@ -12,7 +12,13 @@ public class Heal_Ranged_Ray : MonoBehaviour
 	Ray shootRay;                                   // A ray from the gun end forwards.
 	RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
 	int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
+
+	//at what height do the rays shoot out from
+	public float origin_y;
 	
+	//position rays shoot out from
+	private Vector3 shooting_origin;
+
 	float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
 
 	//public AudioClip healSound;						//sound for healing
@@ -29,6 +35,8 @@ public class Heal_Ranged_Ray : MonoBehaviour
 
 		sounds = this.GetComponents<AudioSource>();
 		healSoundSource = sounds[2];
+
+		shooting_origin = new Vector3(transform.position.x, origin_y, transform.position.z);
 	}
 	
 	void Update ()
@@ -66,9 +74,11 @@ public class Heal_Ranged_Ray : MonoBehaviour
 		
 		// Reset the timer.
 		timer = 0f;
-		
+	
+		shooting_origin = new Vector3(transform.position.x, origin_y, transform.position.z);
+
 		// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
-		shootRay.origin = transform.position;
+		shootRay.origin = shooting_origin;
 		shootRay.direction = transform.forward;
 
 		//sound

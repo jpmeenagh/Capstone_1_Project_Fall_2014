@@ -7698,6 +7698,10 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   xOffset: 0
   yOffset: 0
+  showHealth: 0
+  showHealthDist: 10
+  companionImage: {fileID: 0}
+  playerImage: {fileID: 0}
 --- !u!114 &1782966851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7722,7 +7726,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tether: {fileID: 1980875452}
   tetherDistance: 0
-  tetherRange: 5
+  tetherDefenseRange: 6
+  tetherFarRange: 9
+  tetherTeleportRange: 30
   speed: 3
   moving: 1
   currentLocation: {x: 0, y: 0, z: 0}
@@ -9021,6 +9027,10 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   xOffset: 0
   yOffset: 0
+  showHealth: 0
+  showHealthDist: 10
+  companionImage: {fileID: 0}
+  playerImage: {fileID: 0}
 --- !u!114 &1980875464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9035,7 +9045,7 @@ MonoBehaviour:
   damagePerShot: 20
   timeBetweenAttacks: .150000006
   range: 100
-  healSound: {fileID: 8300000, guid: 40e5c3af5d8a7cc43b5341723d15e8ed, type: 3}
+  origin_y: 2
 --- !u!114 &1980875465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9236,7 +9246,7 @@ MonoBehaviour:
   timeBetweenAttacks: .150000006
   range: 100
   sourceDmg: player
-  shootSound: {fileID: 8300000, guid: 0779dcdb82233b64a905c9b715240a79, type: 3}
+  origin_y: 2
 --- !u!114 &1980875470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9252,7 +9262,6 @@ MonoBehaviour:
   timeBetweenAttacks: .150000006
   range: 3
   sourceDmg: player
-  meleeSound: {fileID: 8300000, guid: 1cca2b8e978849148a8bb75891c59143, type: 3}
 --- !u!82 &1980875471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9565,6 +9574,10 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   xOffset: 0
   yOffset: 0
+  showHealth: 0
+  showHealthDist: 10
+  companionImage: {fileID: 0}
+  playerImage: {fileID: 0}
 --- !u!54 &1995357407
 Rigidbody:
   m_ObjectHideFlags: 0
