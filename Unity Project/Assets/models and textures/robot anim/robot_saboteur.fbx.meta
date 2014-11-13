@@ -1,0 +1,428 @@
+fileFormatVersion: 2
+guid: 5e6492920f10a444eb3e47b3a1aeb790
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ankle_L
+    100002: ankle_R
+    100004: ball_L
+    100006: ball_R
+    100008: chest
+    100010: control_chest
+    100012: control_elbow_L
+    100014: control_elbow_R
+    100016: control_foot_L
+    100018: control_foot_R
+    100020: control_global
+    100022: control_neck
+    100024: control_root
+    100026: control_shoulder_L
+    100028: control_shoulder_R
+    100030: control_spine1
+    100032: control_spine1 1
+    100034: control_wrist_L
+    100036: control_wrist_R
+    100038: elbow_L
+    100040: elbow_R
+    100042: hand_L
+    100044: hand_R
+    100046: head
+    100048: hip_L
+    100050: hip_R
+    100052: ikHandle_ankle_L
+    100054: ikHandle_ankle_R
+    100056: ikHandle_ball_L
+    100058: ikHandle_ball_R
+    100060: ikHandle_toe_L
+    100062: ikHandle_toe_R
+    100064: knee_L
+    100066: knee_R
+    100068: mesh1
+    100070: neck
+    100072: pCube1
+    100074: pCube10
+    100076: pCube2
+    100078: pCube3
+    100080: pCube4
+    100082: pCube5
+    100084: pCube6
+    100086: pCube7
+    100088: pCube8
+    100090: pCube9
+    100092: pCylinder1
+    100094: pCylinder2
+    100096: polySurface1
+    100098: polySurface2
+    100100: polySurface3
+    100102: pSphere1
+    100104: RFR_ankle_L
+    100106: RFR_ankle_R
+    100108: RFR_ball_L
+    100110: RFR_ball_R
+    100112: RFR_heel_L
+    100114: RFR_heel_R
+    100116: RFR_toe_L
+    100118: RFR_toe_R
+    100120: //RootNode
+    100122: root
+    100124: shoulder_L
+    100126: shoulder_R
+    100128: spine1
+    100130: spine2
+    100132: toe_L
+    100134: toe_R
+    100136: transform1
+    100138: transform10
+    100140: transform11
+    100142: transform12
+    100144: transform13
+    100146: transform14
+    100148: transform15
+    100150: transform2
+    100152: transform3
+    100154: transform4
+    100156: transform5
+    100158: transform6
+    100160: transform7
+    100162: transform8
+    100164: transform9
+    100166: wrist_L
+    100168: wrist_R
+    400000: ankle_L
+    400002: ankle_R
+    400004: ball_L
+    400006: ball_R
+    400008: chest
+    400010: control_chest
+    400012: control_elbow_L
+    400014: control_elbow_R
+    400016: control_foot_L
+    400018: control_foot_R
+    400020: control_global
+    400022: control_neck
+    400024: control_root
+    400026: control_shoulder_L
+    400028: control_shoulder_R
+    400030: control_spine1
+    400032: control_spine1 1
+    400034: control_wrist_L
+    400036: control_wrist_R
+    400038: elbow_L
+    400040: elbow_R
+    400042: hand_L
+    400044: hand_R
+    400046: head
+    400048: hip_L
+    400050: hip_R
+    400052: ikHandle_ankle_L
+    400054: ikHandle_ankle_R
+    400056: ikHandle_ball_L
+    400058: ikHandle_ball_R
+    400060: ikHandle_toe_L
+    400062: ikHandle_toe_R
+    400064: knee_L
+    400066: knee_R
+    400068: mesh1
+    400070: neck
+    400072: pCube1
+    400074: pCube10
+    400076: pCube2
+    400078: pCube3
+    400080: pCube4
+    400082: pCube5
+    400084: pCube6
+    400086: pCube7
+    400088: pCube8
+    400090: pCube9
+    400092: pCylinder1
+    400094: pCylinder2
+    400096: polySurface1
+    400098: polySurface2
+    400100: polySurface3
+    400102: pSphere1
+    400104: RFR_ankle_L
+    400106: RFR_ankle_R
+    400108: RFR_ball_L
+    400110: RFR_ball_R
+    400112: RFR_heel_L
+    400114: RFR_heel_R
+    400116: RFR_toe_L
+    400118: RFR_toe_R
+    400120: //RootNode
+    400122: root
+    400124: shoulder_L
+    400126: shoulder_R
+    400128: spine1
+    400130: spine2
+    400132: toe_L
+    400134: toe_R
+    400136: transform1
+    400138: transform10
+    400140: transform11
+    400142: transform12
+    400144: transform13
+    400146: transform14
+    400148: transform15
+    400150: transform2
+    400152: transform3
+    400154: transform4
+    400156: transform5
+    400158: transform6
+    400160: transform7
+    400162: transform8
+    400164: transform9
+    400166: wrist_L
+    400168: wrist_R
+    4300000: polySurface3
+    7400000: robot_saboteur
+    9500000: //RootNode
+    13700000: polySurface3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: robot_saboteur
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: control_global
+        weight: 1
+      - path: control_global/control_foot_L
+        weight: 1
+      - path: control_global/control_foot_L/RFR_heel_L
+        weight: 1
+      - path: control_global/control_foot_L/RFR_heel_L/RFR_toe_L
+        weight: 1
+      - path: control_global/control_foot_L/RFR_heel_L/RFR_toe_L/ikHandle_toe_L
+        weight: 1
+      - path: control_global/control_foot_L/RFR_heel_L/RFR_toe_L/RFR_ball_L
+        weight: 1
+      - path: control_global/control_foot_L/RFR_heel_L/RFR_toe_L/RFR_ball_L/ikHandle_ball_L
+        weight: 1
+      - path: control_global/control_foot_L/RFR_heel_L/RFR_toe_L/RFR_ball_L/RFR_ankle_L
+        weight: 1
+      - path: control_global/control_foot_L/RFR_heel_L/RFR_toe_L/RFR_ball_L/RFR_ankle_L/ikHandle_ankle_L
+        weight: 1
+      - path: control_global/control_foot_R
+        weight: 1
+      - path: control_global/control_foot_R/RFR_heel_R
+        weight: 1
+      - path: control_global/control_foot_R/RFR_heel_R/RFR_toe_R
+        weight: 1
+      - path: control_global/control_foot_R/RFR_heel_R/RFR_toe_R/ikHandle_toe_R
+        weight: 1
+      - path: control_global/control_foot_R/RFR_heel_R/RFR_toe_R/RFR_ball_R
+        weight: 1
+      - path: control_global/control_foot_R/RFR_heel_R/RFR_toe_R/RFR_ball_R/ikHandle_ball_R
+        weight: 1
+      - path: control_global/control_foot_R/RFR_heel_R/RFR_toe_R/RFR_ball_R/RFR_ankle_R
+        weight: 1
+      - path: control_global/control_foot_R/RFR_heel_R/RFR_toe_R/RFR_ball_R/RFR_ankle_R/ikHandle_ankle_R
+        weight: 1
+      - path: control_global/control_root
+        weight: 1
+      - path: control_global/control_root/control_spine1
+        weight: 1
+      - path: control_global/control_root/control_spine1/control_spine1 1
+        weight: 1
+      - path: control_global/control_root/control_spine1/control_spine1 1/control_chest
+        weight: 1
+      - path: control_global/control_root/control_spine1/control_spine1 1/control_chest/control_neck
+        weight: 1
+      - path: control_global/control_root/control_spine1/control_spine1 1/control_chest/control_shoulder_L
+        weight: 1
+      - path: control_global/control_root/control_spine1/control_spine1 1/control_chest/control_shoulder_L/control_elbow_L
+        weight: 1
+      - path: control_global/control_root/control_spine1/control_spine1 1/control_chest/control_shoulder_L/control_elbow_L/control_wrist_L
+        weight: 1
+      - path: control_global/control_root/control_spine1/control_spine1 1/control_chest/control_shoulder_R
+        weight: 1
+      - path: control_global/control_root/control_spine1/control_spine1 1/control_chest/control_shoulder_R/control_elbow_R
+        weight: 1
+      - path: control_global/control_root/control_spine1/control_spine1 1/control_chest/control_shoulder_R/control_elbow_R/control_wrist_R
+        weight: 1
+      - path: mesh1
+        weight: 1
+      - path: mesh1/pCube1
+        weight: 1
+      - path: mesh1/pCube1/transform15
+        weight: 1
+      - path: mesh1/pCube2
+        weight: 1
+      - path: mesh1/pCube2/transform14
+        weight: 1
+      - path: mesh1/pCube3
+        weight: 1
+      - path: mesh1/pCube3/transform13
+        weight: 1
+      - path: mesh1/pCube4
+        weight: 1
+      - path: mesh1/pCube4/transform12
+        weight: 1
+      - path: mesh1/pCube5
+        weight: 1
+      - path: mesh1/pCube5/transform11
+        weight: 1
+      - path: mesh1/pCube6
+        weight: 1
+      - path: mesh1/pCube6/transform9
+        weight: 1
+      - path: mesh1/pCube7
+        weight: 1
+      - path: mesh1/pCube7/transform2
+        weight: 1
+      - path: mesh1/pCube8
+        weight: 1
+      - path: mesh1/pCube8/transform7
+        weight: 1
+      - path: mesh1/pCube9
+        weight: 1
+      - path: mesh1/pCube9/transform4
+        weight: 1
+      - path: mesh1/pCube10
+        weight: 1
+      - path: mesh1/pCube10/transform3
+        weight: 1
+      - path: mesh1/pCylinder1
+        weight: 1
+      - path: mesh1/pCylinder1/transform10
+        weight: 1
+      - path: mesh1/pCylinder2
+        weight: 1
+      - path: mesh1/pCylinder2/transform6
+        weight: 1
+      - path: mesh1/polySurface1
+        weight: 1
+      - path: mesh1/polySurface1/transform8
+        weight: 1
+      - path: mesh1/polySurface2
+        weight: 1
+      - path: mesh1/polySurface2/transform5
+        weight: 1
+      - path: mesh1/polySurface3
+        weight: 1
+      - path: mesh1/pSphere1
+        weight: 1
+      - path: mesh1/pSphere1/transform1
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/hip_L
+        weight: 1
+      - path: root/hip_L/knee_L
+        weight: 1
+      - path: root/hip_L/knee_L/ankle_L
+        weight: 1
+      - path: root/hip_L/knee_L/ankle_L/ball_L
+        weight: 1
+      - path: root/hip_L/knee_L/ankle_L/ball_L/toe_L
+        weight: 1
+      - path: root/hip_R
+        weight: 1
+      - path: root/hip_R/knee_R
+        weight: 1
+      - path: root/hip_R/knee_R/ankle_R
+        weight: 1
+      - path: root/hip_R/knee_R/ankle_R/ball_R
+        weight: 1
+      - path: root/hip_R/knee_R/ankle_R/ball_R/toe_R
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/chest
+        weight: 1
+      - path: root/spine1/spine2/chest/neck
+        weight: 1
+      - path: root/spine1/spine2/chest/neck/head
+        weight: 1
+      - path: root/spine1/spine2/chest/shoulder_L
+        weight: 1
+      - path: root/spine1/spine2/chest/shoulder_L/elbow_L
+        weight: 1
+      - path: root/spine1/spine2/chest/shoulder_L/elbow_L/wrist_L
+        weight: 1
+      - path: root/spine1/spine2/chest/shoulder_L/elbow_L/wrist_L/hand_L
+        weight: 1
+      - path: root/spine1/spine2/chest/shoulder_R
+        weight: 1
+      - path: root/spine1/spine2/chest/shoulder_R/elbow_R
+        weight: 1
+      - path: root/spine1/spine2/chest/shoulder_R/elbow_R/wrist_R
+        weight: 1
+      - path: root/spine1/spine2/chest/shoulder_R/elbow_R/wrist_R/hand_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
