@@ -1842,8 +1842,8 @@ MonoBehaviour:
   currentLocation: {x: 0, y: 0, z: 0}
   targetLocation: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  targetDistance: 10
-  targetingRange: 0
+  targetDistance: 0
+  targetingRange: 100
   approachRange: 7
   targetTimer: 30
   nearbyEnemies: 0
