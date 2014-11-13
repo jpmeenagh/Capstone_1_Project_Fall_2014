@@ -8,7 +8,13 @@ public class Attack_Ranged_Ray : MonoBehaviour
 	public float timeBetweenAttacks = 0.15f;        // The time between each shot.
 	public float range = 100f;                      // The distance the gun can fire.
 	public string sourceDmg = "player";				//souce of the dmg, fed to what it is hitting
-	
+
+	//at what height do the rays shoot out from
+	public float origin_y;
+
+	//position rays shoot out from
+	private Vector3 shooting_origin;
+
 	float time_since_last_attack;                                    // A timer to determine when to fire.
 	float time_at_last_attack;
 	Ray shootRay;                                   // A ray from the gun end forwards.
@@ -37,6 +43,8 @@ public class Attack_Ranged_Ray : MonoBehaviour
 
 		sounds = this.GetComponents<AudioSource>();
 		shootSoundSource = sounds[1];
+
+		shooting_origin = new Vector3(transform.position.x, origin_y, transform.position.z);
 	}
 	
 	void Update ()
@@ -48,7 +56,6 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		{
 			DisableEffects ();
 		}
-
 	}
 	
 	public void DisableEffects ()
@@ -62,6 +69,8 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		if(time_since_last_attack >= timeBetweenAttacks){
 			print ("Attack_Ranged:  FIRE  |  time_since_last:  " + time_since_last_attack);
 
+			shooting_origin = new Vector3(transform.position.x, origin_y, transform.position.z);
+
 			// Reset the time_since_last_attack.
 			time_since_last_attack = 0f;
 
@@ -69,10 +78,10 @@ public class Attack_Ranged_Ray : MonoBehaviour
 
 
 			gunLine.enabled = true;
-			gunLine.SetPosition (0, transform.position);
+			gunLine.SetPosition (0, shooting_origin);
 
 			// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
-			shootRay.origin = transform.position;
+			shootRay.origin = shooting_origin;
 			shootRay.direction = transform.forward;
 
 			//play audio
