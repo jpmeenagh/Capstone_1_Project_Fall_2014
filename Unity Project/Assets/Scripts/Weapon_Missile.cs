@@ -6,7 +6,7 @@ public class Weapon_Missile : MonoBehaviour {
 	//how much damage does this do
 	public int damage = 50;
 
-	public string target_tag = "Enemy";
+	public string target_tag = "Player";
 	GameObject target;
 
 
@@ -161,7 +161,8 @@ public class Weapon_Missile : MonoBehaviour {
 
 				//calculate whether to move the full allowed distance or less and if the latter, how much
 				float move_x = Mathf.Sign(diff_x) * Mathf.Min(Mathf.Abs(diff_x), move_distance);
-				float move_y = Mathf.Sign(diff_y) * Mathf.Min(Mathf.Abs(diff_y), move_distance);
+				//float move_y = Mathf.Sign(diff_y) * Mathf.Min(Mathf.Abs(diff_y), move_distance);
+				float move_y = 0f;
 				float move_z = Mathf.Sign(diff_z) * Mathf.Min(Mathf.Abs(diff_z), move_distance);
 
 				//make a vector to add to the current position
@@ -184,25 +185,24 @@ public class Weapon_Missile : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		//hurt 
-		hurt_enemy (other);
-
+		heal_player (other);
+		print (other.gameObject.tag);
 		//the missile has hurt the enemy, so it should suicide
 		Destroy(this.gameObject);
 	}
 
-	//hurt enemy, return whether it hit enemy (and hurt them) or notg
-	bool hurt_enemy(Collider given_collider){
+	//heal ally, return whether it hit enemy (and hurt them) or not
+	bool heal_player(Collider given_collider){
 		// Try and find an EnemyHealth script on the gameobject hit.
-		Health enemyHealth = given_collider.GetComponent <Health> ();
+		Health ally_health = given_collider.GetComponent <Health> ();
 
 		// If the EnemyHealth component exist...
-		if (enemyHealth != null) {
-
-			if (given_collider.gameObject.tag.Equals("Enemy")) {
-				// ... the enemy should take damage.
-				//enemyHealth.TakeDamage (this.following_object.GetComponent<dmg_out_mod_player>().modDmg(damagePerSecond), new Vector3(0f,0f,0f), following_tags[target]);
-				enemyHealth.TakeDamage (damage, new Vector3 (0f, 0f, 0f), "Companion");
-
+		if (ally_health != null) {
+			if (given_collider.gameObject.tag.Equals("Player")) {
+				//ally_health.Heal (this.following_object.GetComponent<dmg_out_mod_player>().modDmg(damagePerSecond), transform.position);
+				print (" 030 " + ally_health.currentHealth);
+				ally_health.Heal (damage, transform.position);
+				print (" 0>0 "+ ally_health.currentHealth);
 				return true;
 			}
 		}
