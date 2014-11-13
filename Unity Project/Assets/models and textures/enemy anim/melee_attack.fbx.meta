@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: c84a18bd0d1ee0c4c9154911e8b63f33
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: base_joint
+    100002: bladeBase_joint
+    100004: bladeTip_joint
+    100006: //RootNode
+    100008: melee_base
+    100010: melee_base_ctrl
+    100012: melee_blade_ctrl
+    100014: melee_blades
+    100016: melee_controls
+    100018: melee_hilt
+    100020: melee_joints
+    100022: melee_mesh
+    100024: melee_satellite
+    100026: melee_satellite_ctrl
+    100028: satellite
+    100030: satelliteBase_joint
+    400000: base_joint
+    400002: bladeBase_joint
+    400004: bladeTip_joint
+    400006: //RootNode
+    400008: melee_base
+    400010: melee_base_ctrl
+    400012: melee_blade_ctrl
+    400014: melee_blades
+    400016: melee_controls
+    400018: melee_hilt
+    400020: melee_joints
+    400022: melee_mesh
+    400024: melee_satellite
+    400026: melee_satellite_ctrl
+    400028: satellite
+    400030: satelliteBase_joint
+    2300000: melee_base
+    2300002: melee_blades
+    2300004: melee_hilt
+    2300006: melee_satellite
+    3300000: melee_base
+    3300002: melee_blades
+    3300004: melee_hilt
+    3300006: melee_satellite
+    4300000: melee_base
+    4300002: melee_satellite
+    4300004: melee_hilt
+    4300006: melee_blades
+    7400000: melee_Attack
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: melee_Attack
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: melee_controls
+        weight: 1
+      - path: melee_controls/melee_base_ctrl
+        weight: 1
+      - path: melee_controls/melee_base_ctrl/melee_blade_ctrl
+        weight: 1
+      - path: melee_controls/melee_base_ctrl/melee_satellite_ctrl
+        weight: 1
+      - path: melee_joints
+        weight: 1
+      - path: melee_joints/base_joint
+        weight: 1
+      - path: melee_joints/base_joint/bladeBase_joint
+        weight: 1
+      - path: melee_joints/base_joint/bladeBase_joint/bladeTip_joint
+        weight: 1
+      - path: melee_joints/base_joint/satelliteBase_joint
+        weight: 1
+      - path: melee_joints/base_joint/satelliteBase_joint/satellite
+        weight: 1
+      - path: melee_mesh
+        weight: 1
+      - path: melee_mesh/melee_base
+        weight: 1
+      - path: melee_mesh/melee_hilt
+        weight: 1
+      - path: melee_mesh/melee_hilt/melee_blades
+        weight: 1
+      - path: melee_mesh/melee_satellite
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

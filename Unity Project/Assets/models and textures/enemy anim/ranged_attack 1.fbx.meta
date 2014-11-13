@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cbd21281cedda224dbd600b5d576bee0
+guid: cf7667182bc7ee448b96c4ac4fa54dd3
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -24,6 +24,7 @@ ModelImporter:
     400016: tank_gun
     400018: tank_top
     4300000: polySurface7
+    7400000: ranged_attack
     9500000: //RootNode
     13700000: polySurface7
   materials:
@@ -40,7 +41,53 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: ranged_attack
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Controls
+        weight: 1
+      - path: Controls/Control_Base
+        weight: 1
+      - path: Controls/Control_Base/Control_Top
+        weight: 1
+      - path: Joints
+        weight: 1
+      - path: Joints/tank_base
+        weight: 1
+      - path: Joints/tank_base/tank_top
+        weight: 1
+      - path: Joints/tank_base/tank_top/tank_gun
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh/polySurface7
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
