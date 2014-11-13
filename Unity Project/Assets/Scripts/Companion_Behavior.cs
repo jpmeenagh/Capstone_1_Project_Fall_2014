@@ -269,7 +269,7 @@ public class Companion_Behavior : MonoBehaviour {
 				return false;
 			}
 		} else if (name == "Flamethrower" && stance == "Defend") {
-			if (checkEnemiesAtLocation (new Vector3 (transform.position.x, transform.position.y, transform.position.z), 3) > 2 ||
+			if (checkEnemiesAtLocation (new Vector3 (transform.position.x, transform.position.y, transform.position.z), 3) > 0 ||
 			    checkEnemiesAtLocation (new Vector3 (tether.transform.position.x, tether.transform.position.y, tether.transform.position.z), 3) > 2
 			    ) { 
 				return true; 
@@ -288,6 +288,18 @@ public class Companion_Behavior : MonoBehaviour {
 			if (checkEnemiesAtLocation (new Vector3 (transform.position.x, transform.position.y, transform.position.z + 2), 2) 
 			    > 0) { 
 				//target = spreadTheWealth();
+				return true; 
+			} else { 
+				return false;
+			}
+		} else if (name == "Heal" && stance == "Attack") {
+			if (tether.GetComponent<Health>().currentHealth < 100) {
+				return true; 
+			} else { 
+				return false;
+			}
+		} else if (name == "Heal" && stance == "Defend") {
+			if (tether.GetComponent<Health>().currentHealth < 100) {
 				return true; 
 			} else { 
 				return false;

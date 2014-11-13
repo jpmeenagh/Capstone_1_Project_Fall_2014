@@ -38,13 +38,20 @@ public class Health : MonoBehaviour
 	public Vector3 pos;
 	public float xOffset;
 	public float yOffset;
-	
+
+	public bool showHealth;
+	public int showHealthDist = 10;
+
 	GUIStyle style = new GUIStyle();
 	Texture2D texture;
 	Texture2D texture2;
 	Color redColor = Color.red;
 	Color greenColor = Color.green;
-	
+
+	public Texture companionImage;
+	public Texture playerImage;
+
+
 	// Use this for initialization
 	void Start () {
 		texture = new Texture2D(1, 1);
@@ -59,6 +66,9 @@ public class Health : MonoBehaviour
 		if (this.faction == Faction.Enemy){
 			dmgModEnemy = this.GetComponent<dmg_in_mod_robo>();
 		}
+
+		showHealth = true;
+
 	}
 	
 	void Awake ()
@@ -86,6 +96,12 @@ public class Health : MonoBehaviour
 		if (tag == "Companion" && allowCompanionDeath && currentHealth <= 0) {
 			CompanionDead = true;
 		}
+
+		if (tag == "Enemy") {
+			Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+			if(Vector3.Distance(transform.position, player.position) < showHealthDist){ showHealth = true; } else { showHealth = false; }
+ 		}
+
 		// If the enemy should be sinking...
 		if(isSinking)
 		{
@@ -220,13 +236,20 @@ public class Health : MonoBehaviour
 		if (tag == "Player") {
 			GUI.Box (new Rect (250, Screen.height - 20, healthBarLength, 20), new GUIContent (""), style);
 			//GUI.Label (new Rect (10,Screen.height - 40,100,20), "PlayerHP");
+
+			GUI.DrawTexture(new Rect(350, Screen.height - 60, 60,60), playerImage,ScaleMode.ScaleToFit, true, 0);
 			
 		} else if (tag == "Companion") {
 			//GUI.Label (new Rect (Screen.width - 120,Screen.height - 40,100,20), "CompanionHP");
 			GUI.Box (new Rect (Screen.width - 370, Screen.height - 20, healthBarLength, 20), new GUIContent (""), style);
-		} else {
-			GUI.Box (new Rect (pos.x, pos.y, healthBarLength, 20), new GUIContent (""), style);
+
+			GUI.DrawTexture(new Rect(Screen.width - 430, Screen.height - 60, 60,60), companionImage,ScaleMode.ScaleToFit, true, 0);
+
+		} else if (tag == "Enemy" && showHealth){
+			GUI.Box (new Rect (pos.x, pos.y, healthBarLength, 13), new GUIContent (""), style);
 		}
+
+	
 	
 		style.normal.background = texture2;
 		style.normal.textColor = Color.black;
