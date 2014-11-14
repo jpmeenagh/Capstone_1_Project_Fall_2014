@@ -44,7 +44,7 @@ public class Heal_Ranged_Ray : MonoBehaviour
 		time_since_last_attack = 0f;
 		
 		sounds = this.GetComponents<AudioSource>();
-		shootSoundSource = sounds[1];
+		shootSoundSource = sounds[2];
 		
 		shooting_origin = new Vector3(transform.position.x, origin_y, transform.position.z);
 	}
