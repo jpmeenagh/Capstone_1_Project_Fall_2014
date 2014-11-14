@@ -11,6 +11,9 @@ public class Health : MonoBehaviour
 	
 	//sound
 	public AudioClip hitSound;
+
+	//animator
+	Animator thisAnima;
 	
 	//CapsuleCollider enemyCollider;            // Reference to the capsule collider.
 	BoxCollider enemyCollider;
@@ -76,6 +79,7 @@ public class Health : MonoBehaviour
 		// Setting up the references.
 		//enemyCollider = GetComponent <CapsuleCollider> ();
 		enemyCollider = GetComponent <BoxCollider> ();
+		thisAnima = GetComponent<Animator> ();
 		
 		// Setting the current health when the enemy first spawns.
 		currentHealth = startingHealth;
@@ -194,6 +198,9 @@ public class Health : MonoBehaviour
 	{
 		// The enemy is dead.
 		isDead = true;
+
+		//turn off the animator
+		thisAnima.enabled = false;
 		
 		// Turn the collider into a trigger so shots can pass through it.
 		enemyCollider.isTrigger = true;
