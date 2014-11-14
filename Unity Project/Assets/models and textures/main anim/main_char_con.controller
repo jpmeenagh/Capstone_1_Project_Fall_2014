@@ -69,7 +69,7 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: animAbility
-    m_EventTreshold: 3
+    m_EventTreshold: 2
     m_ExitTime: .739130437
   m_Atomic: 1
   m_Solo: 0
@@ -139,9 +139,9 @@ Transition:
   m_TransitionDuration: .260869563
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
-    m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: animSpeed
+    m_EventTreshold: .200000003
     m_ExitTime: .739130437
   m_Atomic: 1
   m_Solo: 0
@@ -309,9 +309,9 @@ Transition:
   m_TransitionDuration: .260869563
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: animAbility
+    m_EventTreshold: 1
     m_ExitTime: .739130437
   m_Atomic: 1
   m_Solo: 0
@@ -327,9 +327,9 @@ Transition:
   m_TransitionDuration: .180442065
   m_TransitionOffset: .0804276019
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
-    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: animSpeed
+    m_EventTreshold: .200000003
     m_ExitTime: .819557905
   m_Atomic: 1
   m_Solo: 0
@@ -403,9 +403,9 @@ Transition:
   m_TransitionDuration: .260869563
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: animAbility
+    m_EventTreshold: 1
     m_ExitTime: .739130437
   m_Atomic: 1
   m_Solo: 0
