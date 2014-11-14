@@ -10,6 +10,7 @@ public class animation_contrl_player : MonoBehaviour {
 	void Start () 
 	{
 		animator = GetComponent<Animator>();
+	
 	}
 	
 	void Update () 
@@ -45,6 +46,7 @@ public class animation_contrl_player : MonoBehaviour {
 
 			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_run-full"))
 			{
+
 				if (Input.GetAxis("triggerAxis") == -1){
 					animator.SetInteger("animAttack", 1);
 				}

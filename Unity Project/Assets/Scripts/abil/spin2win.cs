@@ -3,6 +3,11 @@ using System.Collections;
 
 public class spin2win : MonoBehaviour {
 
+	//4
+	//public AudioClip meleeSound;	
+	AudioSource[] sounds;
+	AudioSource spinSoundSource;
+
 	//collider
 	public GameObject spinZone;
 	GameObject spinZoneNow;
@@ -17,7 +22,8 @@ public class spin2win : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		sounds = this.GetComponents<AudioSource>();
+		spinSoundSource = sounds[4];
 	}
 	
 	// Update is called once per frame
@@ -40,6 +46,7 @@ public class spin2win : MonoBehaviour {
 		spin2winAct spinScript = spinZoneNow.GetComponent<spin2winAct> ();
 		spinScript.setPerams (spinDmg, spinTime);
 		curCD = minCD;
+		spinSoundSource.Play ();
 		//animation code here....
 
 	}

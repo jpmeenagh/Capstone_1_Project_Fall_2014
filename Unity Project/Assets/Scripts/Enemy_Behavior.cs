@@ -4,6 +4,10 @@ using System.Collections;
 
 public class Enemy_Behavior : MonoBehaviour {
 
+	//public AudioClip meleeSound;	
+	AudioSource[] sounds;
+	AudioSource shootSoundSource;
+
 	//basic movement 
 	public float speed = 3.0f;
 	public bool moving;
@@ -42,6 +46,9 @@ public class Enemy_Behavior : MonoBehaviour {
 		targetLocation = transform.position;
 
 		animRa = GetComponent<animation_ctrl_rangedEn> ();
+
+		sounds = this.GetComponents<AudioSource>();
+		shootSoundSource = sounds[1];
 	}
 	
 	// Update is called once per frame
@@ -110,6 +117,7 @@ public class Enemy_Behavior : MonoBehaviour {
 			Rigidbody instantiatedProjectile = Instantiate(projectile, new Vector3(shooter.position.x, shooter.position.y, shooter.position.z),shooter.rotation) as Rigidbody;
 			instantiatedProjectile.velocity = shooter.TransformDirection(new Vector3(0, 0,bulletSpeed));
 			animRa.animAtk();
+			shootSoundSource.Play ();
 		}
 	}
 

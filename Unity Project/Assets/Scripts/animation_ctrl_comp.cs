@@ -36,12 +36,12 @@ public class animation_ctrl_comp : MonoBehaviour {
 			
 			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.robot_flamethrower"))
 			{
-				animator.SetInteger("animRoboAttack", 0);
+				animator.SetInteger("animRoboAbility", 0);
 			}
 			
 			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.robot_saboteur"))
 			{
-				animator.SetInteger("animRoboAttack", 0);
+				animator.SetInteger("animRoboAbility", 0);
 			}
 			
 			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.robot_healingRay"))

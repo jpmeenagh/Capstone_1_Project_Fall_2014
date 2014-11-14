@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Weapon_Health_Station : MonoBehaviour {
+
+	//public AudioClip meleeSound;	
+	AudioSource[] sounds;
+	AudioSource healSoundSource;
+
 	//how much damage does this do per second?
 	public int health_per_second = 10;
 	
@@ -20,6 +25,11 @@ public class Weapon_Health_Station : MonoBehaviour {
 	void Start () {
 		this.time_next_second = Time.time;
 		this.time_trigger_armed = Time.time;
+
+		sounds = this.GetComponents<AudioSource>();
+		healSoundSource = sounds[0];
+
+		healSoundSource.Play ();
 	}
 	
 	
