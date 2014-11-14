@@ -185,6 +185,7 @@ public class Health : MonoBehaviour
 				currentHealth += amount;
 			}
 		}
+		healthBarLength = 100 * (currentHealth / (float)startingHealth);
 	}
 	
 	

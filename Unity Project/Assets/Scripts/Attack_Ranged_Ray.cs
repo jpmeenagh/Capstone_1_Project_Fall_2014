@@ -9,6 +9,8 @@ public class Attack_Ranged_Ray : MonoBehaviour
 	public float range = 100f;                      // The distance the gun can fire.
 	public string sourceDmg = "player";				//souce of the dmg, fed to what it is hitting
 
+	private bool was_firing = false;
+
 	//at what height do the rays shoot out from
 	public float origin_y;
 
@@ -52,9 +54,10 @@ public class Attack_Ranged_Ray : MonoBehaviour
 		// Add the time since Update was last called to time_since_last_attack.
 		time_since_last_attack += Time.deltaTime;
 
-		if(Time.time >= time_at_last_attack + effects_display_time)
+		if((Time.time >= time_at_last_attack + effects_display_time) && was_firing)
 		{
 			DisableEffects ();
+			was_firing = false;
 		}
 	}
 	
@@ -117,6 +120,7 @@ public class Attack_Ranged_Ray : MonoBehaviour
 				print("miss");
 				gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
 			}
+			was_firing = true;
 		}
 		else{
 			print ("Attack_Ranged:  NOFIRE  |  time_since_last:  " + time_since_last_attack);
