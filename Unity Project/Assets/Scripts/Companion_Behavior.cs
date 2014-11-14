@@ -47,6 +47,12 @@ public class Companion_Behavior : MonoBehaviour {
 	float tmpspeed;
 	Collider tmpCol1;
 	bool trigger1 = false;
+
+	//public AudioClip meleeSound;	
+	AudioSource[] sounds;
+	AudioSource offSoundSource;
+	AudioSource defSoundSource;
+	AudioSource supSoundSource;
 	
 	//Companion Ability List
 	public List<Ability> arrayOfAbilities; //the array of ability scripts
@@ -84,6 +90,11 @@ public class Companion_Behavior : MonoBehaviour {
 		changeStance(defaultStance); //set the default stance
 		
 		texture = new Texture2D(1, 1);
+
+		sounds = this.GetComponents<AudioSource>();
+		offSoundSource = sounds[3];
+		defSoundSource = sounds[4];
+		supSoundSource = sounds[5];
 	}
 	
 	// Update is called once per frame
@@ -203,15 +214,33 @@ public class Companion_Behavior : MonoBehaviour {
 	
 	void controlStances(){
 		if (Input.GetButtonUp ("SwitchStanceUp")) {
-			if(stance == "Attack"){ changeStance("Defend"); }
-			else if(stance == "Defend"){ changeStance("Support"); }
-			else if(stance == "Support"){ changeStance("Attack"); }
+			if(stance == "Attack"){ 
+				changeStance("Defend"); 
+				defSoundSource.Play();
+			}
+			else if(stance == "Defend"){ 
+				changeStance("Support"); 
+				supSoundSource.Play();
+			}
+			else if(stance == "Support"){ 
+				changeStance("Attack"); 
+				offSoundSource.Play();
+			}
 		}
 		
 		if (Input.GetButtonUp ("SwitchStanceDown")) {
-			if(stance == "Attack"){ changeStance("Support"); }
-			else if(stance == "Defend"){ changeStance("Attack"); }
-			else if(stance == "Support"){ changeStance("Defend"); }
+			if(stance == "Attack"){ 
+				changeStance("Support"); 
+				supSoundSource.Play();
+			}
+			else if(stance == "Defend"){ 
+				changeStance("Attack"); 
+				offSoundSource.Play();
+			}
+			else if(stance == "Support"){ 
+				changeStance("Defend"); 
+				defSoundSource.Play();
+			}
 		}
 	}
 	

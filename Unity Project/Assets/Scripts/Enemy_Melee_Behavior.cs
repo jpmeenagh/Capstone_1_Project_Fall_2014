@@ -31,11 +31,16 @@ public class Enemy_Melee_Behavior : MonoBehaviour {
 	Collider tmpCol1;
 	bool trigger1 = false;
 
+	//animator
+	animation_ctrl_melee animMelee;
+
 
 	// Use this for initialization
 	void Start () {
 		target = transform; //set target to self when not hostile
 		targetLocation = transform.position;
+
+		animMelee = GetComponent<animation_ctrl_melee> ();
 	}
 	
 	// Update is called once per frame
@@ -102,6 +107,7 @@ public class Enemy_Melee_Behavior : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 			transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
 			target.GetComponent<Health>().TakeDamage(stabDamage, new Vector3(0,0,0), "Stab");
+			animMelee.animAtk();
 		}
 	}
 

@@ -10,6 +10,7 @@ public class animation_contrl_player : MonoBehaviour {
 	void Start () 
 	{
 		animator = GetComponent<Animator>();
+	
 	}
 	
 	void Update () 
@@ -45,6 +46,7 @@ public class animation_contrl_player : MonoBehaviour {
 
 			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_run-full"))
 			{
+
 				if (Input.GetAxis("triggerAxis") == -1){
 					animator.SetInteger("animAttack", 1);
 				}
@@ -73,6 +75,20 @@ public class animation_contrl_player : MonoBehaviour {
 				animator.SetInteger("animAttack", 0);
 			}
 
+			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_whirlwind"))
+			{
+				animator.SetInteger("animAbility", 0);
+			}
+
+			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_bubbleShield"))
+			{
+				animator.SetInteger("animAbility", 0);
+			}
+
+			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_healingShot"))
+			{
+				animator.SetInteger("animAbility", 0);
+			}
 
 			animator.SetFloat("animSpeed", h*h+v*v);
 

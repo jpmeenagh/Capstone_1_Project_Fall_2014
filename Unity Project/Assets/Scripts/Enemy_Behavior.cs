@@ -4,6 +4,10 @@ using System.Collections;
 
 public class Enemy_Behavior : MonoBehaviour {
 
+	//public AudioClip meleeSound;	
+	AudioSource[] sounds;
+	AudioSource shootSoundSource;
+
 	//basic movement 
 	public float speed = 3.0f;
 	public bool moving;
@@ -32,11 +36,19 @@ public class Enemy_Behavior : MonoBehaviour {
 	Collider tmpCol1;
 	bool trigger1 = false;
 
+	//animation
+	animation_ctrl_rangedEn animRa;
+
 
 	// Use this for initialization
 	void Start () {
 		target = transform; //set target to self when not hostile
 		targetLocation = transform.position;
+
+		animRa = GetComponent<animation_ctrl_rangedEn> ();
+
+		sounds = this.GetComponents<AudioSource>();
+		shootSoundSource = sounds[1];
 	}
 	
 	// Update is called once per frame
@@ -54,6 +66,7 @@ public class Enemy_Behavior : MonoBehaviour {
 			transform.LookAt (new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
 			if(targetDistance > approachRange){ transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime); }
 			shoot(); //shoot when in range
+			animRa.animAtk();
 
 			randomStrafe();
 		}
@@ -103,6 +116,8 @@ public class Enemy_Behavior : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 			Rigidbody instantiatedProjectile = Instantiate(projectile, new Vector3(shooter.position.x, shooter.position.y, shooter.position.z),shooter.rotation) as Rigidbody;
 			instantiatedProjectile.velocity = shooter.TransformDirection(new Vector3(0, 0,bulletSpeed));
+			animRa.animAtk();
+			shootSoundSource.Play ();
 		}
 	}
 
