@@ -42816,6 +42816,10 @@ Prefab:
       propertyPath: speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: 6945266ea684c7241ac12924504a814b, type: 2}
+      propertyPath: max_cooldown_defend
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6945266ea684c7241ac12924504a814b, type: 2}
   m_RootGameObject: {fileID: 2059010023}
@@ -52195,7 +52199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_cooldown_attack: 50
-  max_cooldown_defend: 50
+  max_cooldown_defend: 200
   max_cooldown_support: 70
 --- !u!82 &2059010033
 AudioSource:
