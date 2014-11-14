@@ -14,8 +14,6 @@ public class Ability_Heal : Ability {
 	
 	//attack stance effect.  Should only be called using this.stance_delegate
 	protected override int attack(){
-		GameObject player_resource = Resources.Load<GameObject>("missile");
-		Instantiate(player_resource, this.transform.position - (2 * transform.forward), Quaternion.identity);
 		return max_cooldown_attack;
 	}
 	//defend stance effect.  Should only be called using this.stance_delegate
@@ -26,7 +24,8 @@ public class Ability_Heal : Ability {
 	}
 	//support stance effect.  Should only be called using this.stance_delegate
 	protected override int support(){
-		print ("support");
+		GameObject player_resource = Resources.Load<GameObject>("missile");
+		Instantiate(player_resource, this.transform.position - (2 * transform.forward), Quaternion.identity);
 		return max_cooldown_support;
 	}
 }
