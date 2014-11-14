@@ -29,8 +29,23 @@ public class char_rot : MonoBehaviour {
 
 		//KINDA WORKS
 		Vector3 lookDir = new Vector3(Input.GetAxis("char_rot"), 0.0f, -Input.GetAxis("char_rot_vert"));
+		//new
+		lookDir.Normalize();
+
+		//float fHeading = Vector3.Dot(Vector3.right, lookDir);
+		//Vector3 vNewRotation = transform.rotation.eulerAngles;
+		//vNewRotation.y = fHeading * 90.0f;
+		//if(lookDir.z > 0.0f)
+		//{    
+			//Debug.Log(new Vector2(Input.GetAxis("RightStickX"), Input.GetAxis("RightStickY"))); //report value of right thumbstick
+			
+			//vNewRotation.x = 180.0f - vNewRotation.x;    
+		//}
+
+		//transform.rotation = Quaternion.Euler(vNewRotation);
+
 		if (/*lookDir.magnitude > 0.0f &&*/ lookDir.magnitude > radialDeadZone) {
-						transform.LookAt (transform.position + lookDir, Vector3.up);
+				transform.LookAt (transform.position + lookDir, Vector3.up);
 				}
 		/*var direction = new Vector3(Input.GetAxis("char_rot"), Input.GetAxis("char_rot_vert"), 0);
 		
