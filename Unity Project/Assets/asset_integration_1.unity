@@ -15109,6 +15109,26 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400024, guid: d3f01e7b43231b74cb29c8ec5eb4fe0a, type: 2}
+      propertyPath: range
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400024, guid: d3f01e7b43231b74cb29c8ec5eb4fe0a, type: 2}
+      propertyPath: origin_y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400020, guid: d3f01e7b43231b74cb29c8ec5eb4fe0a, type: 2}
+      propertyPath: origin_y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 12000000, guid: d3f01e7b43231b74cb29c8ec5eb4fe0a, type: 2}
+      propertyPath: m_Parameters.startWidth
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 12000000, guid: d3f01e7b43231b74cb29c8ec5eb4fe0a, type: 2}
+      propertyPath: m_Parameters.endWidth
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3f01e7b43231b74cb29c8ec5eb4fe0a, type: 2}
   m_RootGameObject: {fileID: 1356604211}
@@ -49487,8 +49507,8 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   m_Parameters:
-    startWidth: 1
-    endWidth: 1
+    startWidth: .100000001
+    endWidth: .5
     m_StartColor:
       serializedVersion: 2
       rgba: 4294967295
@@ -49600,7 +49620,7 @@ MonoBehaviour:
   timeBetweenAttacks: .150000006
   range: 100
   sourceDmg: Companion
-  origin_y: 1
+  origin_y: 2
 --- !u!114 &2001071653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49627,9 +49647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagePerShot: 20
   timeBetweenAttacks: .150000006
-  range: 100
+  range: 17
   sourceDmg: player
-  origin_y: 1
+  origin_y: 2
 --- !u!114 &2001071655
 MonoBehaviour:
   m_ObjectHideFlags: 0
