@@ -4238,6 +4238,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 0b6168bd40f9efe4d8b8ec66b987c339, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b6168bd40f9efe4d8b8ec66b987c339, type: 2}
   m_RootGameObject: {fileID: 1446523060}
@@ -6753,6 +6757,7 @@ GameObject:
   - 114: {fileID: 1446523063}
   - 82: {fileID: 1446523062}
   - 114: {fileID: 1446523067}
+  - 114: {fileID: 1446523071}
   m_Layer: 0
   m_Name: ranged_enemy_small
   m_TagString: Enemy
@@ -6973,6 +6978,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1446523071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446523060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13233904edd2a44b97b1902e9bfde87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1456717065
 GameObject:
   m_ObjectHideFlags: 0
@@ -7016,6 +7032,7 @@ GameObject:
   - 82: {fileID: 1470719091}
   - 114: {fileID: 1470719090}
   - 65: {fileID: 1470719097}
+  - 114: {fileID: 1470719099}
   m_Layer: 0
   m_Name: melee_enemy
   m_TagString: Enemy
@@ -7233,6 +7250,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1470719099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1470719088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd48dc90b9ce8b9489ea5da9c6a47cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1475367727
 GameObject:
   m_ObjectHideFlags: 0
