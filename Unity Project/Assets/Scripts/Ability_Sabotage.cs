@@ -19,12 +19,14 @@ public class Ability_Sabotage : Ability {
 	}
 
 	protected override int defend(){
-		GameObject cone_collider = Resources.Load<GameObject>("sabotage_cone_defend");
-		Instantiate (cone_collider, transform.position, transform.rotation);
+
 		return max_cooldown_defend;
 	}
 
 	protected override int support(){
+
+		GameObject cone_collider = Resources.Load<GameObject>("sabotage_cone_defend");
+		Instantiate (cone_collider, transform.position, transform.rotation);
 		return max_cooldown_support;
 	}
 }

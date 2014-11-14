@@ -185,6 +185,7 @@ public class Health : MonoBehaviour
 				currentHealth += amount;
 			}
 		}
+		//BUGED hp bar decreases even though health increases
 		healthBarLength = 100 * (currentHealth / (float)startingHealth);
 	}
 	

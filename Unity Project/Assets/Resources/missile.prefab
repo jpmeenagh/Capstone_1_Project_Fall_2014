@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bda4b8307c64064783c6e9f83bedd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
-  target_tag: Enemy
+  damage: 15
+  target_tag: Player
   range: 200
   move_distance: .100000001
 --- !u!1001 &100100000

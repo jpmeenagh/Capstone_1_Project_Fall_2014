@@ -45,7 +45,7 @@ public class cone_col : MonoBehaviour {
 				roboIn.sabo_def(ability_time, ability_strength);
 			}
 		}
-		if (stance == Stance.Defend) {
+		if (stance == Stance.Support) {
 			sab_speed sabSpeedTmp = other.GetComponent<sab_speed>();
 			if (sabSpeedTmp != null){
 				sabSpeedTmp.sabo_speed(ability_time);

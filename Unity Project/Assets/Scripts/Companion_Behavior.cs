@@ -284,7 +284,7 @@ public class Companion_Behavior : MonoBehaviour {
 			} else { 
 				return false;
 			}
-		} else if (name == "Sabotage" && stance == "Defend") {
+		} else if (name == "Sabotage" && stance == "Support") {
 			if (checkEnemiesAtLocation (new Vector3 (transform.position.x, transform.position.y, transform.position.z + 2), 2) 
 			    > 0) { 
 				//target = spreadTheWealth();
@@ -292,7 +292,7 @@ public class Companion_Behavior : MonoBehaviour {
 			} else { 
 				return false;
 			}
-		} else if (name == "Heal" && stance == "Attack") {
+		} else if (name == "Heal" && stance == "Support") {
 			if (tether.GetComponent<Health>().currentHealth < 100) {
 				return true; 
 			} else { 

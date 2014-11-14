@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd597189c977f7b4c8b4ae256d0d795e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stance: 1
+  stance: 2
   ability_strength: 10
   ability_time: 100
   duration: 1

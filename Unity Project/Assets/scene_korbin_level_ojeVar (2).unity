@@ -7522,6 +7522,7 @@ GameObject:
   - 114: {fileID: 1782966854}
   - 114: {fileID: 1782966855}
   - 82: {fileID: 1782966856}
+  - 114: {fileID: 1782966857}
   m_Layer: 0
   m_Name: robot_skeleton
   m_TagString: Companion
@@ -7633,6 +7634,7 @@ MonoBehaviour:
   abilities:
   - {fileID: 1782966848}
   - {fileID: 1782966847}
+  - {fileID: 1782966857}
 --- !u!114 &1782966847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7757,8 +7759,8 @@ MonoBehaviour:
   testAbility1Name: Flamethrower
   testAbility2: {fileID: 1782966847}
   testAbility2Name: Sabotage
-  testAbility3: {fileID: 0}
-  testAbility3Name: 
+  testAbility3: {fileID: 1782966857}
+  testAbility3Name: Heal
 --- !u!23 &1782966853
 Renderer:
   m_ObjectHideFlags: 0
@@ -7863,6 +7865,20 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1782966857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1782966841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a05193b3b1c5514cb03e5e1ecff3885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_cooldown_attack: 50
+  max_cooldown_defend: 50
+  max_cooldown_support: 70
 --- !u!1 &1784293608
 GameObject:
   m_ObjectHideFlags: 0
@@ -9046,6 +9062,7 @@ MonoBehaviour:
   damagePerShot: 20
   timeBetweenAttacks: .150000006
   range: 100
+  sourceDmg: Companion
   origin_y: 2
 --- !u!114 &1980875465
 MonoBehaviour:
