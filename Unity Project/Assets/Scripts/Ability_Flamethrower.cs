@@ -2,8 +2,14 @@
 using System.Collections;
 
 public class Ability_Flamethrower : Ability {
+
+	animation_ctrl_comp animcomp;
+
 	// Use this for initialization
-	void Start () {}
+	void Start () {
+		animcomp = GetComponent<animation_ctrl_comp> ();
+
+	}
 	void Awake(){
 		this.name = "Flamethrower";
 	}
@@ -17,6 +23,7 @@ public class Ability_Flamethrower : Ability {
 		GameObject mine1 = Resources.Load<GameObject>("flame");
 		mine1.GetComponent<Weapon_Firemine> ().target = Weapon_Firemine.Following.Companion;
 		Instantiate(mine1, new Vector3(0,1,1), this.transform.rotation);
+		animcomp.animAbil ("sabo");
 		return max_cooldown_attack;
 	}
 	//circles of fire on the ground around the player and companion that hurt bad guys within every second
@@ -28,7 +35,7 @@ public class Ability_Flamethrower : Ability {
 		GameObject mine2 = Resources.Load<GameObject>("fire_mine");
 		mine2.GetComponent<Weapon_Firemine> ().target = Weapon_Firemine.Following.Companion;
 		Instantiate(mine2, new Vector3(0,1,0), Quaternion.identity);
-
+		animcomp.animAbil ("sabo");
 		return max_cooldown_defend;
 	}
 }

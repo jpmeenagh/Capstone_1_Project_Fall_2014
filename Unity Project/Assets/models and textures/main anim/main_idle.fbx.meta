@@ -448,7 +448,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: control_elbow_R
-      position: {x: .0280725993, y: -5.3290704e-17, z: -1.08246741e-17}
+      position: {x: .0280725993, y: -5.3290704e-17, z: -1.08246749e-17}
       rotation: {x: .0459238887, y: -.488022387, z: -.246609166, w: .836007833}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
@@ -498,7 +498,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: knee_R
-      position: {x: .0445420258, y: .00468113832, z: -.00272228057}
+      position: {x: .0445420295, y: .00468113832, z: -.00272228057}
       rotation: {x: -.00219435268, y: -.0540382564, z: -.0681453869, w: .996208429}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
@@ -553,7 +553,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: wrist_L
-      position: {x: -.0271843206, y: -1.60982334e-17, z: 2.84217088e-16}
+      position: {x: -.0271843206, y: -1.6098235e-17, z: 2.84217088e-16}
       rotation: {x: .082951732, y: .0727429986, z: .0433775336, w: .992948055}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1

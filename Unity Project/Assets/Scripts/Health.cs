@@ -204,6 +204,8 @@ public class Health : MonoBehaviour
 		
 		// Turn the collider into a trigger so shots can pass through it.
 		enemyCollider.isTrigger = true;
+
+		Destroy (gameObject, 1f);
 		
 		
 	}

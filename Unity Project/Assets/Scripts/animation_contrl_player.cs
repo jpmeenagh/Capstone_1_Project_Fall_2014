@@ -73,6 +73,20 @@ public class animation_contrl_player : MonoBehaviour {
 				animator.SetInteger("animAttack", 0);
 			}
 
+			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_whirlwind"))
+			{
+				animator.SetInteger("animAbility", 0);
+			}
+
+			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_bubbleShield"))
+			{
+				animator.SetInteger("animAbility", 0);
+			}
+
+			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_healingShot"))
+			{
+				animator.SetInteger("animAbility", 0);
+			}
 
 			animator.SetFloat("animSpeed", h*h+v*v);
 
