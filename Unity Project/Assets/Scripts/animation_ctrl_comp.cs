@@ -14,8 +14,6 @@ public class animation_ctrl_comp : MonoBehaviour {
 	
 	void Update () 
 	{
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
 		
 		if(animator)
 		{
@@ -48,8 +46,10 @@ public class animation_ctrl_comp : MonoBehaviour {
 			{
 				animator.SetInteger("animRoboAbility", 0);
 			}
-			
-			animator.SetFloat("animRoboSpeed", h*h+v*v);
+
+			if (this.transform.hasChanged == true){
+				animator.SetBool(Animator.StringToHash("animRoboSpeed"), true);
+			}
 			
 			/*
 			//get the current state
