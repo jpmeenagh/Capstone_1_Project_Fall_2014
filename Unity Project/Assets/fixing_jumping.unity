@@ -42828,6 +42828,14 @@ Prefab:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 6945266ea684c7241ac12924504a814b, type: 2}
+      propertyPath: companionImage
+      value: 
+      objectReference: {fileID: 2800000, guid: d8859b4c91ac884449c7c5afbde8c527, type: 3}
+    - target: {fileID: 11400008, guid: 6945266ea684c7241ac12924504a814b, type: 2}
+      propertyPath: playerImage
+      value: 
+      objectReference: {fileID: 2800000, guid: 06b5c1b82a1d589429f033ffb06c78a0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6945266ea684c7241ac12924504a814b, type: 2}
   m_RootGameObject: {fileID: 2059010023}
@@ -52346,8 +52354,8 @@ MonoBehaviour:
   yOffset: 0
   showHealth: 0
   showHealthDist: 10
-  companionImage: {fileID: 0}
-  playerImage: {fileID: 0}
+  companionImage: {fileID: 2800000, guid: d8859b4c91ac884449c7c5afbde8c527, type: 3}
+  playerImage: {fileID: 2800000, guid: 06b5c1b82a1d589429f033ffb06c78a0, type: 3}
 --- !u!114 &2059010038
 MonoBehaviour:
   m_ObjectHideFlags: 0
