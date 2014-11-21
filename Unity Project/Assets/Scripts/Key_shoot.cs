@@ -12,13 +12,13 @@ public class Key_shoot : MonoBehaviour {
 	void Update () {
 
 		//uses triggers for shoot and melee
-		if(Input.GetAxis("triggerAxis") == 1){
+		if(Input.GetButton("Fire1")/*Input.GetAxis("triggerAxis") == 1*/){
 			// ... shoot the gun.
 			Attack_Ranged_Ray rayranged = this.GetComponent <Attack_Ranged_Ray>();
 			rayranged.Shoot();
 		}
 
-		if(Input.GetAxis("triggerAxis") == -1){
+		if(Input.GetButton("Fire2")/*Input.GetAxis("triggerAxis") == -1*/){
 			// ... shoot the gun.
 			Attack_Melee_Ray raymelee = this.GetComponent <Attack_Melee_Ray>();
 			raymelee.Shoot();

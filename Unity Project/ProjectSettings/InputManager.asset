@@ -41,7 +41,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: mouse 0
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -57,7 +57,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: mouse 1
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -73,9 +73,9 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left cmd
+    positiveButton: q
     altNegativeButton: 
-    altPositiveButton: mouse 2
+    altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -297,7 +297,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: z
+    positiveButton: mouse 2
     altNegativeButton: 
     altPositiveButton: joystick button 3
     gravity: 1000
@@ -345,7 +345,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: p
+    positiveButton: f
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -361,7 +361,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: o
+    positiveButton: v
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -377,7 +377,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: k
+    positiveButton: e
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

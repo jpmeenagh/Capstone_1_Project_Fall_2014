@@ -30,7 +30,7 @@ public class spin2win : MonoBehaviour {
 	void Update () {
 
 		//spins when key is pressed
-		if(Input.GetButton ("Fire1")){
+		if(Input.GetButton ("spinKey")){
 			if (curCD <= 0){
 				spin ();
 			}

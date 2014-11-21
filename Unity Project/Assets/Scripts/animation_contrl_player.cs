@@ -26,13 +26,13 @@ public class animation_contrl_player : MonoBehaviour {
 
 			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.Idle"))
 			{
-				if (Input.GetAxis("triggerAxis") == -1){
+				if (Input.GetButton("Fire2")){
 					animator.SetInteger("animAttack", 1);
 				}
-				if (Input.GetAxis("triggerAxis") == 1){
+				if (Input.GetAxis("Fire1") == 1){
 					animator.SetInteger("animAttack", 2);
 				}
-				if (Input.GetButton("Fire1")){
+				if (Input.GetButton("spinKey")){
 					animator.SetInteger("animAbility", 1);
 				}
 				if (Input.GetButton("heal")){
@@ -47,13 +47,13 @@ public class animation_contrl_player : MonoBehaviour {
 			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_run-full"))
 			{
 
-				if (Input.GetAxis("triggerAxis") == -1){
+				if (Input.GetButton("Fire2")){
 					animator.SetInteger("animAttack", 1);
 				}
-				if (Input.GetAxis("triggerAxis") == 1){
+				if (Input.GetAxis("Fire1") == 1){
 					animator.SetInteger("animAttack", 2);
 				}
-				if (Input.GetButton("Fire1")){
+				if (Input.GetButton("spinKey")){
 					animator.SetInteger("animAbility", 1);
 				}
 				if (Input.GetButton("heal")){
