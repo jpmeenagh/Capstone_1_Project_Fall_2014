@@ -16,6 +16,13 @@ public class char_rot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		RaycastHit hitinfo;
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // casts a ray from the center of the camer to the mouse pointer
+		if (Physics.Raycast(ray, out hitinfo)) // stores the collision info of the raycast
+		{
+			transform.LookAt(new Vector3(hitinfo.point.x, this.transform.position.y,hitinfo.point.z)); // look at the point of space you hit
+		}
+
 		//rotates the player using the right stick
 		//transform.Rotate(0, Input.GetAxis("char_rot") * sens/* * sensitivityX */, 0);
 
@@ -28,9 +35,9 @@ public class char_rot : MonoBehaviour {
 		//transform.LookAt(transform.position + new Vector3(Input.GetAxis("char_rot"), Input.GetAxis("char_rot_vert"), 0.0f)/*, -Vector3.forward*/);
 
 		//KINDA WORKS
-		Vector3 lookDir = new Vector3(Input.GetAxis("char_rot"), 0.0f, -Input.GetAxis("char_rot_vert"));
+//		Vector3 lookDir = new Vector3(Input.GetAxis("char_rot"), 0.0f, -Input.GetAxis("char_rot_vert"));
 		//new
-		lookDir.Normalize();
+//		lookDir.Normalize();
 
 		//float fHeading = Vector3.Dot(Vector3.right, lookDir);
 		//Vector3 vNewRotation = transform.rotation.eulerAngles;
@@ -44,9 +51,9 @@ public class char_rot : MonoBehaviour {
 
 		//transform.rotation = Quaternion.Euler(vNewRotation);
 
-		if (/*lookDir.magnitude > 0.0f &&*/ lookDir.magnitude > radialDeadZone) {
-				transform.LookAt (transform.position + lookDir, Vector3.up);
-				}
+//		if (/*lookDir.magnitude > 0.0f &&*/ lookDir.magnitude > radialDeadZone) {
+//				transform.LookAt (transform.position + lookDir, Vector3.up);
+//				}
 		/*var direction = new Vector3(Input.GetAxis("char_rot"), Input.GetAxis("char_rot_vert"), 0);
 		
 		if (direction.magnitude > 0) //Only update rotation if we’re actually pressing a direction, otherwise idle snaps rotation upward
