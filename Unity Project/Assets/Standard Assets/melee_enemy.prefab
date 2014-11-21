@@ -684,7 +684,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!114 &11400000

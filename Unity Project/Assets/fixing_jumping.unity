@@ -4528,7 +4528,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!4 &215726189
@@ -4880,7 +4880,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &237520202
@@ -8587,7 +8587,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1001 &399185628
@@ -10384,7 +10384,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &460497088
@@ -11948,7 +11948,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &506027100
@@ -12618,7 +12618,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1001 &527153366
@@ -13183,7 +13183,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &533444239
@@ -15141,6 +15141,10 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 2537ddbcbde60ef4897bdc7cd9c848d6, type: 3}
+    - target: {fileID: 9500002, guid: d3f01e7b43231b74cb29c8ec5eb4fe0a, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3f01e7b43231b74cb29c8ec5eb4fe0a, type: 2}
   m_RootGameObject: {fileID: 1356604211}
@@ -17618,7 +17622,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &722580512
@@ -18566,7 +18570,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &764283594
@@ -19946,7 +19950,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &804722258
@@ -23348,7 +23352,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &940972134
@@ -28202,7 +28206,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &1184194840
@@ -30916,7 +30920,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &1280638516
@@ -31936,7 +31940,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!4 &1311073852
@@ -35570,7 +35574,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!4 &1431693806
@@ -38967,7 +38971,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &1578132467
@@ -40175,7 +40179,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 136e66abe4add484da4fdca03a034198, type: 3}
   m_Controller: {fileID: 9100000, guid: f030043bbf2a64940af5a0fa23d62353, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &1647470025
@@ -42820,6 +42824,10 @@ Prefab:
       propertyPath: max_cooldown_defend
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 6945266ea684c7241ac12924504a814b, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6945266ea684c7241ac12924504a814b, type: 2}
   m_RootGameObject: {fileID: 2059010023}
@@ -44015,7 +44023,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &1818857622
@@ -45758,7 +45766,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: cbd21281cedda224dbd600b5d576bee0, type: 3}
   m_Controller: {fileID: 9100000, guid: d703efcdfbf7eae4f8b5a64e7d37dc75, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &1898951690
@@ -49710,7 +49718,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: d141c25165f30df41a7a6d030f765d8f, type: 3}
   m_Controller: {fileID: 9100000, guid: 1fff28a13b741934c85c2f093a44bbd0, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &2001237209
@@ -52499,7 +52507,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 28794f7c26c0aa6489e8911a833d2d53, type: 3}
   m_Controller: {fileID: 9100000, guid: e8fe61a3a86ad3d469983c39a0554c68, type: 2}
   m_CullingMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!1 &2059635350
