@@ -248,13 +248,13 @@ public class Health : MonoBehaviour
 			GUI.Box (new Rect (250, Screen.height - 40, healthBarLength, 25), new GUIContent (""), style);
 			//GUI.Label (new Rect (10,Screen.height - 40,100,20), "PlayerHP");
 
-			GUI.DrawTexture(new Rect(350, Screen.height - 100, 60,60), playerImage,ScaleMode.ScaleToFit, true, 0);
+			GUI.DrawTexture(new Rect(350, Screen.height - 100, 100,100), playerImage,ScaleMode.ScaleToFit, true, 0);
 			
 		} else if (tag == "Companion") {
 			//GUI.Label (new Rect (Screen.width - 120,Screen.height - 40,100,20), "CompanionHP");
 			GUI.Box (new Rect (Screen.width - 370, Screen.height - 40, healthBarLength, 25), new GUIContent (""), style);
 
-			GUI.DrawTexture(new Rect(Screen.width - 430, Screen.height - 60, 60,60), companionImage,ScaleMode.ScaleToFit, true, 0);
+			GUI.DrawTexture(new Rect(Screen.width - 470, Screen.height - 100, 100,100), companionImage,ScaleMode.ScaleToFit, true, 0);
 
 		} else if (tag == "Enemy" && showHealth){
 			GUI.Box (new Rect (pos.x, pos.y, healthBarLength, 13), new GUIContent (""), style);
