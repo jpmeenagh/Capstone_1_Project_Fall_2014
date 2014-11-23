@@ -51,8 +51,8 @@ public class Health : MonoBehaviour
 	Color redColor = Color.red;
 	Color greenColor = Color.green;
 
-	public Texture companionImage;
-	public Texture playerImage;
+	public Texture2D companionImage;
+	public Texture2D playerImage;
 
 
 	// Use this for initialization
@@ -243,16 +243,16 @@ public class Health : MonoBehaviour
 		texture.Apply();
 		
 		style.normal.background = texture;
-		
+
 		if (tag == "Player") {
-			GUI.Box (new Rect (250, Screen.height - 20, healthBarLength, 20), new GUIContent (""), style);
+			GUI.Box (new Rect (250, Screen.height - 40, healthBarLength, 25), new GUIContent (""), style);
 			//GUI.Label (new Rect (10,Screen.height - 40,100,20), "PlayerHP");
 
-			GUI.DrawTexture(new Rect(350, Screen.height - 60, 60,60), playerImage,ScaleMode.ScaleToFit, true, 0);
+			GUI.DrawTexture(new Rect(350, Screen.height - 100, 60,60), playerImage,ScaleMode.ScaleToFit, true, 0);
 			
 		} else if (tag == "Companion") {
 			//GUI.Label (new Rect (Screen.width - 120,Screen.height - 40,100,20), "CompanionHP");
-			GUI.Box (new Rect (Screen.width - 370, Screen.height - 20, healthBarLength, 20), new GUIContent (""), style);
+			GUI.Box (new Rect (Screen.width - 370, Screen.height - 40, healthBarLength, 25), new GUIContent (""), style);
 
 			GUI.DrawTexture(new Rect(Screen.width - 430, Screen.height - 60, 60,60), companionImage,ScaleMode.ScaleToFit, true, 0);
 
@@ -265,9 +265,9 @@ public class Health : MonoBehaviour
 		style.normal.background = texture2;
 		style.normal.textColor = Color.black;
 		if (tag == "Player") {
-			GUI.Label (new Rect (250,Screen.height - 40,100,20), "PlayerHP", style);
+			//GUI.Label (new Rect (250,Screen.height - 40,100,20), "PlayerHP", style);
 		} else if (tag == "Companion") {
-			GUI.Label (new Rect (Screen.width - 370,Screen.height - 40,100,20), "CompanionHP", style);
+			//GUI.Label (new Rect (Screen.width - 370,Screen.height - 40,100,20), "CompanionHP", style);
 		} 
 		
 		if (gameOver) {

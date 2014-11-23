@@ -66,11 +66,14 @@ public class Companion_Behavior : MonoBehaviour {
 	//test abilities to auto add, since there's no menu to set up companion
 	public Ability testAbility1;
 	public string  testAbility1Name;
+	public Texture Ability1Image = Resources.Load("fire") as Texture;
 	public Ability testAbility2;
 	public string  testAbility2Name;
+	public Texture Ability2Image = Resources.Load("sabotage") as Texture;
 	public Ability testAbility3;
-	public string  testAbility3Name;
-	
+	public string  testAbility3Name; 
+	public Texture Ability3Image = Resources.Load("health") as Texture;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -441,20 +444,70 @@ public class Companion_Behavior : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-		
+		string text = "";
+		if (stance == "Attack") {
+				texture.SetPixel (1, 1, Color.red);
+				style.normal.textColor = Color.black;
+				text = "  ATTACK";	 
+		}	
+		if (stance == "Defend") {
+			texture.SetPixel (1, 1, Color.cyan);
+			style.normal.textColor = Color.black;
+			text = "  DEFEND";
+		}
+		if (stance == "Support") {
+			texture.SetPixel (1, 1, Color.yellow);
+			style.normal.textColor = Color.black;
+			text = " SUPPORT";
+		}
 		texture.Apply();
-		
 		style.normal.background = texture;
-		style.normal.textColor = Color.black;
+		style.fontSize = 16;
+
 		
-		GUI.Label (new Rect (Screen.width - 70, Screen.height - 40, 75, 50), "Stance: \n" + stance, style);
+		
+		GUI.Label (new Rect (Screen.width - 110, Screen.height - 40, 85, 100), "\n" + text, style);
 		//Screen.width - 200
 		//Screen.width - 320
-		GUI.Label (new Rect (Screen.width - 200, Screen.height - 65, 120, 100), "Abilties: \n" + testAbility1Name + " - " + arrayOfCooldowns[0] +
-		           "\n" + testAbility2Name + " - " + arrayOfCooldowns[1] +
-		           "\n" + testAbility3Name + " - " + arrayOfCooldowns[2], style);
 		
-		
+		//set up cooldown bars
+		GUIStyle style2 = new GUIStyle();
+		Texture2D texture2;
+		Texture2D texture3;
+		Color redColor = Color.red;
+		Color greenColor = Color.green;
+		texture2 = new Texture2D(1, 1);
+		texture2.SetPixel(1, 1, redColor);
+		texture3 = new Texture2D(1, 1);
+		texture3.SetPixel(1, 1, greenColor);
+
+		texture2.Apply();
+		texture3.Apply ();
+		style2.normal.background = texture2;
+
+		if (arrayOfCooldowns [0] == 0) {style2.normal.background = texture3;}else{style2.normal.background = texture2;}
+		GUI.Box (new Rect (Screen.width - 160, Screen.height - 40, 40, 100), new GUIContent (""), style2);
+
+		if (arrayOfCooldowns [1] == 0) {style2.normal.background = texture3;}else{style2.normal.background = texture2;}
+		GUI.Box (new Rect (Screen.width - 210, Screen.height - 40, 40, 100), new GUIContent (""), style2);
+
+		if (arrayOfCooldowns [2] == 0) {style2.normal.background = texture3;}else{style2.normal.background = texture2;}
+		GUI.Box (new Rect (Screen.width - 260, Screen.height - 40, 40, 100), new GUIContent (""), style2);
+
+		GUI.DrawTexture(new Rect(Screen.width - 160, Screen.height - 68, 40, 100), Ability1Image,ScaleMode.ScaleToFit, true, 0);
+		GUI.DrawTexture(new Rect(Screen.width - 210, Screen.height - 68, 40, 100), Ability2Image,ScaleMode.ScaleToFit, true, 0);
+		GUI.DrawTexture(new Rect(Screen.width - 260, Screen.height - 68, 40, 100), Ability3Image,ScaleMode.ScaleToFit, true, 0);
+
+
+		if (arrayOfCooldowns [0] > 0) {
+			GUI.Label (new Rect (Screen.width - 160, Screen.height - 15, 15, 100), "" + arrayOfCooldowns [0], style);
+				}
+		if (arrayOfCooldowns [1] > 0) {
+			GUI.Label (new Rect (Screen.width - 210, Screen.height - 15, 15, 100), "" + arrayOfCooldowns [0], style);
+		}
+		if (arrayOfCooldowns [2] > 0) {
+			GUI.Label (new Rect (Screen.width - 260, Screen.height - 15, 15, 100), "" + arrayOfCooldowns [0], style);
+		}
 	}
 	
 	/*//starts the robot when it leaves robot imasible terrain
