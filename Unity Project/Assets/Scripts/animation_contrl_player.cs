@@ -3,6 +3,9 @@ using System.Collections;
 
 public class animation_contrl_player : MonoBehaviour {
 
+	//Transform LastTransTMPT;
+	Vector3 LastTrasVec;
+
 	protected Animator animator;
 
 	//    public float DirectionDampTime = .25f;
@@ -10,6 +13,8 @@ public class animation_contrl_player : MonoBehaviour {
 	void Start () 
 	{
 		animator = GetComponent<Animator>();
+		//LastTransTMPT = this.transform;
+		LastTrasVec = this.transform.position;
 	
 	}
 	
@@ -17,6 +22,8 @@ public class animation_contrl_player : MonoBehaviour {
 	{
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
+		//Vector3 LastTransDir = LastTransTMPT.InverseTransformDirection();
+		//Vector3 ThisTransDir = this.transform.InverseTransformDirection ();
 
 		if(animator)
 		{
@@ -65,6 +72,69 @@ public class animation_contrl_player : MonoBehaviour {
 				
 			}
 
+			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_run_back"))
+			{
+				
+				if (Input.GetButton("Fire2")){
+					animator.SetInteger("animAttack", 1);
+				}
+				if (Input.GetAxis("Fire1") == 1){
+					animator.SetInteger("animAttack", 2);
+				}
+				if (Input.GetButton("spinKey")){
+					animator.SetInteger("animAbility", 1);
+				}
+				if (Input.GetButton("heal")){
+					animator.SetInteger("animAbility", 2);
+				}
+				if (Input.GetButton("Fire3")){
+					animator.SetInteger("animAbility", 3);
+				}
+				
+			}
+
+			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_sideRun_L"))
+			{
+				
+				if (Input.GetButton("Fire2")){
+					animator.SetInteger("animAttack", 1);
+				}
+				if (Input.GetAxis("Fire1") == 1){
+					animator.SetInteger("animAttack", 2);
+				}
+				if (Input.GetButton("spinKey")){
+					animator.SetInteger("animAbility", 1);
+				}
+				if (Input.GetButton("heal")){
+					animator.SetInteger("animAbility", 2);
+				}
+				if (Input.GetButton("Fire3")){
+					animator.SetInteger("animAbility", 3);
+				}
+				
+			}
+
+			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_sideRun_R"))
+			{
+				
+				if (Input.GetButton("Fire2")){
+					animator.SetInteger("animAttack", 1);
+				}
+				if (Input.GetAxis("Fire1") == 1){
+					animator.SetInteger("animAttack", 2);
+				}
+				if (Input.GetButton("spinKey")){
+					animator.SetInteger("animAbility", 1);
+				}
+				if (Input.GetButton("heal")){
+					animator.SetInteger("animAbility", 2);
+				}
+				if (Input.GetButton("Fire3")){
+					animator.SetInteger("animAbility", 3);
+				}
+				
+			}
+
 			if(stateInfo.nameHash == Animator.StringToHash("Base Layer.main_swordAttack_L"))
 			{
 				animator.SetInteger("animAttack", 0);
@@ -92,6 +162,37 @@ public class animation_contrl_player : MonoBehaviour {
 
 			animator.SetFloat("animSpeed", h*h+v*v);
 
+
+			if (this.transform.InverseTransformPoint(LastTrasVec).x > 0){
+				animator.SetFloat("animDir2", -1.0f);
+				animator.SetInteger("animDir", 2);
+				if (this.transform.InverseTransformPoint(LastTrasVec).z > 0){
+					animator.SetFloat("animDir2", 1.0f);
+					animator.SetInteger("animDir", 3);
+				}
+			}
+
+			if (this.transform.InverseTransformPoint(LastTrasVec).x < 0){
+				animator.SetFloat("animDir2", -1.0f);
+				animator.SetInteger("animDir", 3);
+				if (this.transform.InverseTransformPoint(LastTrasVec).z > 0){
+					animator.SetFloat("animDir2", 1.0f);
+					animator.SetInteger("animDir", 2);
+				}
+			}
+
+			if (this.transform.InverseTransformPoint(LastTrasVec).x > -0.05 &&
+			    this.transform.InverseTransformPoint(LastTrasVec).x < 0.05){
+				if (this.transform.InverseTransformPoint(LastTrasVec).z > 0){
+					animator.SetInteger("animDir", 1);
+				}
+				
+				if (this.transform.InverseTransformPoint(LastTrasVec).z < 0){
+					animator.SetInteger("animDir", 0);
+				}
+				
+			}
+
 			/*
 			//get the current state
 			AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
@@ -115,5 +216,8 @@ public class animation_contrl_player : MonoBehaviour {
 			animator.SetFloat("Direction", h, DirectionDampTime, Time.deltaTime);
 			*/
 		}       
+
+		//LastTransTMPT = this.transform;
+		LastTrasVec = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
 	} 
 }
