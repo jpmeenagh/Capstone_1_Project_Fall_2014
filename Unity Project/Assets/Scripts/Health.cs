@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
 	public float yOffset;
 
 	public bool showHealth;
-	public int showHealthDist = 10;
+	public int showHealthDist = 20;
 
 	GUIStyle style = new GUIStyle();
 	Texture2D texture;
