@@ -1,0 +1,300 @@
+Initialize engine version: 4.3.3f1 (c8ca9b6b9936)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.4052]
+    Renderer: NVIDIA GeForce GTX 780
+    Vendor:   NVIDIA
+    VRAM:     2978 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.038 seconds
+desktop: 1920x1080 60Hz; virtual: 3520x1200 at -1600,-120
+<RI> Initializing input.
+<RI> Input initialized.
+Attack
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Platform assembly: D:\Users\Andrew\Documents\GitHub\Capstone_1_Project_Fall_2014\Unity Project\Final build for turn in 12_2_Data\Managed\Boo.Lang.dll (this message is harmless)
+abilities activated
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  7.890183
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+hit: other faction
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.134422
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  0.1524415
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+hit: other faction
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.01797798
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.0300476
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.05012481
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  0.1632348
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+hit: other faction
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.02028924
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.03618658
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.05046535
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.07066876
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.08415566
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  0.1844234
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+hit: other faction
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.01808638
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.03630545
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.05213568
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.06618697
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  0.1673963
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+hit: other faction
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.0171871
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.03176654
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.04971093
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.06845968
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  0.1654195
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+miss
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.01566603
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.03678673
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.05295575
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  0.3844778
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+hit: other faction
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.02060227
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.03333245
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.05306596
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.06720407
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  0.2001924
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.02023658
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.03672254
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.05309348
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.06512056
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  0.1872609
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+hit: other faction
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.01197652
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.0322768
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.04908389
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.0641488
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.08127968
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.09600327
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  FIRE  |  time_since_last:  0.2292974
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.01804454
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.03663427
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.05218387
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Attack_Ranged:  NOFIRE  |  time_since_last:  0.06514306
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+hit: Enemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Health.Death () [0x00000] in <filename unknown>:0 
+  at Health.TakeDamage (Int32 amount, Vector3 hitPoint, System.String sourceDmg) [0x00000] in <filename unknown>:0 
+  at Enemy_Melee_Behavior.shoot () [0x00000] in <filename unknown>:0 
+  at Enemy_Melee_Behavior.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Firemine:  UPDATE  |  time left:  1  trigger ready:  23.68809
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Firemine:  UPDATE  |  time left:  0  trigger ready:  23.68809
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Firemine:  UPDATE  |  time left:  1  trigger ready:  25.36998
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Firemine:  UPDATE  |  time left:  0  trigger ready:  25.36998
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Firemine:  UPDATE  |  time left:  1  trigger ready:  27.05788
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Firemine:  UPDATE  |  time left:  0  trigger ready:  27.05788
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Health.Death () [0x00000] in <filename unknown>:0 
+  at Health.TakeDamage (Int32 amount, Vector3 hitPoint, System.String sourceDmg) [0x00000] in <filename unknown>:0 
+  at Enemy_Melee_Behavior.shoot () [0x00000] in <filename unknown>:0 
+  at Enemy_Melee_Behavior.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
